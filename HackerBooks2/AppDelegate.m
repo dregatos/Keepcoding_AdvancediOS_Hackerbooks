@@ -8,7 +8,18 @@
 
 #import "AppDelegate.h"
 
+#import "AGTCoreDataStack.h"
+#import "DRGDownloadManager.h"
+#import "UIViewController+Navigation.h"
+
+#import "DRGBook.h"
+#import "DRGBookListVC.h"
+
+NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
+
 @interface AppDelegate ()
+
+@property (nonatomic, strong) AGTCoreDataStack *stack;
 
 @end
 
@@ -16,10 +27,55 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Create the stack
+    self.stack = [AGTCoreDataStack coreDataStackWithModelName:@"Library"];
+
+    if (DEBUG) {
+        [self.stack zapAllData];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:WAS_LAUNCHED_BEFORE];
+    }
+    
+    // Download the library ONLY during the first launch ***
+    NSMutableArray *library = [[NSMutableArray alloc] init];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:WAS_LAUNCHED_BEFORE] == NO) {
+        NSLog(@"Downloading library...");
+        NSArray *bookList = [DRGDownloadManager downloadBookList];
+        // Create library (= insert books on context)
+        for (NSDictionary *dic in bookList) {
+            DRGBook *book = [DRGBook bookFromDictionary:dic withContext:self.stack.context];
+            if (book) { [library addObject:book]; }
+        }
+        // Update 'WAS_LAUNCHED_BEFORE' flag value
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:WAS_LAUNCHED_BEFORE];
+    }
+    
+    NSLog(@"Library count: %lu", [library count]);
+    if (![library count]) {
+        NSLog(@"Ups! We couldn't fetch any book from the server.");
+    }
+    
+    // Loading library
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGBook entityName]];
+    NSSortDescriptor *sortTitle = [NSSortDescriptor sortDescriptorWithKey:DRGBookAttributes.title
+                                                               ascending:YES
+                                                                selector:@selector(caseInsensitiveCompare:)];
+    req.sortDescriptors = @[sortTitle];
+    req.fetchBatchSize = 20;
+    
+    // FetchedResultsController
+    NSFetchedResultsController *frController = [[NSFetchedResultsController alloc] initWithFetchRequest:req
+                                                                                   managedObjectContext:self.stack.context sectionNameKeyPath:nil
+                                                                                              cacheName:nil];
+    
+    DRGBookListVC *bookListVC = [[DRGBookListVC alloc] initWithFetchedResultsController:frController
+                                                                                  style:UITableViewStylePlain];
+    
+    // Show
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [bookListVC wrappedInNavigationController];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

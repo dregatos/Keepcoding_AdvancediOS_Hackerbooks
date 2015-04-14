@@ -10,4 +10,6 @@
 
 @interface DRGLibraryBaseClass : NSManagedObject
 
++ (NSArray *)observableKeys;
+
 @end

@@ -10,4 +10,13 @@
 
 // Custom logic goes here.
 
++ (instancetype)pdfForURL:(NSURL *)aURL withContext:(NSManagedObjectContext *)context {
+    
+    DRGPdf *pdf = [DRGPdf insertInManagedObjectContext:context];
+    pdf.urlString = [aURL absoluteString];
+    pdf.pdfData = nil;
+    
+    return pdf;
+}
+
 @end

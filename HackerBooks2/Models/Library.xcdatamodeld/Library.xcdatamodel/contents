@@ -29,7 +29,7 @@
         <attribute name="modification" attributeType="Date" syncable="YES"/>
         <relationship name="annotation" maxCount="1" deletionRule="Nullify" destinationEntity="Annotation" inverseName="date" inverseEntity="Annotation" syncable="YES"/>
     </entity>
-    <entity name="Label" syncable="YES">
+    <entity name="Label" representedClassName="DRGLabel" syncable="YES">
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="tags" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="label" inverseEntity="Tag" syncable="YES"/>
     </entity>

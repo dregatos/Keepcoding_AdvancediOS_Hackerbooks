@@ -10,4 +10,12 @@
 
 // Custom logic goes here.
 
++ (instancetype)labelNamed:(NSString *)name withContext:(NSManagedObjectContext *)context {
+    
+    DRGLabel *label = [DRGLabel insertInManagedObjectContext:context];
+    label.name = name;
+    
+    return label;
+}
+
 @end

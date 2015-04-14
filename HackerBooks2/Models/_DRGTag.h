@@ -10,7 +10,7 @@ extern const struct DRGTagRelationships {
 } DRGTagRelationships;
 
 @class DRGBook;
-@class NSManagedObject;
+@class DRGLabel;
 
 @interface DRGTagID : NSManagedObjectID {}
 @end
@@ -25,7 +25,7 @@ extern const struct DRGTagRelationships {
 
 //- (BOOL)validateBook:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSManagedObject *label;
+@property (nonatomic, strong) DRGLabel *label;
 
 //- (BOOL)validateLabel:(id*)value_ error:(NSError**)error_;
 
@@ -36,7 +36,7 @@ extern const struct DRGTagRelationships {
 - (DRGBook*)primitiveBook;
 - (void)setPrimitiveBook:(DRGBook*)value;
 
-- (NSManagedObject*)primitiveLabel;
-- (void)setPrimitiveLabel:(NSManagedObject*)value;
+- (DRGLabel*)primitiveLabel;
+- (void)setPrimitiveLabel:(DRGLabel*)value;
 
 @end

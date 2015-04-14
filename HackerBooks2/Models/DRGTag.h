@@ -2,4 +2,8 @@
 
 @interface DRGTag : _DRGTag {}
 // Custom logic goes here.
+
++ (instancetype)tagNamed:(NSString *)name
+                  ofBook:(DRGBook *)book
+             withContext:(NSManagedObjectContext *)context;
 @end

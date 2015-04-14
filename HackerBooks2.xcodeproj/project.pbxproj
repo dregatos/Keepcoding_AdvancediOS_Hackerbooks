@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0704C3B61ADD26BC00F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3B51ADD26BC00F80DB7 /* AGTCoreDataStack.m */; };
 		0704C3CC1ADD297D00F80DB7 /* _DRGAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3B91ADD297D00F80DB7 /* _DRGAnnotation.m */; };
 		0704C3CD1ADD297D00F80DB7 /* _DRGAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3BB1ADD297D00F80DB7 /* _DRGAuthor.m */; };
 		0704C3CE1ADD297D00F80DB7 /* _DRGBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3BD1ADD297D00F80DB7 /* _DRGBook.m */; };
@@ -31,6 +30,11 @@
 		0704C3F81ADD2B7C00F80DB7 /* DRGLibraryBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3F71ADD2B7C00F80DB7 /* DRGLibraryBaseClass.m */; };
 		0704C3FB1ADD4BF700F80DB7 /* _DRGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3FA1ADD4BF700F80DB7 /* _DRGLabel.m */; };
 		0704C3FE1ADD4C0300F80DB7 /* DRGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3FD1ADD4C0300F80DB7 /* DRGLabel.m */; };
+		0704C4021ADD51C400F80DB7 /* DRGDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4011ADD51C400F80DB7 /* DRGDownloadManager.m */; };
+		0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4081ADD725500F80DB7 /* DRGBookListVC.m */; };
+		0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */; };
+		0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */; };
+		0704C4141ADD782900F80DB7 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4131ADD782900F80DB7 /* UIViewController+Navigation.m */; };
 		0738A8AB1ADC0B4700CB87FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AA1ADC0B4700CB87FC /* main.m */; };
 		0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */; };
 		0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8AF1ADC0B4700CB87FC /* Images.xcassets */; };
@@ -50,8 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0704C3B41ADD26BC00F80DB7 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
-		0704C3B51ADD26BC00F80DB7 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
 		0704C3B81ADD297D00F80DB7 /* _DRGAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGAnnotation.h; path = Models/_DRGAnnotation.h; sourceTree = "<group>"; };
 		0704C3B91ADD297D00F80DB7 /* _DRGAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGAnnotation.m; path = Models/_DRGAnnotation.m; sourceTree = "<group>"; };
 		0704C3BA1ADD297D00F80DB7 /* _DRGAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGAuthor.h; path = Models/_DRGAuthor.h; sourceTree = "<group>"; };
@@ -98,6 +100,16 @@
 		0704C3FA1ADD4BF700F80DB7 /* _DRGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGLabel.m; path = Models/_DRGLabel.m; sourceTree = "<group>"; };
 		0704C3FC1ADD4C0300F80DB7 /* DRGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGLabel.h; path = Models/DRGLabel.h; sourceTree = "<group>"; };
 		0704C3FD1ADD4C0300F80DB7 /* DRGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGLabel.m; path = Models/DRGLabel.m; sourceTree = "<group>"; };
+		0704C4001ADD51C400F80DB7 /* DRGDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGDownloadManager.h; path = Managers/DRGDownloadManager.h; sourceTree = "<group>"; };
+		0704C4011ADD51C400F80DB7 /* DRGDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGDownloadManager.m; path = Managers/DRGDownloadManager.m; sourceTree = "<group>"; };
+		0704C4071ADD725500F80DB7 /* DRGBookListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookListVC.h; path = Controllers/DRGBookListVC.h; sourceTree = "<group>"; };
+		0704C4081ADD725500F80DB7 /* DRGBookListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGBookListVC.m; path = Controllers/DRGBookListVC.m; sourceTree = "<group>"; };
+		0704C40A1ADD729200F80DB7 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataStack.h; path = "AGBO Utils/AGTCoreDataStack.h"; sourceTree = "<group>"; };
+		0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataStack.m; path = "AGBO Utils/AGTCoreDataStack.m"; sourceTree = "<group>"; };
+		0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataTableViewController.h; path = "AGBO Utils/AGTCoreDataTableViewController.h"; sourceTree = "<group>"; };
+		0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataTableViewController.m; path = "AGBO Utils/AGTCoreDataTableViewController.m"; sourceTree = "<group>"; };
+		0704C4121ADD782900F80DB7 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		0704C4131ADD782900F80DB7 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		0738A8A51ADC0B4700CB87FC /* HackerBooks2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerBooks2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0738A8A91ADC0B4700CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738A8AA1ADC0B4700CB87FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,6 +210,43 @@
 			name = Mogenerator;
 			sourceTree = "<group>";
 		};
+		0704C3FF1ADD519900F80DB7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0704C4001ADD51C400F80DB7 /* DRGDownloadManager.h */,
+				0704C4011ADD51C400F80DB7 /* DRGDownloadManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		0704C4031ADD71A800F80DB7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0704C40D1ADD72A000F80DB7 /* AGBO */,
+				0704C4071ADD725500F80DB7 /* DRGBookListVC.h */,
+				0704C4081ADD725500F80DB7 /* DRGBookListVC.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0704C40D1ADD72A000F80DB7 /* AGBO */ = {
+			isa = PBXGroup;
+			children = (
+				0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */,
+				0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */,
+			);
+			name = AGBO;
+			sourceTree = "<group>";
+		};
+		0704C4111ADD781800F80DB7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0704C4121ADD782900F80DB7 /* UIViewController+Navigation.h */,
+				0704C4131ADD782900F80DB7 /* UIViewController+Navigation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		0738A89C1ADC0B4700CB87FC = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +272,10 @@
 				0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */,
 				0738A8AF1ADC0B4700CB87FC /* Images.xcassets */,
 				0738A8B11ADC0B4700CB87FC /* LaunchScreen.xib */,
+				0704C4111ADD781800F80DB7 /* Categories */,
+				0704C3FF1ADD519900F80DB7 /* Managers */,
 				0738A8C81ADC0DAC00CB87FC /* Models */,
+				0704C4031ADD71A800F80DB7 /* Controllers */,
 				0738A8A81ADC0B4700CB87FC /* Supporting Files */,
 			);
 			path = HackerBooks2;
@@ -258,9 +310,9 @@
 		0738A8C81ADC0DAC00CB87FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0704C40A1ADD729200F80DB7 /* AGTCoreDataStack.h */,
+				0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */,
 				0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */,
-				0704C3B41ADD26BC00F80DB7 /* AGTCoreDataStack.h */,
-				0704C3B51ADD26BC00F80DB7 /* AGTCoreDataStack.m */,
 				0704C3F51ADD2AF800F80DB7 /* Mogenerator */,
 			);
 			name = Models;
@@ -371,12 +423,15 @@
 				0704C3D01ADD297D00F80DB7 /* _DRGDate.m in Sources */,
 				0704C3D21ADD297D00F80DB7 /* _DRGPdf.m in Sources */,
 				0704C3ED1ADD2AD100F80DB7 /* DRGCover.m in Sources */,
+				0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */,
 				0704C3F21ADD2AD100F80DB7 /* DRGTag.m in Sources */,
 				0704C3F01ADD2AD100F80DB7 /* DRGPdf.m in Sources */,
 				0704C3F31ADD2AD100F80DB7 /* DRGWriter.m in Sources */,
 				0704C3D11ADD297D00F80DB7 /* _DRGLocalization.m in Sources */,
 				0704C3F11ADD2AD100F80DB7 /* DRGPhoto.m in Sources */,
+				0704C4021ADD51C400F80DB7 /* DRGDownloadManager.m in Sources */,
 				0704C3FE1ADD4C0300F80DB7 /* DRGLabel.m in Sources */,
+				0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */,
 				0704C3EC1ADD2AD100F80DB7 /* DRGBook.m in Sources */,
 				0704C3EB1ADD2AD100F80DB7 /* DRGAuthor.m in Sources */,
 				0704C3CF1ADD297D00F80DB7 /* _DRGCover.m in Sources */,
@@ -385,13 +440,14 @@
 				0704C3FB1ADD4BF700F80DB7 /* _DRGLabel.m in Sources */,
 				0738A8AB1ADC0B4700CB87FC /* main.m in Sources */,
 				0704C3EE1ADD2AD100F80DB7 /* DRGDate.m in Sources */,
-				0704C3B61ADD26BC00F80DB7 /* AGTCoreDataStack.m in Sources */,
 				0704C3F81ADD2B7C00F80DB7 /* DRGLibraryBaseClass.m in Sources */,
 				0704C3CC1ADD297D00F80DB7 /* _DRGAnnotation.m in Sources */,
 				0704C3D51ADD297D00F80DB7 /* _DRGWriter.m in Sources */,
+				0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */,
 				0704C3EA1ADD2AD100F80DB7 /* DRGAnnotation.m in Sources */,
 				0704C3EF1ADD2AD100F80DB7 /* DRGLocalization.m in Sources */,
 				0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */,
+				0704C4141ADD782900F80DB7 /* UIViewController+Navigation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
