@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0704C3B61ADD26BC00F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3B51ADD26BC00F80DB7 /* AGTCoreDataStack.m */; };
 		0738A8AB1ADC0B4700CB87FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AA1ADC0B4700CB87FC /* main.m */; };
 		0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */; };
 		0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8AF1ADC0B4700CB87FC /* Images.xcassets */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0704C3B41ADD26BC00F80DB7 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
+		0704C3B51ADD26BC00F80DB7 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
 		0738A8A51ADC0B4700CB87FC /* HackerBooks2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerBooks2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0738A8A91ADC0B4700CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738A8AA1ADC0B4700CB87FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */,
+				0704C3B41ADD26BC00F80DB7 /* AGTCoreDataStack.h */,
+				0704C3B51ADD26BC00F80DB7 /* AGTCoreDataStack.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			files = (
 				0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */,
 				0738A8AB1ADC0B4700CB87FC /* main.m in Sources */,
+				0704C3B61ADD26BC00F80DB7 /* AGTCoreDataStack.m in Sources */,
 				0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +418,7 @@
 				0738A8C41ADC0B4800CB87FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0738A8C51ADC0B4800CB87FC /* Build configuration list for PBXNativeTarget "HackerBooks2Tests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				0738A8C71ADC0B4800CB87FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
