@@ -12,6 +12,7 @@
 		0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8AF1ADC0B4700CB87FC /* Images.xcassets */; };
 		0738A8B31ADC0B4700CB87FC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8B11ADC0B4700CB87FC /* LaunchScreen.xib */; };
 		0738A8BF1ADC0B4800CB87FC /* HackerBooks2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8BE1ADC0B4800CB87FC /* HackerBooks2Tests.m */; };
+		0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		0738A8B81ADC0B4800CB87FC /* HackerBooks2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerBooks2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0738A8BD1ADC0B4800CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738A8BE1ADC0B4800CB87FC /* HackerBooks2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackerBooks2Tests.m; sourceTree = "<group>"; };
+		0738A8CD1ADC0E6B00CB87FC /* Library.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Library.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */,
 				0738A8AF1ADC0B4700CB87FC /* Images.xcassets */,
 				0738A8B11ADC0B4700CB87FC /* LaunchScreen.xib */,
+				0738A8C81ADC0DAC00CB87FC /* Models */,
 				0738A8A81ADC0B4700CB87FC /* Supporting Files */,
 			);
 			path = HackerBooks2;
@@ -109,6 +112,14 @@
 				0738A8BD1ADC0B4800CB87FC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0738A8C81ADC0DAC00CB87FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			files = (
 				0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */,
 				0738A8AB1ADC0B4700CB87FC /* main.m in Sources */,
+				0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +422,20 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0738A8CD1ADC0E6B00CB87FC /* Library.xcdatamodel */,
+			);
+			currentVersion = 0738A8CD1ADC0E6B00CB87FC /* Library.xcdatamodel */;
+			name = Library.xcdatamodeld;
+			path = Models/Library.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0738A89D1ADC0B4700CB87FC /* Project object */;
 }

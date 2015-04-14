@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Annotation" representedClassName="DRGAnnotation" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="annotation" inverseEntity="Book" syncable="YES"/>
+        <relationship name="date" maxCount="1" deletionRule="Cascade" destinationEntity="Date" inverseName="annotation" inverseEntity="Date" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="annotation" inverseEntity="Location" syncable="YES"/>
+        <relationship name="photo" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="annotation" inverseEntity="Photo" syncable="YES"/>
+    </entity>
+    <entity name="Author" representedClassName="DRGAuthor" syncable="YES">
+        <relationship name="book" maxCount="1" deletionRule="Cascade" destinationEntity="Book" inverseName="authors" inverseEntity="Book" syncable="YES"/>
+        <relationship name="writer" maxCount="1" deletionRule="Nullify" destinationEntity="Writer" inverseName="authors" inverseEntity="Writer" syncable="YES"/>
+    </entity>
+    <entity name="Book" representedClassName="DRGBook" syncable="YES">
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="annotation" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Annotation" inverseName="book" inverseEntity="Annotation" syncable="YES"/>
+        <relationship name="authors" toMany="YES" deletionRule="Nullify" destinationEntity="Author" inverseName="book" inverseEntity="Author" syncable="YES"/>
+        <relationship name="cover" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Cover" inverseName="book" inverseEntity="Cover" syncable="YES"/>
+        <relationship name="pdf" maxCount="1" deletionRule="Cascade" destinationEntity="Pdf" inverseName="book" inverseEntity="Pdf" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="book" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="Cover" representedClassName="DRGCover" syncable="YES">
+        <attribute name="coverData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="urlString" attributeType="String" syncable="YES"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="cover" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Date" representedClassName="DRGDate" syncable="YES">
+        <attribute name="creation" attributeType="Date" syncable="YES"/>
+        <attribute name="modification" attributeType="Date" syncable="YES"/>
+        <relationship name="annotation" maxCount="1" deletionRule="Nullify" destinationEntity="Annotation" inverseName="date" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="Label" syncable="YES">
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="tags" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="label" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="DRGLocalization" syncable="YES">
+        <attribute name="latitude" attributeType="Double" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" syncable="YES"/>
+        <relationship name="annotation" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="location" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="Pdf" representedClassName="DRGPdf" syncable="YES">
+        <attribute name="pdfData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="urlString" attributeType="String" syncable="YES"/>
+        <relationship name="book" maxCount="1" deletionRule="Cascade" destinationEntity="Book" inverseName="pdf" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Photo" representedClassName="DRGPhoto" syncable="YES">
+        <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="annotation" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="photo" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="DRGTag" syncable="YES">
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="tags" inverseEntity="Book" syncable="YES"/>
+        <relationship name="label" maxCount="1" deletionRule="Nullify" destinationEntity="Label" inverseName="tags" inverseEntity="Label" syncable="YES"/>
+    </entity>
+    <entity name="Writer" representedClassName="DRGWriter" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="authors" toMany="YES" deletionRule="Cascade" destinationEntity="Author" inverseName="writer" inverseEntity="Author" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Annotation" positionX="-101" positionY="-622" width="128" height="118"/>
+        <element name="Author" positionX="-225" positionY="-451" width="128" height="73"/>
+        <element name="Book" positionX="-486" positionY="-763" width="128" height="133"/>
+        <element name="Cover" positionX="-261" positionY="-367" width="128" height="88"/>
+        <element name="Date" positionX="268" positionY="-439" width="128" height="88"/>
+        <element name="Label" positionX="-153" positionY="-37" width="128" height="73"/>
+        <element name="Location" positionX="223" positionY="-295" width="128" height="88"/>
+        <element name="Pdf" positionX="-290" positionY="-259" width="128" height="88"/>
+        <element name="Photo" positionX="180" positionY="-181" width="128" height="73"/>
+        <element name="Tag" positionX="-317" positionY="-108" width="128" height="73"/>
+        <element name="Writer" positionX="-47" positionY="-369" width="128" height="73"/>
+    </elements>
+</model>
