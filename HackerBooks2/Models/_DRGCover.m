@@ -3,11 +3,6 @@
 
 #import "_DRGCover.h"
 
-const struct DRGCoverAttributes DRGCoverAttributes = {
-	.coverData = @"coverData",
-	.urlString = @"urlString",
-};
-
 const struct DRGCoverRelationships DRGCoverRelationships = {
 	.book = @"book",
 };
@@ -40,10 +35,6 @@ const struct DRGCoverRelationships DRGCoverRelationships = {
 
 	return keyPaths;
 }
-
-@dynamic coverData;
-
-@dynamic urlString;
 
 @dynamic book;
 

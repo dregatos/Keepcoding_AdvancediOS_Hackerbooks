@@ -19,9 +19,11 @@
         <relationship name="pdf" maxCount="1" deletionRule="Cascade" destinationEntity="Pdf" inverseName="book" inverseEntity="Pdf" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="book" inverseEntity="Tag" syncable="YES"/>
     </entity>
-    <entity name="Cover" representedClassName="DRGCover" syncable="YES">
-        <attribute name="coverData" optional="YES" attributeType="Binary" syncable="YES"/>
+    <entity name="BookResource" representedClassName="DRGBookResource" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="urlString" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Cover" representedClassName="DRGCover" parentEntity="BookResource" syncable="YES">
         <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="cover" inverseEntity="Book" syncable="YES"/>
     </entity>
     <entity name="Date" representedClassName="DRGDate" syncable="YES">
@@ -38,9 +40,7 @@
         <attribute name="longitude" attributeType="Double" syncable="YES"/>
         <relationship name="annotation" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="location" inverseEntity="Annotation" syncable="YES"/>
     </entity>
-    <entity name="Pdf" representedClassName="DRGPdf" syncable="YES">
-        <attribute name="pdfData" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="urlString" attributeType="String" syncable="YES"/>
+    <entity name="Pdf" representedClassName="DRGPdf" parentEntity="BookResource" syncable="YES">
         <relationship name="book" maxCount="1" deletionRule="Cascade" destinationEntity="Book" inverseName="pdf" inverseEntity="Book" syncable="YES"/>
     </entity>
     <entity name="Photo" representedClassName="DRGPhoto" syncable="YES">
@@ -56,16 +56,17 @@
         <relationship name="authors" toMany="YES" deletionRule="Cascade" destinationEntity="Author" inverseName="writer" inverseEntity="Author" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Annotation" positionX="-101" positionY="-622" width="128" height="118"/>
-        <element name="Author" positionX="-225" positionY="-451" width="128" height="73"/>
+        <element name="Annotation" positionX="-180" positionY="-846" width="128" height="118"/>
+        <element name="Author" positionX="-218" positionY="-693" width="128" height="73"/>
         <element name="Book" positionX="-486" positionY="-763" width="128" height="133"/>
-        <element name="Cover" positionX="-261" positionY="-367" width="128" height="88"/>
-        <element name="Date" positionX="268" positionY="-439" width="128" height="88"/>
-        <element name="Label" positionX="-153" positionY="-37" width="128" height="73"/>
-        <element name="Location" positionX="223" positionY="-295" width="128" height="88"/>
-        <element name="Pdf" positionX="-290" positionY="-259" width="128" height="88"/>
-        <element name="Photo" positionX="180" positionY="-181" width="128" height="73"/>
-        <element name="Tag" positionX="-317" positionY="-108" width="128" height="73"/>
-        <element name="Writer" positionX="-47" positionY="-369" width="128" height="73"/>
+        <element name="Cover" positionX="-731" positionY="-774" width="128" height="58"/>
+        <element name="Date" positionX="108" positionY="-882" width="128" height="88"/>
+        <element name="Label" positionX="-108" positionY="-550" width="128" height="73"/>
+        <element name="Location" positionX="252" positionY="-855" width="128" height="88"/>
+        <element name="Pdf" positionX="-684" positionY="-612" width="128" height="58"/>
+        <element name="Photo" positionX="250" positionY="-747" width="128" height="73"/>
+        <element name="Tag" positionX="-308" positionY="-558" width="128" height="73"/>
+        <element name="Writer" positionX="-11" positionY="-657" width="128" height="73"/>
+        <element name="BookResource" positionX="-560" positionY="-909" width="128" height="73"/>
     </elements>
 </model>

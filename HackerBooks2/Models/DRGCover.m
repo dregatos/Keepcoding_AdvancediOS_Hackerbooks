@@ -14,7 +14,7 @@
 
     DRGCover *cover = [DRGCover insertInManagedObjectContext:context];
     cover.urlString = [aURL absoluteString];
-    cover.coverData = nil;
+    cover.data = nil;
     
     return cover;
 }

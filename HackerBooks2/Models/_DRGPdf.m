@@ -3,11 +3,6 @@
 
 #import "_DRGPdf.h"
 
-const struct DRGPdfAttributes DRGPdfAttributes = {
-	.pdfData = @"pdfData",
-	.urlString = @"urlString",
-};
-
 const struct DRGPdfRelationships DRGPdfRelationships = {
 	.book = @"book",
 };
@@ -40,10 +35,6 @@ const struct DRGPdfRelationships DRGPdfRelationships = {
 
 	return keyPaths;
 }
-
-@dynamic pdfData;
-
-@dynamic urlString;
 
 @dynamic book;
 

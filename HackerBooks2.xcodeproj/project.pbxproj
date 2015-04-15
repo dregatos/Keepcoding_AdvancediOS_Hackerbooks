@@ -41,6 +41,8 @@
 		0738A8B31ADC0B4700CB87FC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8B11ADC0B4700CB87FC /* LaunchScreen.xib */; };
 		0738A8BF1ADC0B4800CB87FC /* HackerBooks2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8BE1ADC0B4800CB87FC /* HackerBooks2Tests.m */; };
 		0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */; };
+		0749AA9A1ADE7C0A002563C2 /* _DRGBookResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AA991ADE7C0A002563C2 /* _DRGBookResource.m */; };
+		0749AA9D1ADE7C18002563C2 /* DRGBookResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AA9C1ADE7C18002563C2 /* DRGBookResource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,10 @@
 		0738A8BD1ADC0B4800CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738A8BE1ADC0B4800CB87FC /* HackerBooks2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackerBooks2Tests.m; sourceTree = "<group>"; };
 		0738A8CD1ADC0E6B00CB87FC /* Library.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Library.xcdatamodel; sourceTree = "<group>"; };
+		0749AA981ADE7C0A002563C2 /* _DRGBookResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGBookResource.h; path = Models/_DRGBookResource.h; sourceTree = "<group>"; };
+		0749AA991ADE7C0A002563C2 /* _DRGBookResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGBookResource.m; path = Models/_DRGBookResource.m; sourceTree = "<group>"; };
+		0749AA9B1ADE7C18002563C2 /* DRGBookResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookResource.h; path = Models/DRGBookResource.h; sourceTree = "<group>"; };
+		0749AA9C1ADE7C18002563C2 /* DRGBookResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGBookResource.m; path = Models/DRGBookResource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,8 @@
 		0704C3B71ADD296400F80DB7 /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				0749AA981ADE7C0A002563C2 /* _DRGBookResource.h */,
+				0749AA991ADE7C0A002563C2 /* _DRGBookResource.m */,
 				0704C3F91ADD4BF700F80DB7 /* _DRGLabel.h */,
 				0704C3FA1ADD4BF700F80DB7 /* _DRGLabel.m */,
 				0704C3B81ADD297D00F80DB7 /* _DRGAnnotation.h */,
@@ -173,6 +181,8 @@
 		0704C3F41ADD2AED00F80DB7 /* Human */ = {
 			isa = PBXGroup;
 			children = (
+				0749AA9B1ADE7C18002563C2 /* DRGBookResource.h */,
+				0749AA9C1ADE7C18002563C2 /* DRGBookResource.m */,
 				0704C3FC1ADD4C0300F80DB7 /* DRGLabel.h */,
 				0704C3FD1ADD4C0300F80DB7 /* DRGLabel.m */,
 				0704C3D61ADD2AD100F80DB7 /* DRGAnnotation.h */,
@@ -442,9 +452,11 @@
 				0704C3EE1ADD2AD100F80DB7 /* DRGDate.m in Sources */,
 				0704C3F81ADD2B7C00F80DB7 /* DRGLibraryBaseClass.m in Sources */,
 				0704C3CC1ADD297D00F80DB7 /* _DRGAnnotation.m in Sources */,
+				0749AA9D1ADE7C18002563C2 /* DRGBookResource.m in Sources */,
 				0704C3D51ADD297D00F80DB7 /* _DRGWriter.m in Sources */,
 				0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */,
 				0704C3EA1ADD2AD100F80DB7 /* DRGAnnotation.m in Sources */,
+				0749AA9A1ADE7C0A002563C2 /* _DRGBookResource.m in Sources */,
 				0704C3EF1ADD2AD100F80DB7 /* DRGLocalization.m in Sources */,
 				0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */,
 				0704C4141ADD782900F80DB7 /* UIViewController+Navigation.m in Sources */,

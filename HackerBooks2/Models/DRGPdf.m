@@ -14,7 +14,7 @@
     
     DRGPdf *pdf = [DRGPdf insertInManagedObjectContext:context];
     pdf.urlString = [aURL absoluteString];
-    pdf.pdfData = nil;
+    pdf.data = nil;
     
     return pdf;
 }
