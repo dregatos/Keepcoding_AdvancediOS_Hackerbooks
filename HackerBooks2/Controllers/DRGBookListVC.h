@@ -7,7 +7,8 @@
 //
 
 #import "AGTCoreDataTableViewController.h"
+#import "DRGBookDetailVCDelegate.h"
 
-@interface DRGBookListVC : AGTCoreDataTableViewController
+@interface DRGBookListVC : AGTCoreDataTableViewController <DRGBookDetailVCDelegate>
 
 @end

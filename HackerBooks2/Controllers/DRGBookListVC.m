@@ -10,6 +10,7 @@
 #import "DRGBook.h"
 #import "DRGTag.h"
 #import "DRGLabel.h"
+#import "NotificationKeys.h"
 
 @interface DRGBookListVC ()
 
@@ -31,7 +32,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Load data for indexPath
-    DRGBook *book = [self bookAtIndex:indexPath];
+    DRGBook *book = [self bookAtIndexPath:indexPath];
 
     // Crear una celda
     static NSString *cellID = @"bookCell";
@@ -50,7 +51,22 @@
 #pragma mark - UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DRGBook *book = [self bookAtIndex:indexPath];    
+    
+    // Get data for indexPath
+    DRGBook *book = [self bookAtIndexPath:indexPath];
+    
+    // Notify BOOK was selected - ONLY FOR iPad VERSION
+    NSDictionary *dict = @{BOOK_KEY:book};
+    [[NSNotificationCenter defaultCenter] postNotificationName:DID_SELECT_BOOK_NOTIFICATION object:self userInfo:dict];
+}
+
+#pragma mark - DRGBookDetailVCDelegate
+
+- (void)bookDetailVC:(DRGBookDetailVC *)bookDetailVC didMarkBookAsFavorite:(DRGBook *)book {
+    [self favoriteBook:book];
+}
+
+- (void)favoriteBook:(DRGBook *)book {
     if ([book isFavorite]) {
         DRGTag *tag = [DRGTag favoriteTagForBook:book];
         [self.fetchedResultsController.managedObjectContext deleteObject:tag];
@@ -66,11 +82,10 @@
     return tag;
 }
 
-- (DRGBook *)bookAtIndex:(NSIndexPath *)indexPath {
+- (DRGBook *)bookAtIndexPath:(NSIndexPath *)indexPath {
     DRGTag *tag = [self tagAtIndex:indexPath];
     DRGBook *book = tag.book;
     return book;
 }
-
 
 @end

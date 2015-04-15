@@ -8,10 +8,12 @@
 
 #import "DRGBookDetailVC.h"
 #import "DRGBook.h"
+#import "NotificationKeys.h"
 
 @interface DRGBookDetailVC ()
 
 @property (nonatomic, strong) DRGBook *book;
+
 @end
 
 @implementation DRGBookDetailVC
@@ -36,6 +38,54 @@
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Notifications **********************
+    [self registerForNotifications];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self unregisterForNotifications];
+}
+
+#pragma mark - NSNotification
+
+- (void)dealloc {
+    [self unregisterForNotifications];
+}
+
+- (void)registerForNotifications {
+    // Add your notification observer here
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notifyNewBookWasSelected:)
+                                                 name:DID_SELECT_BOOK_NOTIFICATION
+                                               object:nil];
+}
+
+- (void)unregisterForNotifications {
+    // Clear out _all_ observations that this object was making
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)notifyNewBookWasSelected:(NSNotification *)notification {
+    
+    DRGBook *book = [notification.userInfo objectForKey:BOOK_KEY];
+    
+    self.book = book;
+    self.title = book.title;
+}
+
+#pragma mark - IBActions
+
+- (IBAction)favoriteBtnPressed:(UIButton *)sender {
+    
+    // Talk with the delegate, if it implements the method
+    if ([self.delegate respondsToSelector:@selector(bookDetailVC:didFavoriteBook:)]) {
+        [self.delegate bookDetailVC:self didMarkBookAsFavorite:self.book];
+    }
+}
+
 #pragma mark - UISplitViewControllerDelegate
 
 - (void)splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode {
@@ -48,5 +98,6 @@
         self.navigationItem.leftBarButtonItem = nil;
     }
 }
+
 
 @end

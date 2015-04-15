@@ -132,6 +132,8 @@
 		0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DRGBookDetailVC.xib; path = Controllers/DRGBookDetailVC.xib; sourceTree = "<group>"; };
 		0749AAA61ADEBAA3002563C2 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Navigation.h"; path = "Categories/UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Navigation.m"; path = "Categories/UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookDetailVCDelegate.h; path = Controllers/DRGBookDetailVCDelegate.h; sourceTree = "<group>"; };
+		0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				0704C40D1ADD72A000F80DB7 /* AGBO */,
 				0704C4071ADD725500F80DB7 /* DRGBookListVC.h */,
 				0704C4081ADD725500F80DB7 /* DRGBookListVC.m */,
+				0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */,
 				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
 				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
 				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
@@ -286,6 +289,7 @@
 		0738A8A71ADC0B4700CB87FC /* HackerBooks2 */ = {
 			isa = PBXGroup;
 			children = (
+				0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */,
 				0738A8AC1ADC0B4700CB87FC /* AppDelegate.h */,
 				0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */,
 				0738A8AF1ADC0B4700CB87FC /* Images.xcassets */,

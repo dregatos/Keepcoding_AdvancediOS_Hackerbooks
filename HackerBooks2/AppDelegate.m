@@ -121,6 +121,7 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
     
     // Assign delegates
     splitVC.delegate = bookVC;
+    bookVC.delegate = bookListVC;
     
     return splitVC;
 }
