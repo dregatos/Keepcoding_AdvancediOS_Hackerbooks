@@ -15,6 +15,7 @@
 #import "DRGBook.h"
 #import "DRGTag.h"
 #import "DRGBookListVC.h"
+#import "DRGBookDetailVC.h"
 
 NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
 
@@ -49,37 +50,24 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
         }
         // Update 'WAS_LAUNCHED_BEFORE' flag value
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:WAS_LAUNCHED_BEFORE];
+        
+        NSLog(@"Library count: %lu", [library count]);
+        if (![library count]) {
+            NSLog(@"Ups! We couldn't fetch any book from the server.");
+        }
     }
     
-    NSLog(@"Library count: %lu", [library count]);
-    if (![library count]) {
-        NSLog(@"Ups! We couldn't fetch any book from the server.");
+    /** Phone or tablet ? */
+    UIViewController *rootVC = nil;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        rootVC = [self rootViewControllerForPad];
+    } else {
+        rootVC = [self rootViewControllerForPhone];
     }
     
-    // Loading library
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGTag entityName]];
-//    NSSortDescriptor *sortFavorites = [NSSortDescriptor sortDescriptorWithKey:@"label.name == "
-//                                                                    ascending:YES];
-    NSSortDescriptor *sortLabel = [NSSortDescriptor sortDescriptorWithKey:@"label.name"
-                                                               ascending:YES
-                                                                selector:@selector(caseInsensitiveCompare:)];
-    NSSortDescriptor *sortTitle = [NSSortDescriptor sortDescriptorWithKey:@"book.title"
-                                                                ascending:YES
-                                                                 selector:@selector(caseInsensitiveCompare:)];
-    req.sortDescriptors = @[sortLabel, sortTitle];
-    req.fetchBatchSize = 20;
-    
-    // FetchedResultsController
-    NSFetchedResultsController *frController = [[NSFetchedResultsController alloc] initWithFetchRequest:req
-                                                                                   managedObjectContext:self.stack.context sectionNameKeyPath:@"label.name"
-                                                                                              cacheName:nil];
-    
-    DRGBookListVC *bookListVC = [[DRGBookListVC alloc] initWithFetchedResultsController:frController
-                                                                                  style:UITableViewStyleGrouped];
-    
-    // Show root view controller
+    // Assign the root
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [bookListVC wrappedInNavigationController];
+    self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -106,5 +94,60 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - Device configuration
+
+- (UIViewController *)rootViewControllerForPhone {
+    
+    // View controllers
+    DRGBookListVC *bookListVC = [[DRGBookListVC alloc] initWithFetchedResultsController:[self libraryController]
+                                                                                  style:UITableViewStyleGrouped];
+    
+    //Delegates
+    
+    return [bookListVC wrappedInNavigationController];
+}
+
+- (UIViewController *)rootViewControllerForPad {
+    
+    // View controllers
+    DRGBookListVC *bookListVC = [[DRGBookListVC alloc] initWithFetchedResultsController:[self libraryController]
+                                                                                  style:UITableViewStyleGrouped];
+    DRGBookDetailVC *bookVC = [[DRGBookDetailVC alloc] initWithBook:nil];
+    
+    // Create the splitView
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    splitVC.viewControllers = @[[bookListVC wrappedInNavigationController], [bookVC wrappedInNavigationController]];
+    
+    // Assign delegates
+    splitVC.delegate = bookVC;
+    
+    return splitVC;
+}
+
+#pragma mark - Utils
+
+- (NSFetchRequest *)libraryFetchRequest {
+    // Request
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGTag entityName]];
+    NSSortDescriptor *sortLabel = [NSSortDescriptor sortDescriptorWithKey:@"label.name"
+                                                                ascending:YES
+                                                                 selector:@selector(caseInsensitiveCompare:)];
+    NSSortDescriptor *sortTitle = [NSSortDescriptor sortDescriptorWithKey:@"book.title"
+                                                                ascending:YES
+                                                                 selector:@selector(caseInsensitiveCompare:)];
+    req.sortDescriptors = @[sortLabel, sortTitle];
+    req.fetchBatchSize = 20;
+    
+    return req;
+}
+
+- (NSFetchedResultsController *)libraryController {
+    return [[NSFetchedResultsController alloc] initWithFetchRequest:[self libraryFetchRequest]
+                                               managedObjectContext:self.stack.context
+                                                 sectionNameKeyPath:@"label.name"
+                                                          cacheName:nil];
+}
+
 
 @end

@@ -34,7 +34,6 @@
 		0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4081ADD725500F80DB7 /* DRGBookListVC.m */; };
 		0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */; };
 		0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */; };
-		0704C4141ADD782900F80DB7 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4131ADD782900F80DB7 /* UIViewController+Navigation.m */; };
 		0738A8AB1ADC0B4700CB87FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AA1ADC0B4700CB87FC /* main.m */; };
 		0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */; };
 		0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8AF1ADC0B4700CB87FC /* Images.xcassets */; };
@@ -43,6 +42,9 @@
 		0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */; };
 		0749AA9A1ADE7C0A002563C2 /* _DRGBookResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AA991ADE7C0A002563C2 /* _DRGBookResource.m */; };
 		0749AA9D1ADE7C18002563C2 /* DRGBookResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AA9C1ADE7C18002563C2 /* DRGBookResource.m */; };
+		0749AAA41ADEB9E9002563C2 /* DRGBookDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */; };
+		0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */; };
+		0749AAA81ADEBAA3002563C2 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,8 +112,6 @@
 		0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataStack.m; path = "AGBO Utils/AGTCoreDataStack.m"; sourceTree = "<group>"; };
 		0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataTableViewController.h; path = "AGBO Utils/AGTCoreDataTableViewController.h"; sourceTree = "<group>"; };
 		0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataTableViewController.m; path = "AGBO Utils/AGTCoreDataTableViewController.m"; sourceTree = "<group>"; };
-		0704C4121ADD782900F80DB7 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
-		0704C4131ADD782900F80DB7 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		0738A8A51ADC0B4700CB87FC /* HackerBooks2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerBooks2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0738A8A91ADC0B4700CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738A8AA1ADC0B4700CB87FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,6 +127,11 @@
 		0749AA991ADE7C0A002563C2 /* _DRGBookResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGBookResource.m; path = Models/_DRGBookResource.m; sourceTree = "<group>"; };
 		0749AA9B1ADE7C18002563C2 /* DRGBookResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookResource.h; path = Models/DRGBookResource.h; sourceTree = "<group>"; };
 		0749AA9C1ADE7C18002563C2 /* DRGBookResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGBookResource.m; path = Models/DRGBookResource.m; sourceTree = "<group>"; };
+		0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookDetailVC.h; path = Controllers/DRGBookDetailVC.h; sourceTree = "<group>"; };
+		0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGBookDetailVC.m; path = Controllers/DRGBookDetailVC.m; sourceTree = "<group>"; };
+		0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DRGBookDetailVC.xib; path = Controllers/DRGBookDetailVC.xib; sourceTree = "<group>"; };
+		0749AAA61ADEBAA3002563C2 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Navigation.h"; path = "Categories/UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Navigation.m"; path = "Categories/UIViewController+Navigation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +240,9 @@
 				0704C40D1ADD72A000F80DB7 /* AGBO */,
 				0704C4071ADD725500F80DB7 /* DRGBookListVC.h */,
 				0704C4081ADD725500F80DB7 /* DRGBookListVC.m */,
+				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
+				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
+				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -251,8 +259,8 @@
 		0704C4111ADD781800F80DB7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				0704C4121ADD782900F80DB7 /* UIViewController+Navigation.h */,
-				0704C4131ADD782900F80DB7 /* UIViewController+Navigation.m */,
+				0749AAA61ADEBAA3002563C2 /* UIViewController+Navigation.h */,
+				0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -409,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0738A8B31ADC0B4700CB87FC /* LaunchScreen.xib in Resources */,
+				0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */,
 				0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +442,7 @@
 				0704C3D01ADD297D00F80DB7 /* _DRGDate.m in Sources */,
 				0704C3D21ADD297D00F80DB7 /* _DRGPdf.m in Sources */,
 				0704C3ED1ADD2AD100F80DB7 /* DRGCover.m in Sources */,
+				0749AAA41ADEB9E9002563C2 /* DRGBookDetailVC.m in Sources */,
 				0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */,
 				0704C3F21ADD2AD100F80DB7 /* DRGTag.m in Sources */,
 				0704C3F01ADD2AD100F80DB7 /* DRGPdf.m in Sources */,
@@ -446,6 +456,7 @@
 				0704C3EB1ADD2AD100F80DB7 /* DRGAuthor.m in Sources */,
 				0704C3CF1ADD297D00F80DB7 /* _DRGCover.m in Sources */,
 				0704C3CE1ADD297D00F80DB7 /* _DRGBook.m in Sources */,
+				0749AAA81ADEBAA3002563C2 /* UIViewController+Navigation.m in Sources */,
 				0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */,
 				0704C3FB1ADD4BF700F80DB7 /* _DRGLabel.m in Sources */,
 				0738A8AB1ADC0B4700CB87FC /* main.m in Sources */,
@@ -459,7 +470,6 @@
 				0749AA9A1ADE7C0A002563C2 /* _DRGBookResource.m in Sources */,
 				0704C3EF1ADD2AD100F80DB7 /* DRGLocalization.m in Sources */,
 				0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */,
-				0704C4141ADD782900F80DB7 /* UIViewController+Navigation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

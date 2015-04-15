@@ -37,12 +37,12 @@
     NSURL *pdfURL = [NSURL URLWithString:[JSON objectForKey:@"pdf_url"]];
     book.pdf = [DRGPdf pdfForURL:pdfURL withContext:context];
     // authors
-    NSArray *authors = [self extractElementsForKey:@"authors" separatedBy:@"," onDictionary:JSON];
+    NSArray *authors = [self extractAuthors:JSON];
     for (NSString *name in authors) {
         [book addAuthorsObject:[DRGAuthor authorNamed:name ofBook:book withContext:context]];
     }
     // tags
-    NSArray *tags = [self extractElementsForKey:@"tags" separatedBy:@"," onDictionary:JSON];
+    NSArray *tags = [self extractTags:JSON];
     for (NSString *name in tags) {
         [book addTagsObject:[DRGTag tagNamed:name ofBook:book withContext:context]];
     }
@@ -58,7 +58,7 @@
     // Is it tagged as Favorite?
     for (DRGTag *tag in self.tags) {
         DRGLabel *label = tag.label;
-        if ([label.name isEqualToString:IS_FAVORITE]) {
+        if ([label.name isEqualToString:FAVORITE_LABEL]) {
             return YES;
         }
     }
@@ -67,6 +67,10 @@
 }
 
 #pragma mark - KVO
+
++ (NSArray *)observableKeys {
+    return @[];
+}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
@@ -85,13 +89,18 @@
     return YES;
 }
 
-+ (NSArray *)observableKeys {
-    return @[];
++ (NSArray *)extractTags:(NSDictionary *)JSON {
+    return [self extractElementsForKey:@"tags" separatedBy:@"," onDictionary:JSON];
+}
+
++ (NSArray *)extractAuthors:(NSDictionary *)JSON {
+    return [self extractElementsForKey:@"authors" separatedBy:@"," onDictionary:JSON];
 }
 
 + (NSArray *)extractElementsForKey:(NSString *)key separatedBy:(NSString *)separator onDictionary:(NSDictionary *)aDict {
     
     NSString *elements = [aDict objectForKey:key];
+    elements = [elements stringByReplacingOccurrencesOfString:@", " withString:@","];
     NSArray *elementArr = [elements componentsSeparatedByString:separator];
     
     return elementArr;

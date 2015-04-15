@@ -25,7 +25,7 @@
 + (DRGTag *)favoriteTagForBook:(DRGBook *)aBook {
     for (DRGTag *tag in aBook.tags) {
         DRGLabel *label = tag.label;
-        if ([label.name isEqualToString:IS_FAVORITE]) {
+        if ([label.name isEqualToString:FAVORITE_LABEL]) {
             // If YES, untagged it
             return tag;
         }

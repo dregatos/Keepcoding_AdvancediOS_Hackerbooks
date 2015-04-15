@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"Library";
 }
 
 #pragma mark - UITableView DataSource
@@ -49,13 +50,12 @@
 #pragma mark - UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DRGBook *book = [self bookAtIndex:indexPath];
+    DRGBook *book = [self bookAtIndex:indexPath];    
     if ([book isFavorite]) {
         DRGTag *tag = [DRGTag favoriteTagForBook:book];
         [self.fetchedResultsController.managedObjectContext deleteObject:tag];
     } else {
-        DRGTag *newTag = [DRGTag tagNamed:IS_FAVORITE ofBook:book withContext:self.fetchedResultsController.managedObjectContext];
-        [self.fetchedResultsController.managedObjectContext insertObject:newTag];
+        [DRGTag tagNamed:FAVORITE_LABEL ofBook:book withContext:self.fetchedResultsController.managedObjectContext];
     }
 }
 

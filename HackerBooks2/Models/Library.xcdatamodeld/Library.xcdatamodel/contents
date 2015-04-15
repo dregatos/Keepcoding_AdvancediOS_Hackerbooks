@@ -60,11 +60,11 @@
         <element name="Author" positionX="-218" positionY="-693" width="128" height="73"/>
         <element name="Book" positionX="-486" positionY="-763" width="128" height="133"/>
         <element name="Cover" positionX="-731" positionY="-774" width="128" height="58"/>
-        <element name="Date" positionX="108" positionY="-882" width="128" height="88"/>
-        <element name="Label" positionX="-108" positionY="-550" width="128" height="73"/>
-        <element name="Location" positionX="252" positionY="-855" width="128" height="88"/>
+        <element name="Date" positionX="36" positionY="-909" width="128" height="88"/>
+        <element name="Label" positionX="-108" positionY="-532" width="128" height="73"/>
+        <element name="Location" positionX="198" positionY="-873" width="128" height="88"/>
         <element name="Pdf" positionX="-684" positionY="-612" width="128" height="58"/>
-        <element name="Photo" positionX="250" positionY="-747" width="128" height="73"/>
+        <element name="Photo" positionX="135" positionY="-747" width="128" height="73"/>
         <element name="Tag" positionX="-308" positionY="-558" width="128" height="73"/>
         <element name="Writer" positionX="-11" positionY="-657" width="128" height="73"/>
         <element name="BookResource" positionX="-560" positionY="-909" width="128" height="73"/>
