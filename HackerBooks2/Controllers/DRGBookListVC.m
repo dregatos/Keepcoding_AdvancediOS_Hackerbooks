@@ -8,6 +8,8 @@
 
 #import "DRGBookListVC.h"
 #import "DRGBook.h"
+#import "DRGTag.h"
+#import "DRGLabel.h"
 
 @interface DRGBookListVC ()
 
@@ -27,9 +29,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // Averiguar cual es la libreta
-    DRGBook *book = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+    // Load data for indexPath
+    DRGTag *tag = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    DRGBook *book = tag.book;
+    DRGLabel *label = tag.label;
+
     // Crear una celda
     static NSString *cellID = @"bookCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];

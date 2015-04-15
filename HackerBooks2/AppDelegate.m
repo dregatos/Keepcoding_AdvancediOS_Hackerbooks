@@ -13,6 +13,8 @@
 #import "UIViewController+Navigation.h"
 
 #import "DRGBook.h"
+#import "DRGTag.h"
+#import "DRGLabel.h"
 #import "DRGBookListVC.h"
 
 NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
@@ -56,22 +58,25 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
     }
     
     // Loading library
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGBook entityName]];
-    NSSortDescriptor *sortTitle = [NSSortDescriptor sortDescriptorWithKey:DRGBookAttributes.title
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGTag entityName]];
+    NSSortDescriptor *sortLabel = [NSSortDescriptor sortDescriptorWithKey:@"label.name"
                                                                ascending:YES
                                                                 selector:@selector(caseInsensitiveCompare:)];
-    req.sortDescriptors = @[sortTitle];
+    NSSortDescriptor *sortTitle = [NSSortDescriptor sortDescriptorWithKey:@"book.title"
+                                                                ascending:YES
+                                                                 selector:@selector(caseInsensitiveCompare:)];
+    req.sortDescriptors = @[sortLabel,sortTitle];
     req.fetchBatchSize = 20;
     
     // FetchedResultsController
     NSFetchedResultsController *frController = [[NSFetchedResultsController alloc] initWithFetchRequest:req
-                                                                                   managedObjectContext:self.stack.context sectionNameKeyPath:nil
+                                                                                   managedObjectContext:self.stack.context sectionNameKeyPath:@"label.name"
                                                                                               cacheName:nil];
     
     DRGBookListVC *bookListVC = [[DRGBookListVC alloc] initWithFetchedResultsController:frController
-                                                                                  style:UITableViewStylePlain];
+                                                                                  style:UITableViewStyleGrouped];
     
-    // Show
+    // Show root view controller
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [bookListVC wrappedInNavigationController];
     [self.window makeKeyAndVisible];
