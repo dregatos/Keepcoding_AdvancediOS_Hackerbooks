@@ -5,4 +5,6 @@
 
 + (instancetype)bookFromDictionary:(NSDictionary *)JSON withContext:(NSManagedObjectContext *)context;
 
+- (BOOL)isFavorite;
+
 @end

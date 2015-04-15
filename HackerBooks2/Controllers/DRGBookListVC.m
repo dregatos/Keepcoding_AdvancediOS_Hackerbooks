@@ -30,9 +30,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Load data for indexPath
-    DRGTag *tag = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    DRGBook *book = tag.book;
-    DRGLabel *label = tag.label;
+    DRGBook *book = [self bookAtIndex:indexPath];
 
     // Crear una celda
     static NSString *cellID = @"bookCell";
@@ -46,5 +44,33 @@
     
     return cell;
 }
+
+
+#pragma mark - UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DRGBook *book = [self bookAtIndex:indexPath];
+    if ([book isFavorite]) {
+        DRGTag *tag = [DRGTag favoriteTagForBook:book];
+        [self.fetchedResultsController.managedObjectContext deleteObject:tag];
+    } else {
+        DRGTag *newTag = [DRGTag tagNamed:IS_FAVORITE ofBook:book withContext:self.fetchedResultsController.managedObjectContext];
+        [self.fetchedResultsController.managedObjectContext insertObject:newTag];
+    }
+}
+
+#pragma mark - Utils
+
+- (DRGTag *)tagAtIndex:(NSIndexPath *)indexPath {
+    DRGTag *tag = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    return tag;
+}
+
+- (DRGBook *)bookAtIndex:(NSIndexPath *)indexPath {
+    DRGTag *tag = [self tagAtIndex:indexPath];
+    DRGBook *book = tag.book;
+    return book;
+}
+
 
 @end

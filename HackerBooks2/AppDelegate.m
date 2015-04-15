@@ -14,7 +14,6 @@
 
 #import "DRGBook.h"
 #import "DRGTag.h"
-#import "DRGLabel.h"
 #import "DRGBookListVC.h"
 
 NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
@@ -59,13 +58,15 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
     
     // Loading library
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGTag entityName]];
+//    NSSortDescriptor *sortFavorites = [NSSortDescriptor sortDescriptorWithKey:@"label.name == "
+//                                                                    ascending:YES];
     NSSortDescriptor *sortLabel = [NSSortDescriptor sortDescriptorWithKey:@"label.name"
                                                                ascending:YES
                                                                 selector:@selector(caseInsensitiveCompare:)];
     NSSortDescriptor *sortTitle = [NSSortDescriptor sortDescriptorWithKey:@"book.title"
                                                                 ascending:YES
                                                                  selector:@selector(caseInsensitiveCompare:)];
-    req.sortDescriptors = @[sortLabel,sortTitle];
+    req.sortDescriptors = @[sortLabel, sortTitle];
     req.fetchBatchSize = 20;
     
     // FetchedResultsController

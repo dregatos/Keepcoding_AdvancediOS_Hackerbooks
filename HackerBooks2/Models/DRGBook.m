@@ -3,6 +3,7 @@
 #import "DRGPdf.h"
 #import "DRGAuthor.h"
 #import "DRGTag.h"
+#import "DRGLabel.h"
 
 @interface DRGBook ()
 
@@ -20,6 +21,8 @@
                        withContext:(NSManagedObjectContext *)context {
     
     // Check JSON content
+    // If fetched book doesn't content a minimum info,
+    // skip it.
     if (![self hasNeededInformation:JSON]) {
         return nil;
     }
@@ -49,6 +52,20 @@
     return book;
 }
 
+#pragma mark - Favorite
+
+- (BOOL)isFavorite {
+    // Is it tagged as Favorite?
+    for (DRGTag *tag in self.tags) {
+        DRGLabel *label = tag.label;
+        if ([label.name isEqualToString:IS_FAVORITE]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -64,7 +81,6 @@
     if (!title || [title isEqualToString:@""]) {
         return NO;
     }
-    
     
     return YES;
 }
