@@ -7,11 +7,11 @@
 //
 
 #import "DRGBookDetailVC.h"
-#import "DRGWriter.h"
+#import "NotificationKeys.h"
 #import "DRGBook.h"
 #import "DRGWriter.h"
 #import "DRGCover.h"
-#import "NotificationKeys.h"
+#import "DRGPdf.h"
 
 @interface DRGBookDetailVC ()
 
@@ -38,6 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Hacker Books 2.0";
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 
@@ -61,23 +62,9 @@
     self.titleLbl.text = self.book.title;
     self.authorsLbl.text = [[self.book authorList] componentsJoinedByString:@", "];
     self.tagsLbl.text = [[self.book tagList] componentsJoinedByString:@", "];
+    self.readBtn.selected = self.book.pdf.data ? YES : NO;
     
     [self loadCoverImage];
-//    self.favoriteBtn.selected = [self.book isFavorite];
-//    [self.readBtn setTitle:@"Read Book" forState:UIControlStateSelected];
-//    [self.readBtn setTitle:@"Download Book" forState:UIControlStateNormal];
-//    self.readBtn.selected = [self.book isPDFLocallyStored];
-}
-
-- (void)loadCoverImage {
-    self.coverImView.image = nil;
-    if (!self.book.cover.data) {
-        [self.coverActivityIndicator startAnimating];
-    }
-    [self.book.cover fetchCoverImageWithCompletion:^(UIImage *image) {
-        [self.coverActivityIndicator stopAnimating];
-        self.coverImView.image = image;
-    }];
 }
 
 #pragma mark - NSNotification
@@ -115,6 +102,37 @@
     if ([self.delegate respondsToSelector:@selector(bookDetailVC:didMarkBookAsFavorite:)]) {
         [self.delegate bookDetailVC:self didMarkBookAsFavorite:self.book];
     }
+}
+
+- (IBAction)readBtnPressed:(UIButton *)sender {
+    
+    if (!sender.selected) {
+        // Download pdf file
+        NSLog(@"Download PDF file");
+        [self loadPDFFile];
+    }
+    
+    // Show pdf file
+}
+
+#pragma mark - Utils
+
+- (void)loadCoverImage {
+    self.coverImView.image = nil;
+    if (!self.book.cover.data) {
+        [self.coverActivityIndicator startAnimating];
+    }
+    [self.book.cover fetchCoverImageWithCompletion:^(UIImage *image) {
+        [self.coverActivityIndicator stopAnimating];
+        self.coverImView.image = image;
+    }];
+}
+
+- (void)loadPDFFile {
+    [self.book.pdf fetchPDFDataWithCompletion:^(NSData *pdfData) {
+        NSLog(@"PDF file is ready");
+        self.readBtn.selected = self.book.pdf.data ? YES : NO;
+    }];
 }
 
 #pragma mark - UISplitViewControllerDelegate

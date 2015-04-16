@@ -29,15 +29,16 @@
             NSURL *url = [NSURL URLWithString:self.urlString];
             NSData *imageData = [NSData dataWithContentsOfURL:url];
             
+            // Save Image
+            self.data = imageData;
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 //execute the completion block
                 UIImage *image = [UIImage imageWithData:imageData];
                 completionBlock(image);
             });
-            
-            // Save Image
-            self.data = imageData;
         });
+        return;
     }
     
     UIImage *im = [UIImage imageWithData:self.data];
