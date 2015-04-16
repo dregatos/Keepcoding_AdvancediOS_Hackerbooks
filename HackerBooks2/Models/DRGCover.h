@@ -5,5 +5,4 @@
 
 + (instancetype)coverForURL:(NSURL *)aURL withContext:(NSManagedObjectContext *)context;
 
-
 @end

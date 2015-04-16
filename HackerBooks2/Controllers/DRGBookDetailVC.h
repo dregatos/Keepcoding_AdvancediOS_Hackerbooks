@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *authorsLbl;
 @property (weak, nonatomic) IBOutlet UILabel *tagsLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *coverActivityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
 
 

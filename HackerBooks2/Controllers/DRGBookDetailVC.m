@@ -10,6 +10,7 @@
 #import "DRGWriter.h"
 #import "DRGBook.h"
 #import "DRGWriter.h"
+#import "DRGCover.h"
 #import "NotificationKeys.h"
 
 @interface DRGBookDetailVC ()
@@ -60,11 +61,23 @@
     self.titleLbl.text = self.book.title;
     self.authorsLbl.text = [[self.book authorList] componentsJoinedByString:@", "];
     self.tagsLbl.text = [[self.book tagList] componentsJoinedByString:@", "];
-//    self.coverImageView.image = [DRGDownloadManager downloadCoverImageForBook:self.book ofLibrary:self.library];
-    self.favoriteBtn.selected = [self.book isFavorite];
+    
+    [self loadCoverImage];
+//    self.favoriteBtn.selected = [self.book isFavorite];
 //    [self.readBtn setTitle:@"Read Book" forState:UIControlStateSelected];
 //    [self.readBtn setTitle:@"Download Book" forState:UIControlStateNormal];
 //    self.readBtn.selected = [self.book isPDFLocallyStored];
+}
+
+- (void)loadCoverImage {
+    self.coverImView.image = nil;
+    if (!self.book.cover.data) {
+        [self.coverActivityIndicator startAnimating];
+    }
+    [self.book fetchCoverImageWithCompletion:^(UIImage *image) {
+        [self.coverActivityIndicator stopAnimating];
+        self.coverImView.image = image;
+    }];
 }
 
 #pragma mark - NSNotification

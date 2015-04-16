@@ -1,5 +1,7 @@
 #import "_DRGBook.h"
 
+@import UIKit.UIImage;
+
 @interface DRGBook : _DRGBook {}
 // Custom logic goes here.
 
@@ -9,5 +11,7 @@
 
 - (NSArray *)authorList;
 - (NSArray *)tagList;
+
+- (void)fetchCoverImageWithCompletion:(void(^)(UIImage *image))completionBlock;
 
 @end

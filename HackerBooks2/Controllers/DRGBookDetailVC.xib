@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="authorsLbl" destination="9ef-Y1-4jV" id="huG-wN-S2f"/>
                 <outlet property="backgroundImView" destination="SBk-LD-PkW" id="njR-5z-QEZ"/>
+                <outlet property="coverActivityIndicator" destination="7qp-u7-nZS" id="7oc-H5-lXH"/>
                 <outlet property="coverImView" destination="62V-7n-bly" id="IQb-q7-yOW"/>
                 <outlet property="favoriteBtn" destination="9Fm-o6-eJQ" id="A5O-zr-9RX"/>
                 <outlet property="tagsLbl" destination="10t-cP-udu" id="LG1-hI-QHR"/>
@@ -59,6 +60,10 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7qp-u7-nZS">
+                    <rect key="frame" x="85" y="276" width="20" height="20"/>
+                    <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -67,7 +72,9 @@
                 <constraint firstItem="SBk-LD-PkW" firstAttribute="height" secondItem="f2f-kS-u5I" secondAttribute="height" multiplier="5" id="9Bf-Zg-gWI"/>
                 <constraint firstAttribute="bottom" secondItem="SBk-LD-PkW" secondAttribute="bottom" id="AZt-X0-G4q"/>
                 <constraint firstItem="62V-7n-bly" firstAttribute="height" secondItem="9ef-Y1-4jV" secondAttribute="height" multiplier="2.1" id="Aki-1n-3zm"/>
+                <constraint firstItem="7qp-u7-nZS" firstAttribute="centerX" secondItem="62V-7n-bly" secondAttribute="centerX" id="DJd-5I-rfF"/>
                 <constraint firstItem="62V-7n-bly" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="bottom" constant="8" symbolic="YES" id="DR7-xz-wzf"/>
+                <constraint firstItem="7qp-u7-nZS" firstAttribute="centerY" secondItem="62V-7n-bly" secondAttribute="centerY" id="GIa-Ki-HdU"/>
                 <constraint firstItem="SBk-LD-PkW" firstAttribute="width" secondItem="62V-7n-bly" secondAttribute="width" multiplier="4" id="Hvn-ed-pDe"/>
                 <constraint firstItem="9ef-Y1-4jV" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="bottom" constant="8" symbolic="YES" id="J9i-Hp-Nf2"/>
                 <constraint firstAttribute="trailing" secondItem="10t-cP-udu" secondAttribute="trailing" constant="20" symbolic="YES" id="JFp-ND-Emd"/>
