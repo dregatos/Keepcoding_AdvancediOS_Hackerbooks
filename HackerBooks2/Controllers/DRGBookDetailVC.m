@@ -74,7 +74,7 @@
     if (!self.book.cover.data) {
         [self.coverActivityIndicator startAnimating];
     }
-    [self.book fetchCoverImageWithCompletion:^(UIImage *image) {
+    [self.book.cover fetchCoverImageWithCompletion:^(UIImage *image) {
         [self.coverActivityIndicator stopAnimating];
         self.coverImView.image = image;
     }];
