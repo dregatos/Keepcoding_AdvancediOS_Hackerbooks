@@ -4,6 +4,7 @@
 #import "DRGAuthor.h"
 #import "DRGTag.h"
 #import "DRGLabel.h"
+#import "DRGWriter.h"
 
 @interface DRGBook ()
 
@@ -65,6 +66,33 @@
     
     return NO;
 }
+
+- (NSArray *)authorList {
+    
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    NSArray *authors = [self.authors allObjects];
+    for (DRGAuthor *author in authors) {
+        if (author.writer.name && ![author.writer.name isEqualToString:@""]) {
+            [list addObject:author.writer.name];
+        }
+    }
+    
+    return list;
+}
+
+- (NSArray *)tagList {
+    
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    NSArray *tags = [self.tags allObjects];
+    for (DRGTag *tag in tags) {
+        if (tag.label.name && ![tag.label.name isEqualToString:@""]) {
+            [list addObject:tag.label.name];
+        }
+    }
+    
+    return list;
+}
+
 
 #pragma mark - KVO
 

@@ -2,10 +2,18 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DRGBookDetailVC">
             <connections>
+                <outlet property="authorsLbl" destination="9ef-Y1-4jV" id="huG-wN-S2f"/>
+                <outlet property="backgroundImView" destination="SBk-LD-PkW" id="njR-5z-QEZ"/>
+                <outlet property="coverImView" destination="62V-7n-bly" id="IQb-q7-yOW"/>
+                <outlet property="favoriteBtn" destination="9Fm-o6-eJQ" id="A5O-zr-9RX"/>
+                <outlet property="tagsLbl" destination="10t-cP-udu" id="LG1-hI-QHR"/>
+                <outlet property="titleLbl" destination="f2f-kS-u5I" id="Q40-VC-tdH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,8 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fm-o6-eJQ">
-                    <rect key="frame" x="272" y="285" width="56" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SBk-LD-PkW" userLabel="Background image">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fm-o6-eJQ" userLabel="Favorite btn">
+                    <rect key="frame" x="20" y="20" width="56" height="30"/>
                     <state key="normal" title="Favorite">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -23,12 +34,63 @@
                         <action selector="favoriteBtnPressed:" destination="-1" eventType="touchUpInside" id="qa0-gw-eHn"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2f-kS-u5I" userLabel="Title">
+                    <rect key="frame" x="20" y="58" width="560" height="120"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62V-7n-bly">
+                    <rect key="frame" x="20" y="186" width="150" height="200"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="62V-7n-bly" secondAttribute="height" multiplier="3:4" id="ILG-xr-yb0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ef-Y1-4jV">
+                    <rect key="frame" x="178" y="186" width="402" height="95"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10t-cP-udu">
+                    <rect key="frame" x="178" y="289" width="402" height="97"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="9Fm-o6-eJQ" secondAttribute="centerX" id="9Ch-p3-xhO"/>
-                <constraint firstAttribute="centerY" secondItem="9Fm-o6-eJQ" secondAttribute="centerY" id="Oen-yh-Y0j"/>
+                <constraint firstAttribute="trailing" secondItem="f2f-kS-u5I" secondAttribute="trailing" constant="20" symbolic="YES" id="5i2-1F-xFm"/>
+                <constraint firstItem="9Fm-o6-eJQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="63T-OC-HRV"/>
+                <constraint firstItem="SBk-LD-PkW" firstAttribute="height" secondItem="f2f-kS-u5I" secondAttribute="height" multiplier="5" id="9Bf-Zg-gWI"/>
+                <constraint firstAttribute="bottom" secondItem="SBk-LD-PkW" secondAttribute="bottom" id="AZt-X0-G4q"/>
+                <constraint firstItem="62V-7n-bly" firstAttribute="height" secondItem="9ef-Y1-4jV" secondAttribute="height" multiplier="2.1" id="Aki-1n-3zm"/>
+                <constraint firstItem="62V-7n-bly" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="bottom" constant="8" symbolic="YES" id="DR7-xz-wzf"/>
+                <constraint firstItem="SBk-LD-PkW" firstAttribute="width" secondItem="62V-7n-bly" secondAttribute="width" multiplier="4" id="Hvn-ed-pDe"/>
+                <constraint firstItem="9ef-Y1-4jV" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="bottom" constant="8" symbolic="YES" id="J9i-Hp-Nf2"/>
+                <constraint firstAttribute="trailing" secondItem="10t-cP-udu" secondAttribute="trailing" constant="20" symbolic="YES" id="JFp-ND-Emd"/>
+                <constraint firstItem="62V-7n-bly" firstAttribute="bottom" secondItem="10t-cP-udu" secondAttribute="bottom" id="O1q-nn-qER"/>
+                <constraint firstItem="9ef-Y1-4jV" firstAttribute="leading" secondItem="62V-7n-bly" secondAttribute="trailing" constant="8" symbolic="YES" id="OuB-1C-wrX"/>
+                <constraint firstItem="10t-cP-udu" firstAttribute="leading" secondItem="62V-7n-bly" secondAttribute="trailing" constant="8" symbolic="YES" id="RB0-vd-pJ9"/>
+                <constraint firstItem="SBk-LD-PkW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RiB-XB-pXe"/>
+                <constraint firstItem="10t-cP-udu" firstAttribute="top" secondItem="9ef-Y1-4jV" secondAttribute="bottom" constant="8" symbolic="YES" id="Tl3-dp-PCn"/>
+                <constraint firstItem="9Fm-o6-eJQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="YHY-dQ-TRr"/>
+                <constraint firstItem="SBk-LD-PkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bzU-gf-RWn"/>
+                <constraint firstItem="62V-7n-bly" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="dE4-oX-2ie"/>
+                <constraint firstAttribute="trailing" secondItem="9ef-Y1-4jV" secondAttribute="trailing" constant="20" symbolic="YES" id="j98-Hr-b6L"/>
+                <constraint firstItem="SBk-LD-PkW" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="bottom" id="kMe-Um-iUF"/>
+                <constraint firstItem="f2f-kS-u5I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="ry1-wd-GfT"/>
+                <constraint firstAttribute="trailing" secondItem="SBk-LD-PkW" secondAttribute="trailing" id="s9q-0S-dUS"/>
+                <constraint firstItem="f2f-kS-u5I" firstAttribute="top" secondItem="9Fm-o6-eJQ" secondAttribute="bottom" constant="8" symbolic="YES" id="uBR-gn-4qR"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="kMe-Um-iUF"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="294" y="410"/>
         </view>
     </objects>
 </document>

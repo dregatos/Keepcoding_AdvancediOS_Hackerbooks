@@ -7,12 +7,14 @@
 //
 
 #import "DRGBookDetailVC.h"
+#import "DRGWriter.h"
 #import "DRGBook.h"
+#import "DRGWriter.h"
 #import "NotificationKeys.h"
 
 @interface DRGBookDetailVC ()
 
-@property (nonatomic, strong) DRGBook *book;
+@property (nonatomic, readwrite) DRGBook *book;
 
 @end
 
@@ -24,7 +26,6 @@
     
     if (self = [super initWithNibName:nil bundle:nil]) {
         _book = aBook;
-        self.title = aBook.title;
     }
     
     return self;
@@ -35,18 +36,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = @"Hacker Books 2.0";
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self updateViewContent];
+
     // Notifications **********************
     [self registerForNotifications];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [self unregisterForNotifications];
+}
+
+#pragma mark -
+
+- (void)updateViewContent {
+    
+    self.titleLbl.text = self.book.title;
+    self.authorsLbl.text = [[self.book authorList] componentsJoinedByString:@", "];
+    self.tagsLbl.text = [[self.book tagList] componentsJoinedByString:@", "];
+//    self.coverImageView.image = [DRGDownloadManager downloadCoverImageForBook:self.book ofLibrary:self.library];
+    self.favoriteBtn.selected = [self.book isFavorite];
+//    [self.readBtn setTitle:@"Read Book" forState:UIControlStateSelected];
+//    [self.readBtn setTitle:@"Download Book" forState:UIControlStateNormal];
+//    self.readBtn.selected = [self.book isPDFLocallyStored];
 }
 
 #pragma mark - NSNotification
@@ -71,9 +89,9 @@
 - (void)notifyNewBookWasSelected:(NSNotification *)notification {
     
     DRGBook *book = [notification.userInfo objectForKey:BOOK_KEY];
-    
     self.book = book;
-    self.title = book.title;
+
+    [self updateViewContent];
 }
 
 #pragma mark - IBActions
@@ -81,7 +99,7 @@
 - (IBAction)favoriteBtnPressed:(UIButton *)sender {
     
     // Talk with the delegate, if it implements the method
-    if ([self.delegate respondsToSelector:@selector(bookDetailVC:didFavoriteBook:)]) {
+    if ([self.delegate respondsToSelector:@selector(bookDetailVC:didMarkBookAsFavorite:)]) {
         [self.delegate bookDetailVC:self didMarkBookAsFavorite:self.book];
     }
 }

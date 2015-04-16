@@ -7,4 +7,7 @@
 
 - (BOOL)isFavorite;
 
+- (NSArray *)authorList;
+- (NSArray *)tagList;
+
 @end
