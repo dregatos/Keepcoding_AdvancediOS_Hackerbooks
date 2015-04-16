@@ -12,4 +12,7 @@
 
 + (NSArray *)observableKeys;
 
+- (NSData *)archiveURIRepresentation;
++ (instancetype)unarchiveObjectWithURIRepresentation:(NSData *)archivedURI context:(NSManagedObjectContext *)context;
+
 @end

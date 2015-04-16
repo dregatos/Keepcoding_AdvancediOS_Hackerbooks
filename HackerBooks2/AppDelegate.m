@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Settings.h"
 
 #import "AGTCoreDataStack.h"
 #import "DRGDownloadManager.h"
@@ -33,10 +34,10 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
     // Create the stack
     self.stack = [AGTCoreDataStack coreDataStackWithModelName:@"Library"];
 
-    if (DEBUG) {
-        [self.stack zapAllData];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:WAS_LAUNCHED_BEFORE];
-    }
+//    if (DEBUG) {
+//        [self.stack zapAllData];
+//        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:WAS_LAUNCHED_BEFORE];
+//    }
     
     // Download the library ONLY during the first launch ***
     NSMutableArray *library = [[NSMutableArray alloc] init];
@@ -55,6 +56,10 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
         if (![library count]) {
             NSLog(@"Ups! We couldn't fetch any book from the server.");
         }
+        
+        [self.stack saveWithErrorBlock:^(NSError *error) {
+            NSLog(@"Saving error: %@", error.userInfo);
+        }];
     }
     
     /** Phone or tablet ? */
@@ -110,10 +115,13 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
 
 - (UIViewController *)rootViewControllerForPad {
     
+    // Last selected book
+    DRGBook *selectedBook = [self lastSelectedBook];
+    
     // View controllers
     DRGBookListVC *bookListVC = [[DRGBookListVC alloc] initWithFetchedResultsController:[self libraryController]
                                                                                   style:UITableViewStyleGrouped];
-    DRGBookDetailVC *bookVC = [[DRGBookDetailVC alloc] initWithBook:nil];
+    DRGBookDetailVC *bookVC = [[DRGBookDetailVC alloc] initWithBook:selectedBook];
     
     // Create the splitView
     UISplitViewController *splitVC = [[UISplitViewController alloc] init];
@@ -148,6 +156,31 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
                                                managedObjectContext:self.stack.context
                                                  sectionNameKeyPath:@"label.name"
                                                           cacheName:nil];
+}
+
+#pragma mark - Selected Book
+
+- (DRGBook *)lastSelectedBook {
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    NSData *uri = [settings objectForKey:LAST_SELECTED_BOOK];
+    DRGBook *lastSelectedBook = [DRGBook unarchiveObjectWithURIRepresentation:uri context:self.stack.context];
+    if (lastSelectedBook == nil) {
+        lastSelectedBook = [self firstBookOfLibrary];
+    }
+    return lastSelectedBook;
+}
+
+- (DRGBook *)firstBookOfLibrary {
+    
+    NSFetchRequest *req = [self libraryFetchRequest];
+    
+    // Search
+    NSArray *results = [self.stack executeFetchRequest:req errorBlock:^(NSError *error) {
+        NSLog(@"Execute fetch request failed! - %@", error);
+    }];
+    
+    DRGTag *firstTag = [results firstObject];
+    return firstTag.book;
 }
 
 

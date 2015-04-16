@@ -10,6 +10,7 @@
 #import "DRGBook.h"
 #import "DRGTag.h"
 #import "DRGLabel.h"
+#import "Settings.h"
 #import "NotificationKeys.h"
 
 @interface DRGBookListVC ()
@@ -34,14 +35,14 @@
     // Load data for indexPath
     DRGBook *book = [self bookAtIndexPath:indexPath];
 
-    // Crear una celda
+    // Create the cell
     static NSString *cellID = @"bookCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
     }
     
-    // Configurarla (sincronizar libreta -> celda)
+    // Configure cell
     cell.textLabel.text = book.title;
     
     return cell;
@@ -58,6 +59,11 @@
     // Notify BOOK was selected - ONLY FOR iPad VERSION
     NSDictionary *dict = @{BOOK_KEY:book};
     [[NSNotificationCenter defaultCenter] postNotificationName:DID_SELECT_BOOK_NOTIFICATION object:self userInfo:dict];
+    
+    // Remember last selected book
+    NSData *uri = [book archiveURIRepresentation];
+    [[NSUserDefaults standardUserDefaults] setObject:uri forKey:LAST_SELECTED_BOOK];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - DRGBookDetailVCDelegate

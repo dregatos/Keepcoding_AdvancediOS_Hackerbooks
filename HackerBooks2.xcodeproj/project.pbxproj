@@ -134,6 +134,7 @@
 		0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Navigation.m"; path = "Categories/UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookDetailVCDelegate.h; path = Controllers/DRGBookDetailVCDelegate.h; sourceTree = "<group>"; };
 		0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
+		076130BD1ADFA9F7002D80A3 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +290,7 @@
 		0738A8A71ADC0B4700CB87FC /* HackerBooks2 */ = {
 			isa = PBXGroup;
 			children = (
+				076130BD1ADFA9F7002D80A3 /* Settings.h */,
 				0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */,
 				0738A8AC1ADC0B4700CB87FC /* AppDelegate.h */,
 				0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */,

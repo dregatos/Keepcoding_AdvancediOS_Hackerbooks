@@ -68,4 +68,39 @@
     // By default do nothing
 }
 
+#pragma mark - URI
+
+- (NSData *)archiveURIRepresentation {
+    NSURL *uri = self.objectID.URIRepresentation;
+    return [NSKeyedArchiver archivedDataWithRootObject:uri];
+}
+
++ (instancetype)unarchiveObjectWithURIRepresentation:(NSData *)archivedURI context:(NSManagedObjectContext *)context {
+
+    NSURL *uri = [NSKeyedUnarchiver unarchiveObjectWithData:archivedURI];
+    if (uri == nil) { return nil; }
+    
+    NSManagedObjectID *objID = [context.persistentStoreCoordinator managedObjectIDForURIRepresentation:uri];
+    if (objID == nil) { return nil; }
+    
+    NSManagedObject *obj = [context objectWithID:objID];
+    if (obj.isFault) {
+        // We found it
+        return (DRGLibraryBaseClass *)obj;
+    } else {
+        // Might not exist anymore. Let's fetch it!
+        NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:obj.entity.name];
+        req.predicate = [NSPredicate predicateWithFormat:@"SELF = %@", obj];
+        
+        NSError *error;
+        NSArray *result = [context executeFetchRequest:req error:&error];
+        if (result == nil) {
+            NSLog(@"Unarchiving URI obj error: %@", error.userInfo);
+            return nil;
+        } else {
+            return [result lastObject];
+        }
+    }
+}
+
 @end
