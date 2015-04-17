@@ -22,8 +22,6 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) AGTCoreDataStack *stack;
-
 @end
 
 @implementation AppDelegate

@@ -7,13 +7,15 @@
 //
 
 #import "DRGBookListVC.h"
+#import "DRGSearchResultsVC.h"
 #import "DRGBook.h"
 #import "DRGTag.h"
 #import "DRGLabel.h"
-#import "Settings.h"
-#import "NotificationKeys.h"
+#import "NSString+Validation.h"
 
 @interface DRGBookListVC ()
+
+@property (nonatomic, strong) DRGSearchResultsVC *srVC;
 
 @end
 
@@ -26,44 +28,9 @@
     // Do any additional setup after loading the view.
     
     self.title = @"Library";
-}
-
-#pragma mark - UITableView DataSource
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // Load data for indexPath
-    DRGBook *book = [self bookAtIndexPath:indexPath];
-
-    // Create the cell
-    static NSString *cellID = @"bookCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
-    }
-    
-    // Configure cell
-    cell.textLabel.text = book.title;
-    
-    return cell;
-}
-
-
-#pragma mark - UITableView Delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // Get data for indexPath
-    DRGBook *book = [self bookAtIndexPath:indexPath];
-    
-    // Notify BOOK was selected - ONLY FOR iPad VERSION
-    NSDictionary *dict = @{BOOK_KEY:book};
-    [[NSNotificationCenter defaultCenter] postNotificationName:DID_SELECT_BOOK_NOTIFICATION object:self userInfo:dict];
-    
-    // Remember last selected book
-    NSData *uri = [book archiveURIRepresentation];
-    [[NSUserDefaults standardUserDefaults] setObject:uri forKey:LAST_SELECTED_BOOK];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    // Search Results Controller
+    [self configureSearchController];
 }
 
 #pragma mark - DRGBookDetailVCDelegate
@@ -81,17 +48,59 @@
     }
 }
 
-#pragma mark - Utils
+#pragma mark - Search Result Controller
 
-- (DRGTag *)tagAtIndex:(NSIndexPath *)indexPath {
-    DRGTag *tag = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    return tag;
+- (void)configureSearchController {
+    
+    NSFetchedResultsController *frController = [self searchFRControllerWithRequest:[self searchFetchRequest]];
+    self.srVC = [[DRGSearchResultsVC alloc ]initWithFetchedResultsController:frController
+                                                                       style:UITableViewStyleGrouped];
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.srVC];
+    self.searchController.searchResultsUpdater = self;
+    [self.searchController.searchBar sizeToFit];
+    self.searchController.searchBar.placeholder = @"Title, Author or Tag";
+    self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 
-- (DRGBook *)bookAtIndexPath:(NSIndexPath *)indexPath {
-    DRGTag *tag = [self tagAtIndex:indexPath];
-    DRGBook *book = tag.book;
-    return book;
+- (NSFetchRequest *)searchFetchRequest {
+    // Request
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGBook entityName]];
+    NSSortDescriptor *sortTitle = [NSSortDescriptor sortDescriptorWithKey:@"title"
+                                                                ascending:YES
+                                                                 selector:@selector(caseInsensitiveCompare:)];
+    req.sortDescriptors = @[sortTitle];
+    req.fetchBatchSize = 20;
+    
+    return req;
+}
+
+- (NSFetchedResultsController *)searchFRControllerWithRequest:(NSFetchRequest *)request {
+    
+    return [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                               managedObjectContext:self.fetchedResultsController.managedObjectContext
+                                                 sectionNameKeyPath:nil
+                                                          cacheName:nil];
+}
+
+#pragma mark - UISearchControllerDelegate & UISearchResultsDelegate
+
+// Called when the search bar becomes first responder
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    // Set searchString equal to what's typed into the searchbar
+    NSString *searchString = self.searchController.searchBar.text;
+    
+    NSFetchRequest *req = [self searchFetchRequest];
+    if (![NSString isEmpty:searchString]) {
+        // Add Filter
+        NSPredicate *titleOrAuthorOrTag = [NSPredicate predicateWithFormat:@"(title CONTAINS[cd] %@) OR (authors.writer.name CONTAINS[cd] %@) OR (tags.label.name CONTAINS[cd] %@)", searchString, searchString,searchString];
+
+        req.predicate = titleOrAuthorOrTag;
+    }
+    
+    NSFetchedResultsController *frController = [self searchFRControllerWithRequest:req];
+    self.srVC.fetchedResultsController = frController;
 }
 
 @end

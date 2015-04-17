@@ -6,9 +6,11 @@
 //  Copyright (c) 2015 DRG. All rights reserved.
 //
 
-#import "AGTCoreDataTableViewController.h"
+#import "DRGBaseTableVC.h"
 #import "DRGBookDetailVCDelegate.h"
 
-@interface DRGBookListVC : AGTCoreDataTableViewController <DRGBookDetailVCDelegate>
+@interface DRGBookListVC : DRGBaseTableVC <DRGBookDetailVCDelegate,UISearchResultsUpdating>
+
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end

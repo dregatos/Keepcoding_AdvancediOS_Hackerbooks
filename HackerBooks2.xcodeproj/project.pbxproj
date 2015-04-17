@@ -45,6 +45,9 @@
 		0749AAA41ADEB9E9002563C2 /* DRGBookDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */; };
 		0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */; };
 		0749AAA81ADEBAA3002563C2 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */; };
+		0779FC871AE0FFD0008412A2 /* DRGSearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */; };
+		0779FC8A1AE102EC008412A2 /* DRGBaseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */; };
+		0779FC8D1AE10C08008412A2 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC8C1AE10C08008412A2 /* NSString+Validation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,12 @@
 		0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookDetailVCDelegate.h; path = Controllers/DRGBookDetailVCDelegate.h; sourceTree = "<group>"; };
 		0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
 		076130BD1ADFA9F7002D80A3 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		0779FC851AE0FFD0008412A2 /* DRGSearchResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGSearchResultsVC.h; path = Controllers/DRGSearchResultsVC.h; sourceTree = "<group>"; };
+		0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGSearchResultsVC.m; path = Controllers/DRGSearchResultsVC.m; sourceTree = "<group>"; };
+		0779FC881AE102EC008412A2 /* DRGBaseTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBaseTableVC.h; path = Controllers/DRGBaseTableVC.h; sourceTree = "<group>"; };
+		0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGBaseTableVC.m; path = Controllers/DRGBaseTableVC.m; sourceTree = "<group>"; };
+		0779FC8B1AE10C08008412A2 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Validation.h"; path = "Categories/NSString+Validation.h"; sourceTree = "<group>"; };
+		0779FC8C1AE10C08008412A2 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Validation.m"; path = "Categories/NSString+Validation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +250,12 @@
 			isa = PBXGroup;
 			children = (
 				0704C40D1ADD72A000F80DB7 /* AGBO */,
+				0779FC881AE102EC008412A2 /* DRGBaseTableVC.h */,
+				0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */,
 				0704C4071ADD725500F80DB7 /* DRGBookListVC.h */,
 				0704C4081ADD725500F80DB7 /* DRGBookListVC.m */,
+				0779FC851AE0FFD0008412A2 /* DRGSearchResultsVC.h */,
+				0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */,
 				0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */,
 				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
 				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
@@ -265,6 +278,8 @@
 			children = (
 				0749AAA61ADEBAA3002563C2 /* UIViewController+Navigation.h */,
 				0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */,
+				0779FC8B1AE10C08008412A2 /* NSString+Validation.h */,
+				0779FC8C1AE10C08008412A2 /* NSString+Validation.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -442,11 +457,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0779FC8A1AE102EC008412A2 /* DRGBaseTableVC.m in Sources */,
 				0704C3D41ADD297D00F80DB7 /* _DRGTag.m in Sources */,
 				0704C3D31ADD297D00F80DB7 /* _DRGPhoto.m in Sources */,
+				0779FC8D1AE10C08008412A2 /* NSString+Validation.m in Sources */,
 				0704C3CD1ADD297D00F80DB7 /* _DRGAuthor.m in Sources */,
 				0704C3D01ADD297D00F80DB7 /* _DRGDate.m in Sources */,
 				0704C3D21ADD297D00F80DB7 /* _DRGPdf.m in Sources */,
+				0779FC871AE0FFD0008412A2 /* DRGSearchResultsVC.m in Sources */,
 				0704C3ED1ADD2AD100F80DB7 /* DRGCover.m in Sources */,
 				0749AAA41ADEB9E9002563C2 /* DRGBookDetailVC.m in Sources */,
 				0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */,
