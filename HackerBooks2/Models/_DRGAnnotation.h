@@ -6,6 +6,7 @@
 
 extern const struct DRGAnnotationAttributes {
 	__unsafe_unretained NSString *text;
+	__unsafe_unretained NSString *title;
 } DRGAnnotationAttributes;
 
 extern const struct DRGAnnotationRelationships {
@@ -17,7 +18,7 @@ extern const struct DRGAnnotationRelationships {
 
 @class DRGBook;
 @class DRGDate;
-@class DRGLocalization;
+@class DRGLocation;
 @class DRGPhoto;
 
 @interface DRGAnnotationID : NSManagedObjectID {}
@@ -33,6 +34,10 @@ extern const struct DRGAnnotationRelationships {
 
 //- (BOOL)validateText:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSString* title;
+
+//- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) DRGBook *book;
 
 //- (BOOL)validateBook:(id*)value_ error:(NSError**)error_;
@@ -41,7 +46,7 @@ extern const struct DRGAnnotationRelationships {
 
 //- (BOOL)validateDate:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) DRGLocalization *location;
+@property (nonatomic, strong) DRGLocation *location;
 
 //- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
 
@@ -56,14 +61,17 @@ extern const struct DRGAnnotationRelationships {
 - (NSString*)primitiveText;
 - (void)setPrimitiveText:(NSString*)value;
 
+- (NSString*)primitiveTitle;
+- (void)setPrimitiveTitle:(NSString*)value;
+
 - (DRGBook*)primitiveBook;
 - (void)setPrimitiveBook:(DRGBook*)value;
 
 - (DRGDate*)primitiveDate;
 - (void)setPrimitiveDate:(DRGDate*)value;
 
-- (DRGLocalization*)primitiveLocation;
-- (void)setPrimitiveLocation:(DRGLocalization*)value;
+- (DRGLocation*)primitiveLocation;
+- (void)setPrimitiveLocation:(DRGLocation*)value;
 
 - (DRGPhoto*)primitivePhoto;
 - (void)setPrimitivePhoto:(DRGPhoto*)value;

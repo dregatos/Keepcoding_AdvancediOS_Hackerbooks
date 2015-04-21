@@ -6,4 +6,5 @@
 //  Copyright (c) 2015 DRG. All rights reserved.
 //
 
-#define LAST_SELECTED_BOOK @"lastSelectedBook"
+#define LAST_SELECTED_BOOK                      @"LAST_SELECTED_BOOK"
+

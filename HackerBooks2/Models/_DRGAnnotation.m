@@ -5,6 +5,7 @@
 
 const struct DRGAnnotationAttributes DRGAnnotationAttributes = {
 	.text = @"text",
+	.title = @"title",
 };
 
 const struct DRGAnnotationRelationships DRGAnnotationRelationships = {
@@ -44,6 +45,8 @@ const struct DRGAnnotationRelationships DRGAnnotationRelationships = {
 }
 
 @dynamic text;
+
+@dynamic title;
 
 @dynamic book;
 

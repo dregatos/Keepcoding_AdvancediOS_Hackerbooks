@@ -50,6 +50,10 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return nil;
+}
+
 #pragma mark - Utils
 
 - (DRGTag *)tagAtIndex:(NSIndexPath *)indexPath {

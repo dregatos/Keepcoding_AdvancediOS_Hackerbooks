@@ -1,28 +1,28 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to DRGLocalization.h instead.
+// Make changes to DRGLocation.h instead.
 
 @import CoreData;
 #import "DRGLibraryBaseClass.h"
 
-extern const struct DRGLocalizationAttributes {
+extern const struct DRGLocationAttributes {
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
-} DRGLocalizationAttributes;
+} DRGLocationAttributes;
 
-extern const struct DRGLocalizationRelationships {
+extern const struct DRGLocationRelationships {
 	__unsafe_unretained NSString *annotation;
-} DRGLocalizationRelationships;
+} DRGLocationRelationships;
 
 @class DRGAnnotation;
 
-@interface DRGLocalizationID : NSManagedObjectID {}
+@interface DRGLocationID : NSManagedObjectID {}
 @end
 
-@interface _DRGLocalization : DRGLibraryBaseClass {}
+@interface _DRGLocation : DRGLibraryBaseClass {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) DRGLocalizationID* objectID;
+@property (nonatomic, readonly, strong) DRGLocationID* objectID;
 
 @property (nonatomic, strong) NSNumber* latitude;
 
@@ -46,7 +46,7 @@ extern const struct DRGLocalizationRelationships {
 
 @end
 
-@interface _DRGLocalization (AnnotationCoreDataGeneratedAccessors)
+@interface _DRGLocation (AnnotationCoreDataGeneratedAccessors)
 - (void)addAnnotation:(NSSet*)value_;
 - (void)removeAnnotation:(NSSet*)value_;
 - (void)addAnnotationObject:(DRGAnnotation*)value_;
@@ -54,7 +54,7 @@ extern const struct DRGLocalizationRelationships {
 
 @end
 
-@interface _DRGLocalization (CoreDataGeneratedPrimitiveAccessors)
+@interface _DRGLocation (CoreDataGeneratedPrimitiveAccessors)
 
 - (NSNumber*)primitiveLatitude;
 - (void)setPrimitiveLatitude:(NSNumber*)value;

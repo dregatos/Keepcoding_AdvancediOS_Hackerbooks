@@ -12,7 +12,6 @@
 		0704C3CE1ADD297D00F80DB7 /* _DRGBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3BD1ADD297D00F80DB7 /* _DRGBook.m */; };
 		0704C3CF1ADD297D00F80DB7 /* _DRGCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3BF1ADD297D00F80DB7 /* _DRGCover.m */; };
 		0704C3D01ADD297D00F80DB7 /* _DRGDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3C11ADD297D00F80DB7 /* _DRGDate.m */; };
-		0704C3D11ADD297D00F80DB7 /* _DRGLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3C31ADD297D00F80DB7 /* _DRGLocalization.m */; };
 		0704C3D21ADD297D00F80DB7 /* _DRGPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3C51ADD297D00F80DB7 /* _DRGPdf.m */; };
 		0704C3D31ADD297D00F80DB7 /* _DRGPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3C71ADD297D00F80DB7 /* _DRGPhoto.m */; };
 		0704C3D41ADD297D00F80DB7 /* _DRGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3C91ADD297D00F80DB7 /* _DRGTag.m */; };
@@ -22,7 +21,6 @@
 		0704C3EC1ADD2AD100F80DB7 /* DRGBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3DB1ADD2AD100F80DB7 /* DRGBook.m */; };
 		0704C3ED1ADD2AD100F80DB7 /* DRGCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3DD1ADD2AD100F80DB7 /* DRGCover.m */; };
 		0704C3EE1ADD2AD100F80DB7 /* DRGDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3DF1ADD2AD100F80DB7 /* DRGDate.m */; };
-		0704C3EF1ADD2AD100F80DB7 /* DRGLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3E11ADD2AD100F80DB7 /* DRGLocalization.m */; };
 		0704C3F01ADD2AD100F80DB7 /* DRGPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3E31ADD2AD100F80DB7 /* DRGPdf.m */; };
 		0704C3F11ADD2AD100F80DB7 /* DRGPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3E51ADD2AD100F80DB7 /* DRGPhoto.m */; };
 		0704C3F21ADD2AD100F80DB7 /* DRGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3E71ADD2AD100F80DB7 /* DRGTag.m */; };
@@ -30,7 +28,7 @@
 		0704C3F81ADD2B7C00F80DB7 /* DRGLibraryBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3F71ADD2B7C00F80DB7 /* DRGLibraryBaseClass.m */; };
 		0704C3FB1ADD4BF700F80DB7 /* _DRGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3FA1ADD4BF700F80DB7 /* _DRGLabel.m */; };
 		0704C3FE1ADD4C0300F80DB7 /* DRGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C3FD1ADD4C0300F80DB7 /* DRGLabel.m */; };
-		0704C4021ADD51C400F80DB7 /* DRGDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4011ADD51C400F80DB7 /* DRGDownloadManager.m */; };
+		0704C4021ADD51C400F80DB7 /* DRGDownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4011ADD51C400F80DB7 /* DRGDownloadHelper.m */; };
 		0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4081ADD725500F80DB7 /* DRGBookListVC.m */; };
 		0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */; };
 		0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */; };
@@ -48,6 +46,10 @@
 		0779FC871AE0FFD0008412A2 /* DRGSearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */; };
 		0779FC8A1AE102EC008412A2 /* DRGBaseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */; };
 		0779FC8D1AE10C08008412A2 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC8C1AE10C08008412A2 /* NSString+Validation.m */; };
+		0779FC901AE13D00008412A2 /* _DRGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC8F1AE13D00008412A2 /* _DRGLocation.m */; };
+		0779FC931AE13D0A008412A2 /* DRGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC921AE13D0A008412A2 /* DRGLocation.m */; };
+		079E3A461AE5342F00018ED7 /* DRGAnnotationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E3A441AE5342F00018ED7 /* DRGAnnotationVC.m */; };
+		079E3A471AE5342F00018ED7 /* DRGAnnotationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079E3A451AE5342F00018ED7 /* DRGAnnotationVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +73,6 @@
 		0704C3BF1ADD297D00F80DB7 /* _DRGCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGCover.m; path = Models/_DRGCover.m; sourceTree = "<group>"; };
 		0704C3C01ADD297D00F80DB7 /* _DRGDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGDate.h; path = Models/_DRGDate.h; sourceTree = "<group>"; };
 		0704C3C11ADD297D00F80DB7 /* _DRGDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGDate.m; path = Models/_DRGDate.m; sourceTree = "<group>"; };
-		0704C3C21ADD297D00F80DB7 /* _DRGLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGLocalization.h; path = Models/_DRGLocalization.h; sourceTree = "<group>"; };
-		0704C3C31ADD297D00F80DB7 /* _DRGLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGLocalization.m; path = Models/_DRGLocalization.m; sourceTree = "<group>"; };
 		0704C3C41ADD297D00F80DB7 /* _DRGPdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGPdf.h; path = Models/_DRGPdf.h; sourceTree = "<group>"; };
 		0704C3C51ADD297D00F80DB7 /* _DRGPdf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGPdf.m; path = Models/_DRGPdf.m; sourceTree = "<group>"; };
 		0704C3C61ADD297D00F80DB7 /* _DRGPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGPhoto.h; path = Models/_DRGPhoto.h; sourceTree = "<group>"; };
@@ -91,8 +91,6 @@
 		0704C3DD1ADD2AD100F80DB7 /* DRGCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGCover.m; path = Models/DRGCover.m; sourceTree = "<group>"; };
 		0704C3DE1ADD2AD100F80DB7 /* DRGDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGDate.h; path = Models/DRGDate.h; sourceTree = "<group>"; };
 		0704C3DF1ADD2AD100F80DB7 /* DRGDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGDate.m; path = Models/DRGDate.m; sourceTree = "<group>"; };
-		0704C3E01ADD2AD100F80DB7 /* DRGLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGLocalization.h; path = Models/DRGLocalization.h; sourceTree = "<group>"; };
-		0704C3E11ADD2AD100F80DB7 /* DRGLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGLocalization.m; path = Models/DRGLocalization.m; sourceTree = "<group>"; };
 		0704C3E21ADD2AD100F80DB7 /* DRGPdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGPdf.h; path = Models/DRGPdf.h; sourceTree = "<group>"; };
 		0704C3E31ADD2AD100F80DB7 /* DRGPdf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGPdf.m; path = Models/DRGPdf.m; sourceTree = "<group>"; };
 		0704C3E41ADD2AD100F80DB7 /* DRGPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGPhoto.h; path = Models/DRGPhoto.h; sourceTree = "<group>"; };
@@ -107,8 +105,8 @@
 		0704C3FA1ADD4BF700F80DB7 /* _DRGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGLabel.m; path = Models/_DRGLabel.m; sourceTree = "<group>"; };
 		0704C3FC1ADD4C0300F80DB7 /* DRGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGLabel.h; path = Models/DRGLabel.h; sourceTree = "<group>"; };
 		0704C3FD1ADD4C0300F80DB7 /* DRGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGLabel.m; path = Models/DRGLabel.m; sourceTree = "<group>"; };
-		0704C4001ADD51C400F80DB7 /* DRGDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGDownloadManager.h; path = Managers/DRGDownloadManager.h; sourceTree = "<group>"; };
-		0704C4011ADD51C400F80DB7 /* DRGDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGDownloadManager.m; path = Managers/DRGDownloadManager.m; sourceTree = "<group>"; };
+		0704C4001ADD51C400F80DB7 /* DRGDownloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGDownloadHelper.h; path = Managers/DRGDownloadHelper.h; sourceTree = "<group>"; };
+		0704C4011ADD51C400F80DB7 /* DRGDownloadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGDownloadHelper.m; path = Managers/DRGDownloadHelper.m; sourceTree = "<group>"; };
 		0704C4071ADD725500F80DB7 /* DRGBookListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookListVC.h; path = Controllers/DRGBookListVC.h; sourceTree = "<group>"; };
 		0704C4081ADD725500F80DB7 /* DRGBookListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGBookListVC.m; path = Controllers/DRGBookListVC.m; sourceTree = "<group>"; };
 		0704C40A1ADD729200F80DB7 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataStack.h; path = "AGBO Utils/AGTCoreDataStack.h"; sourceTree = "<group>"; };
@@ -137,6 +135,7 @@
 		0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Navigation.m"; path = "Categories/UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookDetailVCDelegate.h; path = Controllers/DRGBookDetailVCDelegate.h; sourceTree = "<group>"; };
 		0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
+		0749BB061AE552B700DD0C5F /* ErrorDomains.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorDomains.h; sourceTree = "<group>"; };
 		076130BD1ADFA9F7002D80A3 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		0779FC851AE0FFD0008412A2 /* DRGSearchResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGSearchResultsVC.h; path = Controllers/DRGSearchResultsVC.h; sourceTree = "<group>"; };
 		0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGSearchResultsVC.m; path = Controllers/DRGSearchResultsVC.m; sourceTree = "<group>"; };
@@ -144,6 +143,13 @@
 		0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGBaseTableVC.m; path = Controllers/DRGBaseTableVC.m; sourceTree = "<group>"; };
 		0779FC8B1AE10C08008412A2 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Validation.h"; path = "Categories/NSString+Validation.h"; sourceTree = "<group>"; };
 		0779FC8C1AE10C08008412A2 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Validation.m"; path = "Categories/NSString+Validation.m"; sourceTree = "<group>"; };
+		0779FC8E1AE13D00008412A2 /* _DRGLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DRGLocation.h; path = Models/_DRGLocation.h; sourceTree = "<group>"; };
+		0779FC8F1AE13D00008412A2 /* _DRGLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGLocation.m; path = Models/_DRGLocation.m; sourceTree = "<group>"; };
+		0779FC911AE13D0A008412A2 /* DRGLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGLocation.h; path = Models/DRGLocation.h; sourceTree = "<group>"; };
+		0779FC921AE13D0A008412A2 /* DRGLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGLocation.m; path = Models/DRGLocation.m; sourceTree = "<group>"; };
+		079E3A431AE5342F00018ED7 /* DRGAnnotationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGAnnotationVC.h; path = Controllers/DRGAnnotationVC.h; sourceTree = "<group>"; };
+		079E3A441AE5342F00018ED7 /* DRGAnnotationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGAnnotationVC.m; path = Controllers/DRGAnnotationVC.m; sourceTree = "<group>"; };
+		079E3A451AE5342F00018ED7 /* DRGAnnotationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DRGAnnotationVC.xib; path = Controllers/DRGAnnotationVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,22 +173,22 @@
 		0704C3B71ADD296400F80DB7 /* Machine */ = {
 			isa = PBXGroup;
 			children = (
-				0749AA981ADE7C0A002563C2 /* _DRGBookResource.h */,
-				0749AA991ADE7C0A002563C2 /* _DRGBookResource.m */,
-				0704C3F91ADD4BF700F80DB7 /* _DRGLabel.h */,
-				0704C3FA1ADD4BF700F80DB7 /* _DRGLabel.m */,
 				0704C3B81ADD297D00F80DB7 /* _DRGAnnotation.h */,
 				0704C3B91ADD297D00F80DB7 /* _DRGAnnotation.m */,
 				0704C3BA1ADD297D00F80DB7 /* _DRGAuthor.h */,
 				0704C3BB1ADD297D00F80DB7 /* _DRGAuthor.m */,
 				0704C3BC1ADD297D00F80DB7 /* _DRGBook.h */,
 				0704C3BD1ADD297D00F80DB7 /* _DRGBook.m */,
+				0749AA981ADE7C0A002563C2 /* _DRGBookResource.h */,
+				0749AA991ADE7C0A002563C2 /* _DRGBookResource.m */,
 				0704C3BE1ADD297D00F80DB7 /* _DRGCover.h */,
 				0704C3BF1ADD297D00F80DB7 /* _DRGCover.m */,
 				0704C3C01ADD297D00F80DB7 /* _DRGDate.h */,
 				0704C3C11ADD297D00F80DB7 /* _DRGDate.m */,
-				0704C3C21ADD297D00F80DB7 /* _DRGLocalization.h */,
-				0704C3C31ADD297D00F80DB7 /* _DRGLocalization.m */,
+				0704C3F91ADD4BF700F80DB7 /* _DRGLabel.h */,
+				0704C3FA1ADD4BF700F80DB7 /* _DRGLabel.m */,
+				0779FC8E1AE13D00008412A2 /* _DRGLocation.h */,
+				0779FC8F1AE13D00008412A2 /* _DRGLocation.m */,
 				0704C3C41ADD297D00F80DB7 /* _DRGPdf.h */,
 				0704C3C51ADD297D00F80DB7 /* _DRGPdf.m */,
 				0704C3C61ADD297D00F80DB7 /* _DRGPhoto.h */,
@@ -198,22 +204,22 @@
 		0704C3F41ADD2AED00F80DB7 /* Human */ = {
 			isa = PBXGroup;
 			children = (
-				0749AA9B1ADE7C18002563C2 /* DRGBookResource.h */,
-				0749AA9C1ADE7C18002563C2 /* DRGBookResource.m */,
-				0704C3FC1ADD4C0300F80DB7 /* DRGLabel.h */,
-				0704C3FD1ADD4C0300F80DB7 /* DRGLabel.m */,
 				0704C3D61ADD2AD100F80DB7 /* DRGAnnotation.h */,
 				0704C3D71ADD2AD100F80DB7 /* DRGAnnotation.m */,
 				0704C3D81ADD2AD100F80DB7 /* DRGAuthor.h */,
 				0704C3D91ADD2AD100F80DB7 /* DRGAuthor.m */,
 				0704C3DA1ADD2AD100F80DB7 /* DRGBook.h */,
 				0704C3DB1ADD2AD100F80DB7 /* DRGBook.m */,
+				0749AA9B1ADE7C18002563C2 /* DRGBookResource.h */,
+				0749AA9C1ADE7C18002563C2 /* DRGBookResource.m */,
 				0704C3DC1ADD2AD100F80DB7 /* DRGCover.h */,
 				0704C3DD1ADD2AD100F80DB7 /* DRGCover.m */,
 				0704C3DE1ADD2AD100F80DB7 /* DRGDate.h */,
 				0704C3DF1ADD2AD100F80DB7 /* DRGDate.m */,
-				0704C3E01ADD2AD100F80DB7 /* DRGLocalization.h */,
-				0704C3E11ADD2AD100F80DB7 /* DRGLocalization.m */,
+				0704C3FC1ADD4C0300F80DB7 /* DRGLabel.h */,
+				0704C3FD1ADD4C0300F80DB7 /* DRGLabel.m */,
+				0779FC911AE13D0A008412A2 /* DRGLocation.h */,
+				0779FC921AE13D0A008412A2 /* DRGLocation.m */,
 				0704C3E21ADD2AD100F80DB7 /* DRGPdf.h */,
 				0704C3E31ADD2AD100F80DB7 /* DRGPdf.m */,
 				0704C3E41ADD2AD100F80DB7 /* DRGPhoto.h */,
@@ -237,15 +243,6 @@
 			name = Mogenerator;
 			sourceTree = "<group>";
 		};
-		0704C3FF1ADD519900F80DB7 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				0704C4001ADD51C400F80DB7 /* DRGDownloadManager.h */,
-				0704C4011ADD51C400F80DB7 /* DRGDownloadManager.m */,
-			);
-			name = Managers;
-			sourceTree = "<group>";
-		};
 		0704C4031ADD71A800F80DB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +257,9 @@
 				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
 				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
 				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
+				079E3A431AE5342F00018ED7 /* DRGAnnotationVC.h */,
+				079E3A441AE5342F00018ED7 /* DRGAnnotationVC.m */,
+				079E3A451AE5342F00018ED7 /* DRGAnnotationVC.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -307,12 +307,12 @@
 			children = (
 				076130BD1ADFA9F7002D80A3 /* Settings.h */,
 				0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */,
+				0749BB061AE552B700DD0C5F /* ErrorDomains.h */,
 				0738A8AC1ADC0B4700CB87FC /* AppDelegate.h */,
 				0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */,
 				0738A8AF1ADC0B4700CB87FC /* Images.xcassets */,
 				0738A8B11ADC0B4700CB87FC /* LaunchScreen.xib */,
 				0704C4111ADD781800F80DB7 /* Categories */,
-				0704C3FF1ADD519900F80DB7 /* Managers */,
 				0738A8C81ADC0DAC00CB87FC /* Models */,
 				0704C4031ADD71A800F80DB7 /* Controllers */,
 				0738A8A81ADC0B4700CB87FC /* Supporting Files */,
@@ -349,6 +349,8 @@
 		0738A8C81ADC0DAC00CB87FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0704C4001ADD51C400F80DB7 /* DRGDownloadHelper.h */,
+				0704C4011ADD51C400F80DB7 /* DRGDownloadHelper.m */,
 				0704C40A1ADD729200F80DB7 /* AGTCoreDataStack.h */,
 				0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */,
 				0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */,
@@ -438,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0738A8B31ADC0B4700CB87FC /* LaunchScreen.xib in Resources */,
+				079E3A471AE5342F00018ED7 /* DRGAnnotationVC.xib in Resources */,
 				0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */,
 				0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */,
 			);
@@ -467,15 +470,17 @@
 				0779FC871AE0FFD0008412A2 /* DRGSearchResultsVC.m in Sources */,
 				0704C3ED1ADD2AD100F80DB7 /* DRGCover.m in Sources */,
 				0749AAA41ADEB9E9002563C2 /* DRGBookDetailVC.m in Sources */,
+				0779FC901AE13D00008412A2 /* _DRGLocation.m in Sources */,
+				079E3A461AE5342F00018ED7 /* DRGAnnotationVC.m in Sources */,
 				0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */,
 				0704C3F21ADD2AD100F80DB7 /* DRGTag.m in Sources */,
 				0704C3F01ADD2AD100F80DB7 /* DRGPdf.m in Sources */,
 				0704C3F31ADD2AD100F80DB7 /* DRGWriter.m in Sources */,
-				0704C3D11ADD297D00F80DB7 /* _DRGLocalization.m in Sources */,
 				0704C3F11ADD2AD100F80DB7 /* DRGPhoto.m in Sources */,
-				0704C4021ADD51C400F80DB7 /* DRGDownloadManager.m in Sources */,
+				0704C4021ADD51C400F80DB7 /* DRGDownloadHelper.m in Sources */,
 				0704C3FE1ADD4C0300F80DB7 /* DRGLabel.m in Sources */,
 				0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */,
+				0779FC931AE13D0A008412A2 /* DRGLocation.m in Sources */,
 				0704C3EC1ADD2AD100F80DB7 /* DRGBook.m in Sources */,
 				0704C3EB1ADD2AD100F80DB7 /* DRGAuthor.m in Sources */,
 				0704C3CF1ADD297D00F80DB7 /* _DRGCover.m in Sources */,
@@ -492,7 +497,6 @@
 				0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */,
 				0704C3EA1ADD2AD100F80DB7 /* DRGAnnotation.m in Sources */,
 				0749AA9A1ADE7C0A002563C2 /* _DRGBookResource.m in Sources */,
-				0704C3EF1ADD2AD100F80DB7 /* DRGLocalization.m in Sources */,
 				0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

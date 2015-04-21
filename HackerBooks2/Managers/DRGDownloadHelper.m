@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 DRG. All rights reserved.
 //
 
-#import "DRGDownloadManager.h"
+#import "DRGDownloadHelper.h"
 
-@implementation DRGDownloadManager
+@implementation DRGDownloadHelper
 
 + (NSArray *)downloadBookList {
     
@@ -37,13 +37,11 @@
     return bookList;
 }
 
-
 + (NSData *)downloadLibraryDataFromServer {
     // Download library
-    NSData *libraryData = [DRGDownloadManager downloadJSONFromURL:[NSURL URLWithString:@"https://t.co/K9ziV0z3SJ"]];
+    NSData *libraryData = [DRGDownloadHelper downloadJSONFromURL:[NSURL URLWithString:@"https://t.co/K9ziV0z3SJ"]];
     return libraryData;
 }
-
 
 #pragma mark - Helpers
 

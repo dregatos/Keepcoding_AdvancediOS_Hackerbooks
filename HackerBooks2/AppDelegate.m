@@ -10,7 +10,7 @@
 #import "Settings.h"
 
 #import "AGTCoreDataStack.h"
-#import "DRGDownloadManager.h"
+#import "DRGDownloadHelper.h"
 #import "UIViewController+Navigation.h"
 
 #import "DRGBook.h"
@@ -41,7 +41,7 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
     NSMutableArray *library = [[NSMutableArray alloc] init];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:WAS_LAUNCHED_BEFORE] == NO) {
         NSLog(@"Downloading library...");
-        NSArray *bookList = [DRGDownloadManager downloadBookList];
+        NSArray *bookList = [DRGDownloadHelper downloadBookList];
         // Create library (= insert books on context)
         for (NSDictionary *dic in bookList) {
             DRGBook *book = [DRGBook bookFromDictionary:dic withContext:self.stack.context];
@@ -165,9 +165,12 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
 #pragma mark - Selected Book
 
 - (DRGBook *)lastSelectedBook {
+    DRGBook *lastSelectedBook;
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     NSData *uri = [settings objectForKey:LAST_SELECTED_BOOK];
-    DRGBook *lastSelectedBook = [DRGBook unarchiveObjectWithURIRepresentation:uri context:self.stack.context];
+    if (uri) {
+        lastSelectedBook = [DRGBook unarchiveObjectWithURIRepresentation:uri context:self.stack.context];
+    }
     if (lastSelectedBook == nil) {
         lastSelectedBook = [self firstBookOfLibrary];
     }

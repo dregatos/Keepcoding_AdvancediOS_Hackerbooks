@@ -53,6 +53,18 @@
     return book;
 }
 
+#pragma mark - KVO
+
++ (NSArray *)observableKeys {
+    return @[DRGBookRelationships.annotation];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    // Update modification date
+    NSLog(@"Annotation did change");
+}
+
 #pragma mark - Favorite
 
 - (BOOL)isFavorite {
@@ -91,17 +103,6 @@
     }
     
     return list;
-}
-
-#pragma mark - KVO
-
-+ (NSArray *)observableKeys {
-    return @[];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    // Update modification date
 }
 
 #pragma mark - Utils

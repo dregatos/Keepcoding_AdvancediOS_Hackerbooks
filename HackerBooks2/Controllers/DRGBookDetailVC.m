@@ -7,11 +7,17 @@
 //
 
 #import "DRGBookDetailVC.h"
-#import "NotificationKeys.h"
+#import "DRGAnnotationVC.h"
+// models
 #import "DRGBook.h"
 #import "DRGWriter.h"
 #import "DRGCover.h"
 #import "DRGPdf.h"
+#import "DRGAnnotation.h"
+// others
+#import "NotificationKeys.h"
+#import "UIViewController+Navigation.h"
+
 
 @interface DRGBookDetailVC ()
 
@@ -65,6 +71,8 @@
     self.readBtn.selected = self.book.pdf.data ? YES : NO;
     
     [self loadCoverImage];
+    
+    NSLog(@"Book annotation count: %lu", [self.book.annotation count]);
 }
 
 #pragma mark - NSNotification
@@ -113,6 +121,16 @@
     }
     
     // Show pdf file
+}
+
+- (IBAction)newAnnotationBtnPressed:(UIButton *)sender {
+    
+    DRGAnnotationVC *annVC = [[DRGAnnotationVC alloc] initAnnotationForBook:self.book];
+    [self presentViewController:[annVC wrappedInNavigationController] animated:YES completion:nil];
+}
+
+- (IBAction)showAnnotationsBtnPressed:(UIButton *)sender {
+    
 }
 
 #pragma mark - Utils

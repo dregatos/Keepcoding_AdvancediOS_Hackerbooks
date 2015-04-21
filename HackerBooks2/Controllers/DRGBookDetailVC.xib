@@ -85,9 +85,28 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUI-rI-a2K" userLabel="Add annotation">
+                    <rect key="frame" x="20" y="546" width="276" height="30"/>
+                    <state key="normal" title="New annotation">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="newAnnotationBtnPressed:" destination="-1" eventType="touchUpInside" id="G1A-JK-ktl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLm-zm-N7x" userLabel="Show annotations">
+                    <rect key="frame" x="304" y="546" width="276" height="30"/>
+                    <state key="normal" title="Show annotations">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showAnnotationsBtnPressed:" destination="-1" eventType="touchUpInside" id="fSf-x0-qoc"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="cUI-rI-a2K" firstAttribute="width" secondItem="iLm-zm-N7x" secondAttribute="width" id="2lx-ZE-Ud6"/>
                 <constraint firstItem="f2f-kS-u5I" firstAttribute="leading" secondItem="62V-7n-bly" secondAttribute="trailing" constant="8" symbolic="YES" id="38e-8q-lRp"/>
                 <constraint firstItem="62V-7n-bly" firstAttribute="height" secondItem="f2f-kS-u5I" secondAttribute="height" multiplier="2.1" id="5oy-xQ-gHl"/>
                 <constraint firstItem="9ef-Y1-4jV" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="bottom" constant="8" symbolic="YES" id="6mJ-PX-heM"/>
@@ -103,6 +122,7 @@
                 <constraint firstItem="SBk-LD-PkW" firstAttribute="width" secondItem="62V-7n-bly" secondAttribute="width" multiplier="4" id="Hvn-ed-pDe"/>
                 <constraint firstItem="f2f-kS-u5I" firstAttribute="trailing" secondItem="10t-cP-udu" secondAttribute="trailing" id="JQh-nO-uFN"/>
                 <constraint firstItem="9ef-Y1-4jV" firstAttribute="height" secondItem="10t-cP-udu" secondAttribute="height" id="Mnt-ZD-je7"/>
+                <constraint firstAttribute="trailing" secondItem="iLm-zm-N7x" secondAttribute="trailing" constant="20" id="NhD-FA-qoX"/>
                 <constraint firstItem="62V-7n-bly" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="RYD-Z3-Ogr"/>
                 <constraint firstItem="SBk-LD-PkW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RiB-XB-pXe"/>
                 <constraint firstItem="2bd-i2-rcK" firstAttribute="bottom" secondItem="62V-7n-bly" secondAttribute="bottom" id="T1F-df-KWM"/>
@@ -112,9 +132,13 @@
                 <constraint firstItem="2bd-i2-rcK" firstAttribute="trailing" secondItem="62V-7n-bly" secondAttribute="trailing" id="bQA-Ut-dfe"/>
                 <constraint firstItem="2bd-i2-rcK" firstAttribute="top" secondItem="10t-cP-udu" secondAttribute="bottom" constant="8" symbolic="YES" id="bez-OS-XOK"/>
                 <constraint firstItem="SBk-LD-PkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bzU-gf-RWn"/>
+                <constraint firstItem="cUI-rI-a2K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="co4-Tf-6P4"/>
                 <constraint firstItem="62V-7n-bly" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="dE4-oX-2ie"/>
+                <constraint firstItem="iLm-zm-N7x" firstAttribute="leading" secondItem="cUI-rI-a2K" secondAttribute="trailing" constant="8" id="gg0-ug-BsO"/>
                 <constraint firstItem="9Fm-o6-eJQ" firstAttribute="leading" secondItem="62V-7n-bly" secondAttribute="leading" constant="5" id="h4u-ED-X2h"/>
                 <constraint firstItem="f2f-kS-u5I" firstAttribute="trailing" secondItem="9ef-Y1-4jV" secondAttribute="trailing" id="hyO-T0-WMA"/>
+                <constraint firstAttribute="bottom" secondItem="iLm-zm-N7x" secondAttribute="bottom" constant="24" id="iLF-o0-UdU"/>
+                <constraint firstAttribute="bottom" secondItem="cUI-rI-a2K" secondAttribute="bottom" constant="24" id="iVh-qo-wMi"/>
                 <constraint firstItem="62V-7n-bly" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="top" id="jM0-v9-MDC"/>
                 <constraint firstItem="SBk-LD-PkW" firstAttribute="top" secondItem="f2f-kS-u5I" secondAttribute="bottom" id="kMe-Um-iUF"/>
                 <constraint firstItem="2bd-i2-rcK" firstAttribute="height" secondItem="62V-7n-bly" secondAttribute="height" multiplier="0.2" id="qsS-2Z-e28"/>

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DRGDownloadManager : NSObject
+@interface DRGDownloadHelper : NSObject
 
+// Returns the list of books given by the server
 + (NSArray *)downloadBookList;
 
 @end

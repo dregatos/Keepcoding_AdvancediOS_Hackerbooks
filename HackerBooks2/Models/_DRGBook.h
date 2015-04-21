@@ -35,9 +35,9 @@ extern const struct DRGBookRelationships {
 
 //- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) DRGAnnotation *annotation;
+@property (nonatomic, strong) NSSet *annotation;
 
-//- (BOOL)validateAnnotation:(id*)value_ error:(NSError**)error_;
+- (NSMutableSet*)annotationSet;
 
 @property (nonatomic, strong) NSSet *authors;
 
@@ -54,6 +54,14 @@ extern const struct DRGBookRelationships {
 @property (nonatomic, strong) NSSet *tags;
 
 - (NSMutableSet*)tagsSet;
+
+@end
+
+@interface _DRGBook (AnnotationCoreDataGeneratedAccessors)
+- (void)addAnnotation:(NSSet*)value_;
+- (void)removeAnnotation:(NSSet*)value_;
+- (void)addAnnotationObject:(DRGAnnotation*)value_;
+- (void)removeAnnotationObject:(DRGAnnotation*)value_;
 
 @end
 
@@ -78,8 +86,8 @@ extern const struct DRGBookRelationships {
 - (NSString*)primitiveTitle;
 - (void)setPrimitiveTitle:(NSString*)value;
 
-- (DRGAnnotation*)primitiveAnnotation;
-- (void)setPrimitiveAnnotation:(DRGAnnotation*)value;
+- (NSMutableSet*)primitiveAnnotation;
+- (void)setPrimitiveAnnotation:(NSMutableSet*)value;
 
 - (NSMutableSet*)primitiveAuthors;
 - (void)setPrimitiveAuthors:(NSMutableSet*)value;

@@ -8,6 +8,14 @@
 
 @implementation DRGDate
 
-// Custom logic goes here.
++ (instancetype)dateWithContext:(NSManagedObjectContext *)context {
+    
+    DRGDate *nDate = [DRGDate insertInManagedObjectContext:context];
+    
+    nDate.creation = [NSDate date];
+    nDate.modification = nDate.creation;
+    
+    return nDate;
+}
 
 @end
