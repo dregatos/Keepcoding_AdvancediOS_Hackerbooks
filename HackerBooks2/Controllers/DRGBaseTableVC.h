@@ -7,8 +7,6 @@
 //
 
 #import "AGTCoreDataTableViewController.h"
-#import "Settings.h"
-#import "NotificationKeys.h"
 
 @class DRGBook;
 @class DRGTag;

@@ -9,9 +9,18 @@
 #import "DRGBaseTableVC.h"
 #import "DRGBook.h"
 #import "DRGTag.h"
+#import "Settings.h"
+#import "NotificationKeys.h"
 
 @implementation DRGBaseTableVC
 
+#pragma mark - View events
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+}
 
 #pragma mark - UITableView DataSource
 
@@ -42,7 +51,9 @@
     
     // Notify BOOK was selected - ONLY FOR iPad VERSION
     NSDictionary *dict = @{BOOK_KEY:book};
-    [[NSNotificationCenter defaultCenter] postNotificationName:DID_SELECT_BOOK_NOTIFICATION object:self userInfo:dict];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DID_SELECT_BOOK_NOTIFICATION
+                                                        object:self
+                                                      userInfo:dict];
     
     // Remember last selected book
     NSData *uri = [book archiveURIRepresentation];

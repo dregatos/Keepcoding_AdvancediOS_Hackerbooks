@@ -32,6 +32,7 @@
 		0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4081ADD725500F80DB7 /* DRGBookListVC.m */; };
 		0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */; };
 		0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */; };
+		070F0B7D1AE7926D0068702B /* book-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 070F0B7C1AE7926D0068702B /* book-placeholder.jpg */; };
 		0738A8AB1ADC0B4700CB87FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AA1ADC0B4700CB87FC /* main.m */; };
 		0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */; };
 		0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8AF1ADC0B4700CB87FC /* Images.xcassets */; };
@@ -113,6 +114,7 @@
 		0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataStack.m; path = "AGBO Utils/AGTCoreDataStack.m"; sourceTree = "<group>"; };
 		0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataTableViewController.h; path = "AGBO Utils/AGTCoreDataTableViewController.h"; sourceTree = "<group>"; };
 		0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataTableViewController.m; path = "AGBO Utils/AGTCoreDataTableViewController.m"; sourceTree = "<group>"; };
+		070F0B7C1AE7926D0068702B /* book-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "book-placeholder.jpg"; sourceTree = "<group>"; };
 		0738A8A51ADC0B4700CB87FC /* HackerBooks2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerBooks2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0738A8A91ADC0B4700CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738A8AA1ADC0B4700CB87FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -246,7 +248,6 @@
 		0704C4031ADD71A800F80DB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0704C40D1ADD72A000F80DB7 /* AGBO */,
 				0779FC881AE102EC008412A2 /* DRGBaseTableVC.h */,
 				0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */,
 				0704C4071ADD725500F80DB7 /* DRGBookListVC.h */,
@@ -267,6 +268,8 @@
 		0704C40D1ADD72A000F80DB7 /* AGBO */ = {
 			isa = PBXGroup;
 			children = (
+				0704C40A1ADD729200F80DB7 /* AGTCoreDataStack.h */,
+				0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */,
 				0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */,
 				0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */,
 			);
@@ -305,6 +308,7 @@
 		0738A8A71ADC0B4700CB87FC /* HackerBooks2 */ = {
 			isa = PBXGroup;
 			children = (
+				070F0B7C1AE7926D0068702B /* book-placeholder.jpg */,
 				076130BD1ADFA9F7002D80A3 /* Settings.h */,
 				0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */,
 				0749BB061AE552B700DD0C5F /* ErrorDomains.h */,
@@ -312,8 +316,10 @@
 				0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */,
 				0738A8AF1ADC0B4700CB87FC /* Images.xcassets */,
 				0738A8B11ADC0B4700CB87FC /* LaunchScreen.xib */,
+				0704C40D1ADD72A000F80DB7 /* AGBO */,
 				0704C4111ADD781800F80DB7 /* Categories */,
 				0738A8C81ADC0DAC00CB87FC /* Models */,
+				07C7715D1AE6627A00835F84 /* Views */,
 				0704C4031ADD71A800F80DB7 /* Controllers */,
 				0738A8A81ADC0B4700CB87FC /* Supporting Files */,
 			);
@@ -351,12 +357,17 @@
 			children = (
 				0704C4001ADD51C400F80DB7 /* DRGDownloadHelper.h */,
 				0704C4011ADD51C400F80DB7 /* DRGDownloadHelper.m */,
-				0704C40A1ADD729200F80DB7 /* AGTCoreDataStack.h */,
-				0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */,
 				0738A8CC1ADC0E6B00CB87FC /* Library.xcdatamodeld */,
 				0704C3F51ADD2AF800F80DB7 /* Mogenerator */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		07C7715D1AE6627A00835F84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +454,7 @@
 				079E3A471AE5342F00018ED7 /* DRGAnnotationVC.xib in Resources */,
 				0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */,
 				0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */,
+				070F0B7D1AE7926D0068702B /* book-placeholder.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

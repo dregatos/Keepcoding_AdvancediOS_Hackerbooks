@@ -14,8 +14,6 @@
 
 @implementation DRGBook
 
-// Custom logic goes here.
-
 #pragma mark - Factory
 
 + (instancetype)bookFromDictionary:(NSDictionary *)JSON
@@ -56,18 +54,21 @@
 #pragma mark - KVO
 
 + (NSArray *)observableKeys {
-    return @[DRGBookRelationships.annotation];
+    return @[DRGBookRelationships.annotations, DRGBookRelationships.tags];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
-    // Update modification date
-    NSLog(@"Annotation did change");
+    if ([keyPath isEqualToString:@"annotations"]) {
+        NSLog(@"Annotation did change");
+    } else if ([keyPath isEqualToString:@"tags"]) {
+        NSLog(@"Tag did change");
+    }
 }
 
-#pragma mark - Favorite
+#pragma mark - Helpers
 
-- (BOOL)isFavorite {
+- (BOOL)isFavoriteBook {
     // Is it tagged as Favorite?
     for (DRGTag *tag in self.tags) {
         DRGLabel *label = tag.label;
@@ -77,6 +78,10 @@
     }
     
     return NO;
+}
+
+- (BOOL)isPDFAvailable {
+    return self.pdf.data ? YES : NO;
 }
 
 - (NSArray *)authorList {
@@ -102,8 +107,21 @@
         }
     }
     
-    return list;
+    return [list sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 }
+
+- (NSArray *)tagListExceptFavorite {
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    NSArray *tags = [self.tags allObjects];
+    for (DRGTag *tag in tags) {
+        if (tag.label.name && ![tag.label.name isEqualToString:@""] && ![tag.label.name isEqualToString:FAVORITE_LABEL]) {
+            [list addObject:tag.label.name];
+        }
+    }
+    
+    return [list sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+}
+
 
 #pragma mark - Utils
 

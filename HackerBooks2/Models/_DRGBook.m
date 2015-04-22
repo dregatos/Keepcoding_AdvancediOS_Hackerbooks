@@ -8,7 +8,7 @@ const struct DRGBookAttributes DRGBookAttributes = {
 };
 
 const struct DRGBookRelationships DRGBookRelationships = {
-	.annotation = @"annotation",
+	.annotations = @"annotations",
 	.authors = @"authors",
 	.cover = @"cover",
 	.pdf = @"pdf",
@@ -46,14 +46,14 @@ const struct DRGBookRelationships DRGBookRelationships = {
 
 @dynamic title;
 
-@dynamic annotation;
+@dynamic annotations;
 
-- (NSMutableSet*)annotationSet {
-	[self willAccessValueForKey:@"annotation"];
+- (NSMutableSet*)annotationsSet {
+	[self willAccessValueForKey:@"annotations"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"annotation"];
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"annotations"];
 
-	[self didAccessValueForKey:@"annotation"];
+	[self didAccessValueForKey:@"annotations"];
 	return result;
 }
 

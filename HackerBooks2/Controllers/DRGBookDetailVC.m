@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 DRG. All rights reserved.
 //
 
+@import QuartzCore;
+
 #import "DRGBookDetailVC.h"
 #import "DRGAnnotationVC.h"
 // models
@@ -18,6 +20,7 @@
 #import "NotificationKeys.h"
 #import "UIViewController+Navigation.h"
 
+#define KVO_tags @"tags"
 
 @interface DRGBookDetailVC ()
 
@@ -46,39 +49,51 @@
     self.title = @"Hacker Books 2.0";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    // cover container appearance
+    self.coverContainer.layer.borderWidth = 2.;
+    self.coverContainer.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    self.coverContainer.clipsToBounds = YES;
+    self.coverImView.image = [UIImage imageNamed:@"book-placeholder.jpg"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [self updateViewContent];
-
+    
     // Notifications **********************
     [self registerForNotifications];
+    
+    // KVOs **********************
+    [self registerForKVOs];   
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
     [self unregisterForNotifications];
+    [self unregisterForKVOs];
 }
 
-#pragma mark -
+#pragma mark - Sync view <-> model
 
 - (void)updateViewContent {
     
-    self.titleLbl.text = self.book.title;
-    self.authorsLbl.text = [[self.book authorList] componentsJoinedByString:@", "];
-    self.tagsLbl.text = [[self.book tagList] componentsJoinedByString:@", "];
-    self.readBtn.selected = self.book.pdf.data ? YES : NO;
+    self.tagsLbl.text = [[self.book tagListExceptFavorite] componentsJoinedByString:@", "];
+    self.favoriteBtn.selected = [self.book isFavoriteBook];
+    self.readBtn.selected = [self.book isPDFAvailable];
+
+    // cover
+    [self performSelector:@selector(loadCoverImage) withObject:nil afterDelay:0.3];
     
-    [self loadCoverImage];
-    
-    NSLog(@"Book annotation count: %lu", [self.book.annotation count]);
+    NSLog(@"Book annotation count: %lu", [self.book.annotations count]);
 }
 
 #pragma mark - NSNotification
 
 - (void)dealloc {
     [self unregisterForNotifications];
+    [self unregisterForKVOs];
 }
 
 - (void)registerForNotifications {
@@ -94,12 +109,38 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+// DID_SELECT_BOOK_NOTIFICATION
 - (void)notifyNewBookWasSelected:(NSNotification *)notification {
     
     DRGBook *book = [notification.userInfo objectForKey:BOOK_KEY];
     self.book = book;
 
     [self updateViewContent];
+}
+
+#pragma mark - KVOs
+
+- (void)setBook:(DRGBook *)book {
+    
+    // KVOs **********************
+    [self unregisterForKVOs];  // unregister for previous book
+    _book = book;
+    [self registerForKVOs];    // register for new one
+}
+
+- (void)registerForKVOs {
+    [self.book addObserver:self forKeyPath:KVO_tags options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)unregisterForKVOs {
+    [self.book removeObserver:self forKeyPath:KVO_tags];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:KVO_tags]) {
+        // Do something after observed_obj's observed_property was changed
+        [self updateViewContent];
+    }
 }
 
 #pragma mark - IBActions
@@ -136,20 +177,27 @@
 #pragma mark - Utils
 
 - (void)loadCoverImage {
-    self.coverImView.image = nil;
+    //self.coverImView.image = nil;
     if (!self.book.cover.data) {
         [self.coverActivityIndicator startAnimating];
     }
     [self.book.cover fetchCoverImageWithCompletion:^(UIImage *image) {
-        [self.coverActivityIndicator stopAnimating];
-        self.coverImView.image = image;
+        UIImage *newImage = image ? image : [UIImage imageNamed:@"book-placeholder.jpg"];
+        [UIView transitionWithView:self.coverImView
+                          duration:0.3
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            self.coverImView.image = newImage;
+                        } completion:^(BOOL finished) {
+                            [self.coverActivityIndicator stopAnimating];
+                        }];
     }];
 }
 
 - (void)loadPDFFile {
     [self.book.pdf fetchPDFDataWithCompletion:^(NSData *pdfData) {
         NSLog(@"PDF file is ready");
-        self.readBtn.selected = self.book.pdf.data ? YES : NO;
+        self.readBtn.selected = [self.book isPDFAvailable];
     }];
 }
 
@@ -165,6 +213,5 @@
         self.navigationItem.leftBarButtonItem = nil;
     }
 }
-
 
 @end

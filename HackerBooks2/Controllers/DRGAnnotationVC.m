@@ -65,6 +65,8 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
     [self unregisterForNotifications];   //optionally we can unregister a notification when the view disappears
 }
 
@@ -167,8 +169,8 @@
                                                     withContext:self.book.managedObjectContext];
     if (annotation) {
         // Add annotation into context
-        [self.book addAnnotationObject:annotation];
-        NSLog(@"New Book annotation count: %lu", [self.book.annotation count]);
+        [self.book addAnnotationsObject:annotation];
+        NSLog(@"New Book annotation count: %lu", [self.book.annotations count]);
         completionBlock(YES,nil);
     } else {
         NSLog(@"Annotation creation failed!!");

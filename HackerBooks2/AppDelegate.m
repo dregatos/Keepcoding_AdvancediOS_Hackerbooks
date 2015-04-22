@@ -18,9 +18,9 @@
 #import "DRGBookListVC.h"
 #import "DRGBookDetailVC.h"
 
-NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
-
 @interface AppDelegate ()
+
+@property (nonatomic, strong) AGTCoreDataStack *stack;
 
 @end
 
@@ -143,6 +143,9 @@ NSString * const WAS_LAUNCHED_BEFORE = @"WAS_LAUNCHED_BEFORE";
 - (NSFetchRequest *)libraryFetchRequest {
     // Request
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGTag entityName]];
+//    NSSortDescriptor *sortLabel = [NSSortDescriptor sortDescriptorWithKey:@"label"
+//                                                                ascending:YES
+//                                                                 selector:@selector(compare:)];
     NSSortDescriptor *sortLabel = [NSSortDescriptor sortDescriptorWithKey:@"label.name"
                                                                 ascending:YES
                                                                  selector:@selector(caseInsensitiveCompare:)];

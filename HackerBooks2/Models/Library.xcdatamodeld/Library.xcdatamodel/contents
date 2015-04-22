@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Annotation" representedClassName="DRGAnnotation" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="annotation" inverseEntity="Book" syncable="YES"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="annotations" inverseEntity="Book" syncable="YES"/>
         <relationship name="date" maxCount="1" deletionRule="Cascade" destinationEntity="Date" inverseName="annotation" inverseEntity="Date" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="annotation" inverseEntity="Location" syncable="YES"/>
         <relationship name="photo" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="annotation" inverseEntity="Photo" syncable="YES"/>
@@ -14,7 +14,7 @@
     </entity>
     <entity name="Book" representedClassName="DRGBook" syncable="YES">
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="annotation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Annotation" inverseName="book" inverseEntity="Annotation" syncable="YES"/>
+        <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Annotation" inverseName="book" inverseEntity="Annotation" syncable="YES"/>
         <relationship name="authors" toMany="YES" deletionRule="Nullify" destinationEntity="Author" inverseName="book" inverseEntity="Author" syncable="YES"/>
         <relationship name="cover" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Cover" inverseName="book" inverseEntity="Cover" syncable="YES"/>
         <relationship name="pdf" maxCount="1" deletionRule="Cascade" destinationEntity="Pdf" inverseName="book" inverseEntity="Pdf" syncable="YES"/>
@@ -59,7 +59,7 @@
     <elements>
         <element name="Annotation" positionX="-180" positionY="-846" width="128" height="133"/>
         <element name="Author" positionX="-218" positionY="-693" width="128" height="73"/>
-        <element name="Book" positionX="-486" positionY="-763" width="128" height="133"/>
+        <element name="Book" positionX="-486" positionY="-763" width="128" height="135"/>
         <element name="BookResource" positionX="-560" positionY="-909" width="128" height="73"/>
         <element name="Cover" positionX="-731" positionY="-774" width="128" height="58"/>
         <element name="Date" positionX="36" positionY="-909" width="128" height="88"/>

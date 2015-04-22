@@ -6,10 +6,12 @@
 + (instancetype)bookFromDictionary:(NSDictionary *)JSON
                        withContext:(NSManagedObjectContext *)context;
 
-- (BOOL)isFavorite;
+- (BOOL)isFavoriteBook;
+- (BOOL)isPDFAvailable;
 
 - (NSArray *)authorList;
 - (NSArray *)tagList;
+- (NSArray *)tagListExceptFavorite;
 
 
 @end

@@ -40,7 +40,7 @@
 }
 
 - (void)favoriteBook:(DRGBook *)book {
-    if ([book isFavorite]) {
+    if ([book isFavoriteBook]) {
         DRGTag *tag = [DRGTag favoriteTagForBook:book];
         [self.fetchedResultsController.managedObjectContext deleteObject:tag];
     } else {

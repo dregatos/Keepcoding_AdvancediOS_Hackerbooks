@@ -7,4 +7,4 @@
 //
 
 #define LAST_SELECTED_BOOK                      @"LAST_SELECTED_BOOK"
-
+#define WAS_LAUNCHED_BEFORE                     @"WAS_LAUNCHED_BEFORE"
