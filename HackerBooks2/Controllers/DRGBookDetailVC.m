@@ -10,11 +10,11 @@
 
 #import "DRGBookDetailVC.h"
 #import "DRGAnnotationVC.h"
+#import "DRGSimplePDFVC.h"
 // models
 #import "DRGBook.h"
 #import "DRGWriter.h"
 #import "DRGCover.h"
-#import "DRGPdf.h"
 #import "DRGAnnotation.h"
 // others
 #import "NotificationKeys.h"
@@ -46,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"Hacker Books 2.0";
+    self.title = @"Book details";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     // cover container appearance
@@ -81,7 +81,6 @@
     
     self.tagsLbl.text = [[self.book tagListExceptFavorite] componentsJoinedByString:@", "];
     self.favoriteBtn.selected = [self.book isFavoriteBook];
-    self.readBtn.selected = [self.book isPDFAvailable];
 
     // cover
     [self performSelector:@selector(loadCoverImage) withObject:nil afterDelay:0.3];
@@ -155,13 +154,9 @@
 
 - (IBAction)readBtnPressed:(UIButton *)sender {
     
-    if (!sender.selected) {
-        // Download pdf file
-        NSLog(@"Download PDF file");
-        [self loadPDFFile];
-    }
-    
     // Show pdf file
+    DRGSimplePDFVC *pdfVC = [[DRGSimplePDFVC alloc] initWithBook:self.book];
+    [self.navigationController pushViewController:pdfVC animated:YES];
 }
 
 - (IBAction)newAnnotationBtnPressed:(UIButton *)sender {
@@ -191,13 +186,6 @@
                         } completion:^(BOOL finished) {
                             [self.coverActivityIndicator stopAnimating];
                         }];
-    }];
-}
-
-- (void)loadPDFFile {
-    [self.book.pdf fetchPDFDataWithCompletion:^(NSData *pdfData) {
-        NSLog(@"PDF file is ready");
-        self.readBtn.selected = [self.book isPDFAvailable];
     }];
 }
 

@@ -33,6 +33,8 @@
 		0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */; };
 		0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */; };
 		070F0B7D1AE7926D0068702B /* book-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 070F0B7C1AE7926D0068702B /* book-placeholder.jpg */; };
+		070F0B811AE79D5E0068702B /* DRGSimplePDFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F0B7F1AE79D5E0068702B /* DRGSimplePDFVC.m */; };
+		070F0B821AE79D5E0068702B /* DRGSimplePDFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070F0B801AE79D5E0068702B /* DRGSimplePDFVC.xib */; };
 		0738A8AB1ADC0B4700CB87FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AA1ADC0B4700CB87FC /* main.m */; };
 		0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */; };
 		0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0738A8AF1ADC0B4700CB87FC /* Images.xcassets */; };
@@ -115,6 +117,9 @@
 		0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataTableViewController.h; path = "AGBO Utils/AGTCoreDataTableViewController.h"; sourceTree = "<group>"; };
 		0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataTableViewController.m; path = "AGBO Utils/AGTCoreDataTableViewController.m"; sourceTree = "<group>"; };
 		070F0B7C1AE7926D0068702B /* book-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "book-placeholder.jpg"; sourceTree = "<group>"; };
+		070F0B7E1AE79D5E0068702B /* DRGSimplePDFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRGSimplePDFVC.h; sourceTree = "<group>"; };
+		070F0B7F1AE79D5E0068702B /* DRGSimplePDFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRGSimplePDFVC.m; sourceTree = "<group>"; };
+		070F0B801AE79D5E0068702B /* DRGSimplePDFVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DRGSimplePDFVC.xib; sourceTree = "<group>"; };
 		0738A8A51ADC0B4700CB87FC /* HackerBooks2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerBooks2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0738A8A91ADC0B4700CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0738A8AA1ADC0B4700CB87FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -261,6 +266,9 @@
 				079E3A431AE5342F00018ED7 /* DRGAnnotationVC.h */,
 				079E3A441AE5342F00018ED7 /* DRGAnnotationVC.m */,
 				079E3A451AE5342F00018ED7 /* DRGAnnotationVC.xib */,
+				070F0B7E1AE79D5E0068702B /* DRGSimplePDFVC.h */,
+				070F0B7F1AE79D5E0068702B /* DRGSimplePDFVC.m */,
+				070F0B801AE79D5E0068702B /* DRGSimplePDFVC.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 				0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */,
 				0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */,
 				070F0B7D1AE7926D0068702B /* book-placeholder.jpg in Resources */,
+				070F0B821AE79D5E0068702B /* DRGSimplePDFVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +499,7 @@
 				0704C3F31ADD2AD100F80DB7 /* DRGWriter.m in Sources */,
 				0704C3F11ADD2AD100F80DB7 /* DRGPhoto.m in Sources */,
 				0704C4021ADD51C400F80DB7 /* DRGDownloadHelper.m in Sources */,
+				070F0B811AE79D5E0068702B /* DRGSimplePDFVC.m in Sources */,
 				0704C3FE1ADD4C0300F80DB7 /* DRGLabel.m in Sources */,
 				0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */,
 				0779FC931AE13D0A008412A2 /* DRGLocation.m in Sources */,

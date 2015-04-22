@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"Library";
+    self.title = @"Hacker Books 2.0";
     
     // Search Results Controller
     [self configureSearchController];
