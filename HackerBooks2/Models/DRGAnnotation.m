@@ -37,7 +37,7 @@
     if (![NSString isEmpty:text]) { ann.text = text; }
     // image
     ann.photo = [DRGPhoto insertInManagedObjectContext:context];
-    if (!image) { ann.photo.image = image; }
+    if (image) { ann.photo.image = image; }
     // date
     ann.date = [DRGDate dateWithContext:context];
     // location

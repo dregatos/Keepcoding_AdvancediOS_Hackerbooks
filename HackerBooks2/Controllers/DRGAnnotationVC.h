@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *textAndPhotoContainer;
 @property (weak, nonatomic) IBOutlet UITextView *textInput;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *photoActivityIndicator;
 // Autolayout
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomContainerConstrain;
 

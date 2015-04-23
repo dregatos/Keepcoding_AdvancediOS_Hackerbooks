@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="backgroundView" destination="cb8-ri-EKL" id="xsi-UJ-pm9"/>
                 <outlet property="bottomContainerConstrain" destination="kYo-zZ-yvt" id="qmY-dH-Fjj"/>
+                <outlet property="photoActivityIndicator" destination="yzu-5t-ImQ" id="wgb-uT-hfZ"/>
                 <outlet property="photoView" destination="1NE-Iz-HaQ" id="qQj-J4-H98"/>
                 <outlet property="textAndPhotoContainer" destination="xL6-Bn-Uby" id="DrC-E5-KyW"/>
                 <outlet property="textInput" destination="6p1-CR-cHT" id="7f3-3f-wgM"/>
@@ -24,24 +25,24 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Annotation title" textAlignment="justified" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NcH-IV-mhW" userLabel="Title input">
-                    <rect key="frame" x="20" y="20" width="560" height="51"/>
+                    <rect key="frame" x="20" y="40" width="560" height="51"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="51" id="X9h-MJ-EIq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL6-Bn-Uby" userLabel="Text&amp;Photo container" customClass="UIControl">
-                    <rect key="frame" x="20" y="79" width="560" height="501"/>
+                    <rect key="frame" x="20" y="99" width="560" height="481"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="6p1-CR-cHT" userLabel="Text input">
-                            <rect key="frame" x="20" y="25" width="256" height="456"/>
+                            <rect key="frame" x="20" y="25" width="256" height="436"/>
                             <color key="backgroundColor" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="1NE-Iz-HaQ" userLabel="photo view">
-                            <rect key="frame" x="284" y="25" width="256" height="456"/>
+                            <rect key="frame" x="284" y="25" width="256" height="436"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <gestureRecognizers/>
                             <connections>
@@ -60,6 +61,9 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-5t-ImQ">
+                            <rect key="frame" x="394" y="224" width="37" height="37"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -72,7 +76,9 @@
                         <constraint firstItem="6p1-CR-cHT" firstAttribute="leading" secondItem="nYv-XB-UOG" secondAttribute="leading" id="QbG-j2-44I"/>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="width" secondItem="6p1-CR-cHT" secondAttribute="width" id="Tlf-bI-LVu"/>
                         <constraint firstItem="6p1-CR-cHT" firstAttribute="trailing" secondItem="nYv-XB-UOG" secondAttribute="trailing" id="VHY-kj-y2f"/>
+                        <constraint firstItem="yzu-5t-ImQ" firstAttribute="centerY" secondItem="1NE-Iz-HaQ" secondAttribute="centerY" constant="-0.5" id="h7v-CB-qPa"/>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="leading" secondItem="6p1-CR-cHT" secondAttribute="trailing" constant="8" symbolic="YES" id="qfu-wF-COC"/>
+                        <constraint firstItem="yzu-5t-ImQ" firstAttribute="centerX" secondItem="1NE-Iz-HaQ" secondAttribute="centerX" constant="0.5" id="qm2-MH-pUx"/>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="centerY" secondItem="6p1-CR-cHT" secondAttribute="centerY" id="qtf-zA-74y"/>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="trailing" secondItem="uv5-BU-lth" secondAttribute="trailing" id="sQ7-2b-KWL"/>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="leading" secondItem="uv5-BU-lth" secondAttribute="leading" id="tz7-cs-cC4"/>
@@ -82,10 +88,17 @@
                         <action selector="hideKeyboard:" destination="-1" eventType="touchUpInside" id="y4P-42-U2a"/>
                     </connections>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new annotation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKs-4p-tbO">
+                    <rect key="frame" x="20" y="21" width="157" height="19"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="NcH-IV-mhW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="1Jm-Ew-E4Z"/>
+                <constraint firstItem="NcH-IV-mhW" firstAttribute="top" secondItem="gKs-4p-tbO" secondAttribute="bottom" id="10R-93-frZ"/>
+                <constraint firstItem="NcH-IV-mhW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="1Jm-Ew-E4Z"/>
                 <constraint firstAttribute="trailing" secondItem="NcH-IV-mhW" secondAttribute="trailing" constant="20" symbolic="YES" id="9vK-Se-NS0"/>
                 <constraint firstAttribute="trailing" secondItem="xL6-Bn-Uby" secondAttribute="trailing" constant="20" symbolic="YES" id="CWh-FH-ns3"/>
                 <constraint firstItem="cb8-ri-EKL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dUk-jS-RtR"/>
@@ -96,6 +109,7 @@
                 <constraint firstItem="NcH-IV-mhW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="pGX-zn-m2S"/>
                 <constraint firstItem="xL6-Bn-Uby" firstAttribute="top" secondItem="NcH-IV-mhW" secondAttribute="bottom" constant="8" symbolic="YES" id="prm-oL-Gbr"/>
                 <constraint firstAttribute="bottom" secondItem="cb8-ri-EKL" secondAttribute="bottom" id="qSy-Om-TcP"/>
+                <constraint firstItem="NcH-IV-mhW" firstAttribute="leading" secondItem="gKs-4p-tbO" secondAttribute="leading" id="sLJ-mG-URQ"/>
             </constraints>
             <connections>
                 <action selector="hideKeyboard:" destination="-1" eventType="touchUpInside" id="uMJ-J6-8o8"/>

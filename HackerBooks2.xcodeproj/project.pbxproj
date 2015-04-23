@@ -47,6 +47,9 @@
 		0749AAA41ADEB9E9002563C2 /* DRGBookDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */; };
 		0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */; };
 		0749AAA81ADEBAA3002563C2 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */; };
+		074D13671AE92CD100D2565A /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D13621AE92CD100D2565A /* UIImage+Alpha.m */; };
+		074D13681AE92CD100D2565A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D13641AE92CD100D2565A /* UIImage+Resize.m */; };
+		074D13691AE92CD100D2565A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D13661AE92CD100D2565A /* UIImage+RoundedCorner.m */; };
 		0779FC871AE0FFD0008412A2 /* DRGSearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */; };
 		0779FC8A1AE102EC008412A2 /* DRGBaseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */; };
 		0779FC8D1AE10C08008412A2 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC8C1AE10C08008412A2 /* NSString+Validation.m */; };
@@ -145,6 +148,12 @@
 		0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGBookDetailVCDelegate.h; path = Controllers/DRGBookDetailVCDelegate.h; sourceTree = "<group>"; };
 		0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
 		0749BB061AE552B700DD0C5F /* ErrorDomains.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorDomains.h; sourceTree = "<group>"; };
+		074D13611AE92CD100D2565A /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Alpha.h"; path = "Categories/UIImage+Alpha.h"; sourceTree = "<group>"; };
+		074D13621AE92CD100D2565A /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "Categories/UIImage+Alpha.m"; sourceTree = "<group>"; };
+		074D13631AE92CD100D2565A /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "Categories/UIImage+Resize.h"; sourceTree = "<group>"; };
+		074D13641AE92CD100D2565A /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "Categories/UIImage+Resize.m"; sourceTree = "<group>"; };
+		074D13651AE92CD100D2565A /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RoundedCorner.h"; path = "Categories/UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		074D13661AE92CD100D2565A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "Categories/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		076130BD1ADFA9F7002D80A3 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		0779FC851AE0FFD0008412A2 /* DRGSearchResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGSearchResultsVC.h; path = Controllers/DRGSearchResultsVC.h; sourceTree = "<group>"; };
 		0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGSearchResultsVC.m; path = Controllers/DRGSearchResultsVC.m; sourceTree = "<group>"; };
@@ -284,6 +293,12 @@
 		0704C4111ADD781800F80DB7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				074D13611AE92CD100D2565A /* UIImage+Alpha.h */,
+				074D13621AE92CD100D2565A /* UIImage+Alpha.m */,
+				074D13631AE92CD100D2565A /* UIImage+Resize.h */,
+				074D13641AE92CD100D2565A /* UIImage+Resize.m */,
+				074D13651AE92CD100D2565A /* UIImage+RoundedCorner.h */,
+				074D13661AE92CD100D2565A /* UIImage+RoundedCorner.m */,
 				0749AAA61ADEBAA3002563C2 /* UIViewController+Navigation.h */,
 				0749AAA71ADEBAA3002563C2 /* UIViewController+Navigation.m */,
 				0779FC8B1AE10C08008412A2 /* NSString+Validation.h */,
@@ -509,6 +524,7 @@
 				0704C3F21ADD2AD100F80DB7 /* DRGTag.m in Sources */,
 				0704C3F01ADD2AD100F80DB7 /* DRGPdf.m in Sources */,
 				0704C3F31ADD2AD100F80DB7 /* DRGWriter.m in Sources */,
+				074D13691AE92CD100D2565A /* UIImage+RoundedCorner.m in Sources */,
 				0704C3F11ADD2AD100F80DB7 /* DRGPhoto.m in Sources */,
 				0704C4021ADD51C400F80DB7 /* DRGDownloadHelper.m in Sources */,
 				070F0B811AE79D5E0068702B /* DRGSimplePDFVC.m in Sources */,
@@ -519,8 +535,10 @@
 				0704C3EB1ADD2AD100F80DB7 /* DRGAuthor.m in Sources */,
 				0704C3CF1ADD297D00F80DB7 /* _DRGCover.m in Sources */,
 				0704C3CE1ADD297D00F80DB7 /* _DRGBook.m in Sources */,
+				074D13681AE92CD100D2565A /* UIImage+Resize.m in Sources */,
 				0749AAA81ADEBAA3002563C2 /* UIViewController+Navigation.m in Sources */,
 				0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */,
+				074D13671AE92CD100D2565A /* UIImage+Alpha.m in Sources */,
 				0704C3FB1ADD4BF700F80DB7 /* _DRGLabel.m in Sources */,
 				0738A8AB1ADC0B4700CB87FC /* main.m in Sources */,
 				0704C3EE1ADD2AD100F80DB7 /* DRGDate.m in Sources */,
