@@ -15,11 +15,11 @@
 // IBOutles
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UITextField *titleInput;
+@property (weak, nonatomic) IBOutlet UIView *textAndPhotoContainer;
 @property (weak, nonatomic) IBOutlet UITextView *textInput;
-@property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
 // Autolayout
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomPhotoConstrain;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomContainerConstrain;
 
 - (instancetype)initAnnotationForBook:(DRGBook *)aBook;
 

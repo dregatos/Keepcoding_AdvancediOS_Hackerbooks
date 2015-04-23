@@ -15,6 +15,7 @@
 
 #import "DRGBook.h"
 #import "DRGTag.h"
+#import "DRGLabel.h"
 #import "DRGBookListVC.h"
 #import "DRGBookDetailVC.h"
 
@@ -192,6 +193,5 @@
     DRGTag *firstTag = [results firstObject];
     return firstTag.book;
 }
-
 
 @end

@@ -6,17 +6,18 @@
 //  Copyright (c) 2015 DRG. All rights reserved.
 //
 
+@import QuartzCore;
+
 #import "DRGAnnotationVC.h"
 #import "DRGBook.h"
 #import "DRGAnnotation.h"
 #import "ErrorDomains.h"
 #import "NSString+Validation.h"
 
-#define VERTICAL_SPACE  8
-
 @interface DRGAnnotationVC () <UITextFieldDelegate, UITextViewDelegate>
 
 @property (nonatomic, strong) DRGBook *book;
+@property (nonatomic, strong) UIImage *photo;
 
 @end
 
@@ -42,6 +43,8 @@
     
     self.title = @"New Annotation";
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.textInput.layer.cornerRadius = 5.;
+    self.textInput.layer.masksToBounds = YES;
     
     // Delegates
     self.titleInput.delegate = self;
@@ -103,10 +106,10 @@
     
     // Animation
     double duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    float distance = (CGRectGetMaxY(self.textInput.frame) - (self.view.bounds.size.height-kbFrame.size.height)) + VERTICAL_SPACE;
     [self.view setNeedsLayout];
     [UIView animateWithDuration:duration animations:^{
-        self.bottomPhotoConstrain.constant += distance;
+        // We are NOT animating nothing for now
+        self.bottomContainerConstrain.constant = 20 + kbFrame.size.height;
         [self.view layoutIfNeeded];
     }];
 }
@@ -114,12 +117,12 @@
 // UIKeyboardWillHideNotification
 - (void)notifyKeyboardWillHide:(NSNotification *)notification {
     
-    // Get Keyboard frame
     // Animation
     double duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     [self.view setNeedsLayout];
     [UIView animateWithDuration:duration animations:^{
-        self.bottomPhotoConstrain.constant = VERTICAL_SPACE;
+        // We are NOT animating nothing for now
+        self.bottomContainerConstrain.constant = 20;
         [self.view layoutIfNeeded];
     }];
 }
@@ -130,7 +133,7 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)cameraBtnPressed:(UIBarButtonItem *)sender {
+- (IBAction)addPhoto:(UITapGestureRecognizer *)sender {
     
 }
 
@@ -141,10 +144,11 @@
 - (IBAction)saveBtnPressed:(UIBarButtonItem *)sender {
     
     if ([NSString isEmpty:self.titleInput.text]) {
-        NSLog(@"Annotation must have a title");
-        
-    } else if ([NSString isEmpty:self.textInput.text] && !self.photo.image) {
-        NSLog(@"Annotation must have a text OR a photo");
+        NSLog(@"New annotations must have a title");
+        [self showAlertWithMessage:@"Annotation must have a title"];
+    } else if ([NSString isEmpty:self.textInput.text] && !self.photo) {
+        NSLog(@"Annotations must have a text OR a photo");
+        [self showAlertWithMessage:@"Annotation must have a text OR a photo"];
     } else {
         [self hideKeyboard:nil];
         [self saveAnnotationWithCompletion:^(BOOL success, NSError *error) {
@@ -152,6 +156,7 @@
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {
                 NSLog(@"Error: %@", error.userInfo);
+                [self showAlertWithMessage:@"Annotation creation failed. Please try again"];
             }
         }];
     }
@@ -187,12 +192,20 @@
     
 }
 
+- (void)showAlertWithMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okBtn = [UIAlertAction actionWithTitle:@"OK"
+                                                    style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * action) {
+                                                      [alert dismissViewControllerAnimated:YES completion:nil];
+                                                  }];
+    [alert addAction:okBtn];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    [textField resignFirstResponder];
     
     return YES;
 }

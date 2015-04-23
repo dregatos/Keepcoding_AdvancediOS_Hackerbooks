@@ -2,15 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DRGAnnotationVC">
             <connections>
                 <outlet property="backgroundView" destination="cb8-ri-EKL" id="xsi-UJ-pm9"/>
-                <outlet property="bottomPhotoConstrain" destination="9HZ-xJ-giu" id="BTZ-ga-Adv"/>
-                <outlet property="photo" destination="1NE-Iz-HaQ" id="Cty-BD-B7l"/>
+                <outlet property="bottomContainerConstrain" destination="kYo-zZ-yvt" id="qmY-dH-Fjj"/>
+                <outlet property="photoView" destination="1NE-Iz-HaQ" id="qQj-J4-H98"/>
+                <outlet property="textAndPhotoContainer" destination="xL6-Bn-Uby" id="DrC-E5-KyW"/>
                 <outlet property="textInput" destination="6p1-CR-cHT" id="7f3-3f-wgM"/>
                 <outlet property="titleInput" destination="NcH-IV-mhW" id="hNk-bh-N5A"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,58 +23,92 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cb8-ri-EKL" userLabel="Background view">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcN-Cd-eRN">
-                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                    <items>
-                        <barButtonItem systemItem="camera" id="cEC-oB-lGR">
-                            <connections>
-                                <action selector="cameraBtnPressed:" destination="-1" id="gWX-kG-YZJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NcH-IV-mhW" userLabel="Title input">
-                    <rect key="frame" x="20" y="20" width="560" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Annotation title" textAlignment="justified" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NcH-IV-mhW" userLabel="Title input">
+                    <rect key="frame" x="20" y="20" width="560" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="X9h-MJ-EIq"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="6p1-CR-cHT" userLabel="Text input">
-                    <rect key="frame" x="20" y="58" width="560" height="284"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1NE-Iz-HaQ" userLabel="photo view">
-                    <rect key="frame" x="234" y="350" width="132" height="198"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL6-Bn-Uby" userLabel="Text&amp;Photo container" customClass="UIControl">
+                    <rect key="frame" x="20" y="79" width="560" height="501"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="6p1-CR-cHT" userLabel="Text input">
+                            <rect key="frame" x="20" y="25" width="256" height="456"/>
+                            <color key="backgroundColor" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="1NE-Iz-HaQ" userLabel="photo view">
+                            <rect key="frame" x="284" y="25" width="256" height="456"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="65p-sH-CjD" appends="YES" id="Yw0-Ts-wFv"/>
+                            </connections>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a text to this annotation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYv-XB-UOG">
+                            <rect key="frame" x="20" y="7" width="256" height="17"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a picture to this annotation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv5-BU-lth">
+                            <rect key="frame" x="284" y="7" width="256" height="17"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" secondItem="1NE-Iz-HaQ" secondAttribute="width" multiplier="1.5" id="UpI-xe-n1C"/>
+                        <constraint firstItem="1NE-Iz-HaQ" firstAttribute="top" secondItem="uv5-BU-lth" secondAttribute="bottom" constant="1" id="4K3-kt-Gi3"/>
+                        <constraint firstAttribute="bottom" secondItem="6p1-CR-cHT" secondAttribute="bottom" constant="20" symbolic="YES" id="6ex-fa-flF"/>
+                        <constraint firstItem="6p1-CR-cHT" firstAttribute="leading" secondItem="xL6-Bn-Uby" secondAttribute="leading" constant="20" symbolic="YES" id="BwQ-Kn-BCt"/>
+                        <constraint firstItem="6p1-CR-cHT" firstAttribute="top" secondItem="nYv-XB-UOG" secondAttribute="bottom" constant="1" id="HM7-v4-ExV"/>
+                        <constraint firstItem="6p1-CR-cHT" firstAttribute="top" secondItem="xL6-Bn-Uby" secondAttribute="top" constant="25" id="Hbe-9M-Ccq"/>
+                        <constraint firstItem="6p1-CR-cHT" firstAttribute="height" secondItem="1NE-Iz-HaQ" secondAttribute="height" id="OsR-Fq-KZB"/>
+                        <constraint firstItem="6p1-CR-cHT" firstAttribute="leading" secondItem="nYv-XB-UOG" secondAttribute="leading" id="QbG-j2-44I"/>
+                        <constraint firstItem="1NE-Iz-HaQ" firstAttribute="width" secondItem="6p1-CR-cHT" secondAttribute="width" id="Tlf-bI-LVu"/>
+                        <constraint firstItem="6p1-CR-cHT" firstAttribute="trailing" secondItem="nYv-XB-UOG" secondAttribute="trailing" id="VHY-kj-y2f"/>
+                        <constraint firstItem="1NE-Iz-HaQ" firstAttribute="leading" secondItem="6p1-CR-cHT" secondAttribute="trailing" constant="8" symbolic="YES" id="qfu-wF-COC"/>
+                        <constraint firstItem="1NE-Iz-HaQ" firstAttribute="centerY" secondItem="6p1-CR-cHT" secondAttribute="centerY" id="qtf-zA-74y"/>
+                        <constraint firstItem="1NE-Iz-HaQ" firstAttribute="trailing" secondItem="uv5-BU-lth" secondAttribute="trailing" id="sQ7-2b-KWL"/>
+                        <constraint firstItem="1NE-Iz-HaQ" firstAttribute="leading" secondItem="uv5-BU-lth" secondAttribute="leading" id="tz7-cs-cC4"/>
+                        <constraint firstAttribute="trailing" secondItem="1NE-Iz-HaQ" secondAttribute="trailing" constant="20" symbolic="YES" id="uv5-qg-RFP"/>
                     </constraints>
-                </imageView>
+                    <connections>
+                        <action selector="hideKeyboard:" destination="-1" eventType="touchUpInside" id="y4P-42-U2a"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="NcH-IV-mhW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="1Jm-Ew-E4Z"/>
-                <constraint firstItem="6p1-CR-cHT" firstAttribute="top" secondItem="NcH-IV-mhW" secondAttribute="bottom" constant="8" symbolic="YES" id="5Xv-7r-Cq0"/>
-                <constraint firstItem="1NE-Iz-HaQ" firstAttribute="centerX" secondItem="cb8-ri-EKL" secondAttribute="centerX" id="5k0-g9-GrF"/>
-                <constraint firstItem="TcN-Cd-eRN" firstAttribute="top" secondItem="1NE-Iz-HaQ" secondAttribute="bottom" constant="8" id="9HZ-xJ-giu"/>
-                <constraint firstItem="1NE-Iz-HaQ" firstAttribute="top" secondItem="6p1-CR-cHT" secondAttribute="bottom" constant="8" symbolic="YES" id="9Rc-gb-I4f"/>
                 <constraint firstAttribute="trailing" secondItem="NcH-IV-mhW" secondAttribute="trailing" constant="20" symbolic="YES" id="9vK-Se-NS0"/>
-                <constraint firstItem="1NE-Iz-HaQ" firstAttribute="height" secondItem="cb8-ri-EKL" secondAttribute="height" multiplier="0.33" id="Bq7-24-4RU"/>
-                <constraint firstItem="TcN-Cd-eRN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EDm-zv-0Lf"/>
-                <constraint firstAttribute="trailing" secondItem="TcN-Cd-eRN" secondAttribute="trailing" id="ZOx-83-Ava"/>
-                <constraint firstItem="6p1-CR-cHT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="bVB-1B-Alc"/>
+                <constraint firstAttribute="trailing" secondItem="xL6-Bn-Uby" secondAttribute="trailing" constant="20" symbolic="YES" id="CWh-FH-ns3"/>
                 <constraint firstItem="cb8-ri-EKL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dUk-jS-RtR"/>
                 <constraint firstItem="cb8-ri-EKL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eBQ-wC-Xvj"/>
+                <constraint firstItem="xL6-Bn-Uby" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="gbw-VZ-HH7"/>
                 <constraint firstAttribute="trailing" secondItem="cb8-ri-EKL" secondAttribute="trailing" id="gou-6I-0wN"/>
-                <constraint firstAttribute="bottom" secondItem="TcN-Cd-eRN" secondAttribute="bottom" id="m2J-bY-ntY"/>
+                <constraint firstAttribute="bottom" secondItem="xL6-Bn-Uby" secondAttribute="bottom" constant="20" symbolic="YES" id="kYo-zZ-yvt"/>
                 <constraint firstItem="NcH-IV-mhW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="pGX-zn-m2S"/>
+                <constraint firstItem="xL6-Bn-Uby" firstAttribute="top" secondItem="NcH-IV-mhW" secondAttribute="bottom" constant="8" symbolic="YES" id="prm-oL-Gbr"/>
                 <constraint firstAttribute="bottom" secondItem="cb8-ri-EKL" secondAttribute="bottom" id="qSy-Om-TcP"/>
-                <constraint firstAttribute="trailing" secondItem="6p1-CR-cHT" secondAttribute="trailing" constant="20" symbolic="YES" id="uNg-W0-ddE"/>
             </constraints>
             <connections>
                 <action selector="hideKeyboard:" destination="-1" eventType="touchUpInside" id="uMJ-J6-8o8"/>
             </connections>
+            <point key="canvasLocation" x="187" y="388"/>
         </view>
+        <tapGestureRecognizer id="65p-sH-CjD">
+            <connections>
+                <action selector="addPhoto:" destination="-1" id="1uz-Uh-Ee9"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="image_placeholder.png" width="510" height="384"/>
+    </resources>
 </document>

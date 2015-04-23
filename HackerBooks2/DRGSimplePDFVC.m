@@ -7,10 +7,13 @@
 //
 
 #import "DRGSimplePDFVC.h"
+#import "DRGAnnotationVC.h"
+// Models
 #import "DRGBook.h"
 #import "DRGPdf.h"
+// Others
 #import "NotificationKeys.h"
-#import "DRGBookDetailVC.h"
+#import "UIViewController+Navigation.h"
 
 @interface DRGSimplePDFVC ()
 
@@ -60,13 +63,18 @@
     [self updateViewContent];
 }
 
-#pragma mark - Lifecycle
+#pragma mark - View events
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                            target:self
+                                                                            action:@selector(addAnnotationToBook:)];
+    self.navigationItem.rightBarButtonItem = addBtn;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,9 +95,11 @@
     [self unregisterForNotifications];   //optionally we can unregister a notification when the view disappears
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - IBActions
+
+- (void)addAnnotationToBook:(id)sender {
+    DRGAnnotationVC *annVC = [[DRGAnnotationVC alloc] initAnnotationForBook:self.book];
+    [self presentViewController:[annVC wrappedInNavigationController] animated:YES completion:nil];
 }
 
 #pragma mark - Helpers
@@ -132,6 +142,14 @@
     NSLog(@"Loading did finish");
     [self.activityView stopAnimating];
 }
+
+#pragma mark - Memory
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 
 @end

@@ -49,16 +49,17 @@
 }
 
 #pragma mark - Comparison
+
 - (NSComparisonResult)compare:(DRGLabel *)other {
     
     /* favorite always comes first */
     if ([self.name isEqualToString:other.name]) {
         return NSOrderedSame;
-    }else if ([self.name isEqualToString:FAVORITE_LABEL]){
+    } else if ([self.name isEqualToString:FAVORITE_LABEL]) {
         return NSOrderedAscending;
-    }else if ([other.name isEqualToString:FAVORITE_LABEL]){
+    } else if ([other.name isEqualToString:FAVORITE_LABEL]) {
         return NSOrderedDescending;
-    }else{
+    } else {
         return [self.name compare:other.name];
     }
 }
