@@ -244,7 +244,7 @@
     if (annotation) {
         // Add annotation into context
         [self.book addAnnotationsObject:annotation];
-        NSLog(@"New Book annotation count: %lu", [self.book.annotations count]);
+        NSLog(@"New Book annotation count: %lu", (unsigned long)[self.book.annotations count]);
         completionBlock(YES,nil);
     } else {
         NSLog(@"Annotation creation failed!!");

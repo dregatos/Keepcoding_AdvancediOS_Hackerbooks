@@ -36,13 +36,13 @@
                     <rect key="frame" x="20" y="99" width="560" height="481"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="6p1-CR-cHT" userLabel="Text input">
-                            <rect key="frame" x="20" y="25" width="256" height="436"/>
+                            <rect key="frame" x="0.0" y="25" width="276" height="436"/>
                             <color key="backgroundColor" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="1NE-Iz-HaQ" userLabel="photo view">
-                            <rect key="frame" x="284" y="25" width="256" height="436"/>
+                            <rect key="frame" x="284" y="25" width="276" height="436"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <gestureRecognizers/>
                             <connections>
@@ -50,26 +50,26 @@
                             </connections>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a text to this annotation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYv-XB-UOG">
-                            <rect key="frame" x="20" y="7" width="256" height="17"/>
+                            <rect key="frame" x="0.0" y="7" width="276" height="17"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a picture to this annotation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv5-BU-lth">
-                            <rect key="frame" x="284" y="7" width="256" height="17"/>
+                            <rect key="frame" x="284" y="7" width="276" height="17"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-5t-ImQ">
-                            <rect key="frame" x="394" y="224" width="37" height="37"/>
+                            <rect key="frame" x="404" y="224" width="37" height="37"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="top" secondItem="uv5-BU-lth" secondAttribute="bottom" constant="1" id="4K3-kt-Gi3"/>
                         <constraint firstAttribute="bottom" secondItem="6p1-CR-cHT" secondAttribute="bottom" constant="20" symbolic="YES" id="6ex-fa-flF"/>
-                        <constraint firstItem="6p1-CR-cHT" firstAttribute="leading" secondItem="xL6-Bn-Uby" secondAttribute="leading" constant="20" symbolic="YES" id="BwQ-Kn-BCt"/>
+                        <constraint firstItem="6p1-CR-cHT" firstAttribute="leading" secondItem="xL6-Bn-Uby" secondAttribute="leading" id="BwQ-Kn-BCt"/>
                         <constraint firstItem="6p1-CR-cHT" firstAttribute="top" secondItem="nYv-XB-UOG" secondAttribute="bottom" constant="1" id="HM7-v4-ExV"/>
                         <constraint firstItem="6p1-CR-cHT" firstAttribute="top" secondItem="xL6-Bn-Uby" secondAttribute="top" constant="25" id="Hbe-9M-Ccq"/>
                         <constraint firstItem="6p1-CR-cHT" firstAttribute="height" secondItem="1NE-Iz-HaQ" secondAttribute="height" id="OsR-Fq-KZB"/>
@@ -82,7 +82,7 @@
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="centerY" secondItem="6p1-CR-cHT" secondAttribute="centerY" id="qtf-zA-74y"/>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="trailing" secondItem="uv5-BU-lth" secondAttribute="trailing" id="sQ7-2b-KWL"/>
                         <constraint firstItem="1NE-Iz-HaQ" firstAttribute="leading" secondItem="uv5-BU-lth" secondAttribute="leading" id="tz7-cs-cC4"/>
-                        <constraint firstAttribute="trailing" secondItem="1NE-Iz-HaQ" secondAttribute="trailing" constant="20" symbolic="YES" id="uv5-qg-RFP"/>
+                        <constraint firstAttribute="trailing" secondItem="1NE-Iz-HaQ" secondAttribute="trailing" id="uv5-qg-RFP"/>
                     </constraints>
                     <connections>
                         <action selector="hideKeyboard:" destination="-1" eventType="touchUpInside" id="y4P-42-U2a"/>

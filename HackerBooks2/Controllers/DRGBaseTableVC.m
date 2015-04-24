@@ -9,8 +9,6 @@
 #import "DRGBaseTableVC.h"
 #import "DRGBook.h"
 #import "DRGTag.h"
-#import "Settings.h"
-#import "NotificationKeys.h"
 
 @implementation DRGBaseTableVC
 
@@ -43,23 +41,6 @@
 }
 
 #pragma mark - UITableView Delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-        
-    // Get data for indexPath
-    DRGBook *book = [self bookAtIndexPath:indexPath];
-    
-    // Notify BOOK was selected - ONLY FOR iPad VERSION
-    NSDictionary *dict = @{BOOK_KEY:book};
-    [[NSNotificationCenter defaultCenter] postNotificationName:DID_SELECT_BOOK_NOTIFICATION
-                                                        object:self
-                                                      userInfo:dict];
-    
-    // Remember last selected book
-    NSData *uri = [book archiveURIRepresentation];
-    [[NSUserDefaults standardUserDefaults] setObject:uri forKey:LAST_SELECTED_BOOK];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     return nil;

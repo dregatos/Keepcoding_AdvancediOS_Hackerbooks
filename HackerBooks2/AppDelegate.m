@@ -46,7 +46,7 @@
         // Update 'WAS_LAUNCHED_BEFORE' flag value
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:WAS_LAUNCHED_BEFORE];
         
-        NSLog(@"Library count: %lu", [library count]);
+        NSLog(@"Library count: %lu", (unsigned long)[library count]);
         if (![library count]) {
             NSLog(@"Ups! We couldn't fetch any book from the server.");
         }
@@ -108,6 +108,7 @@
                                                                                   style:UITableViewStyleGrouped];
     
     //Delegates
+    
     
     return [bookListVC wrappedInNavigationController];
 }

@@ -29,7 +29,7 @@
         // Use previous one
         label = [results lastObject];
     } else if ([results count] > 1) {
-        NSLog(@"Duplicated!! Label \'%@\' was found %lu times on our DB", normalizedName, [results count]);
+        NSLog(@"Duplicated!! Label \'%@\' was found %lu times on our DB", normalizedName, (unsigned long)[results count]);
     }
     
     return label;

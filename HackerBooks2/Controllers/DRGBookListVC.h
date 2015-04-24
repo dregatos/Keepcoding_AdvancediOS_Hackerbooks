@@ -7,9 +7,8 @@
 //
 
 #import "DRGBaseTableVC.h"
-#import "DRGBookDetailVCDelegate.h"
 
-@interface DRGBookListVC : DRGBaseTableVC <DRGBookDetailVCDelegate,UISearchResultsUpdating>
+@interface DRGBookListVC : DRGBaseTableVC <UISearchBarDelegate,UISearchResultsUpdating,UISearchControllerDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 

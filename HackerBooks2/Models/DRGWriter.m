@@ -25,7 +25,7 @@
     } else if ([results count] == 1) {
         writer = [results lastObject];
     } else if ([results count] > 1) {
-        NSLog(@"Duplicated!! Writer \'%@\' was found %lu times on our DB", name, [results count]);
+        NSLog(@"Duplicated!! Writer \'%@\' was found %lu times on our DB", name, (unsigned long)[results count]);
     }
     
     return writer;

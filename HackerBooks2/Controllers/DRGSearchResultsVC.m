@@ -10,5 +10,9 @@
 
 @implementation DRGSearchResultsVC
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
 
 @end

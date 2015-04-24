@@ -71,7 +71,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self unregisterForNotifications];
+//    [self unregisterForNotifications];
     [self unregisterForKVOs];
 }
 
@@ -85,14 +85,14 @@
     // cover
     [self performSelector:@selector(loadCoverImage) withObject:nil afterDelay:0.3];
     
-    NSLog(@"Book annotation count: %lu", [self.book.annotations count]);
+    NSLog(@"Book annotation count: %lu", (unsigned long)[self.book.annotations count]);
 }
 
 #pragma mark - NSNotification
 
 - (void)dealloc {
     [self unregisterForNotifications];
-    [self unregisterForKVOs];
+//    [self unregisterForKVOs];
 }
 
 - (void)registerForNotifications {

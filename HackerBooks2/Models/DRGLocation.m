@@ -26,7 +26,7 @@
     } else if ([results count] == 1) {
         location = [results lastObject];
     } else if ([results count] > 1) {
-        NSLog(@"Duplicated!! Location \'%f-%f\' was found %lu times on our DB", latitude, longitude, [results count]);
+        NSLog(@"Duplicated!! Location \'%f-%f\' was found %lu times on our DB", latitude, longitude, (unsigned long)[results count]);
     }
     
     return location;
