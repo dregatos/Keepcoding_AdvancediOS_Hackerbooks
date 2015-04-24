@@ -7,9 +7,13 @@
 //
 
 #import "DRGAnnotationsVC.h"
-#import "DRGAnnotationViewCell.h"
+#import "DRGAnnotationDetailVC.h"
+// models
 #import "DRGBook.h"
 #import "DRGAnnotation.h"
+// others
+#import "UIViewController+Navigation.h"
+#import "DRGAnnotationViewCell.h"
 #import "NotificationKeys.h"
 
 static NSString *cellId = @"AnnotationCellId";
@@ -17,6 +21,12 @@ static NSString *cellId = @"AnnotationCellId";
 @implementation DRGAnnotationsVC
 
 #pragma mark -  View events
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.collectionView.delegate = self;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -97,7 +107,7 @@ static NSString *cellId = @"AnnotationCellId";
           forCellWithReuseIdentifier:cellId];
 }
 
-#pragma mark - Data Source
+#pragma mark - UICollectionView Data Source
 
 - (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView
                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,5 +121,16 @@ static NSString *cellId = @"AnnotationCellId";
     
     return cell;
 }
+
+#pragma mark - UICollectionView Delegates
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DRGAnnotation *ann = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    DRGAnnotationDetailVC *annVC = [[DRGAnnotationDetailVC alloc] initAnnotation:ann forBook:ann.book];
+    [self presentViewController:[annVC wrappedInNavigationController] animated:YES completion:nil];
+}
+
 
 @end

@@ -275,19 +275,10 @@
 		0704C4031ADD71A800F80DB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				074FC1BE1AEA83440059EB95 /* Annotations */,
 				070F0B831AE7B0EE0068702B /* Book list */,
-				0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */,
-				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
-				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
-				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
-				074FC1B21AEA48750059EB95 /* DRGSimplePDFVC.h */,
-				074FC1B31AEA48750059EB95 /* DRGSimplePDFVC.m */,
-				074FC1B41AEA48750059EB95 /* DRGSimplePDFVC.xib */,
-				079E3A431AE5342F00018ED7 /* DRGAnnotationDetailVC.h */,
-				079E3A441AE5342F00018ED7 /* DRGAnnotationDetailVC.m */,
-				079E3A451AE5342F00018ED7 /* DRGAnnotationDetailVC.xib */,
-				074FC1AC1AEA48240059EB95 /* DRGAnnotationsVC.h */,
-				074FC1AD1AEA48240059EB95 /* DRGAnnotationsVC.m */,
+				074FC1BC1AEA83200059EB95 /* Detail Book */,
+				074FC1BD1AEA83300059EB95 /* PDF viewer */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -410,6 +401,39 @@
 				0704C3F51ADD2AF800F80DB7 /* Mogenerator */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		074FC1BC1AEA83200059EB95 /* Detail Book */ = {
+			isa = PBXGroup;
+			children = (
+				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
+				0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */,
+				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
+				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
+			);
+			name = "Detail Book";
+			sourceTree = "<group>";
+		};
+		074FC1BD1AEA83300059EB95 /* PDF viewer */ = {
+			isa = PBXGroup;
+			children = (
+				074FC1B21AEA48750059EB95 /* DRGSimplePDFVC.h */,
+				074FC1B31AEA48750059EB95 /* DRGSimplePDFVC.m */,
+				074FC1B41AEA48750059EB95 /* DRGSimplePDFVC.xib */,
+			);
+			name = "PDF viewer";
+			sourceTree = "<group>";
+		};
+		074FC1BE1AEA83440059EB95 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				074FC1AC1AEA48240059EB95 /* DRGAnnotationsVC.h */,
+				074FC1AD1AEA48240059EB95 /* DRGAnnotationsVC.m */,
+				079E3A431AE5342F00018ED7 /* DRGAnnotationDetailVC.h */,
+				079E3A441AE5342F00018ED7 /* DRGAnnotationDetailVC.m */,
+				079E3A451AE5342F00018ED7 /* DRGAnnotationDetailVC.xib */,
+			);
+			name = Annotations;
 			sourceTree = "<group>";
 		};
 		07C7715D1AE6627A00835F84 /* Views */ = {

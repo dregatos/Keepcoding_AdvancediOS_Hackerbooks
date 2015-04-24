@@ -98,7 +98,7 @@
 #pragma mark - IBActions
 
 - (void)addAnnotationToBook:(id)sender {
-    DRGAnnotationDetailVC *annVC = [[DRGAnnotationDetailVC alloc] initAnnotationForBook:self.book];
+    DRGAnnotationDetailVC *annVC = [[DRGAnnotationDetailVC alloc] initAnnotation:nil forBook:self.book];
     [self presentViewController:[annVC wrappedInNavigationController] animated:YES completion:nil];
 }
 

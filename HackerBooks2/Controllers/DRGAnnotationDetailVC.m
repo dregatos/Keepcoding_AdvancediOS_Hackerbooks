@@ -9,14 +9,18 @@
 @import QuartzCore;
 
 #import "DRGAnnotationDetailVC.h"
+// models
 #import "DRGBook.h"
 #import "DRGAnnotation.h"
+#import "DRGPhoto.h"
+// others
 #import "ErrorDomains.h"
 #import "NSString+Validation.h"
 #import "UIImage+Resize.h"
 
 @interface DRGAnnotationDetailVC () <UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property (nonatomic, strong) DRGAnnotation *annotation;
 @property (nonatomic, strong) DRGBook *book;
 @property (nonatomic, strong) UIImage *photo;
 
@@ -26,15 +30,17 @@
 
 #pragma mark - Init
 
-- (instancetype)initAnnotationForBook:(DRGBook *)aBook {
+- (instancetype)initAnnotation:(DRGAnnotation *)annotation forBook:(DRGBook *)aBook {
     
     if (self = [super initWithNibName:nil bundle:nil]) {
+        _annotation = annotation;
         _book = aBook;
         self.title = aBook.title;
     }
     
     return self;
 }
+
 
 #pragma mark - View events
 
@@ -69,6 +75,8 @@
                                                                                    action:@selector(cancelBtnPressed:)];
         self.navigationItem.leftBarButtonItem = cancelBtn;
     }
+    
+    [self updateViewContent];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -165,14 +173,26 @@
         [self showAlertWithMessage:@"Annotation must have a text OR a photo"];
     } else {
         [self hideKeyboard:nil];
-        [self saveAnnotationWithCompletion:^(BOOL success, NSError *error) {
-            if (success) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            } else {
-                NSLog(@"Error: %@", error.userInfo);
-                [self showAlertWithMessage:@"Annotation creation failed. Please try again"];
-            }
-        }];
+        
+        if (self.annotation) { // Edition mode
+            // Modify current annotation
+            self.annotation.title = self.titleInput.text;
+            self.annotation.text = self.textInput.text;
+            self.annotation.photo.image = self.photo;
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+
+        } else {
+            // Create new annotation
+            [self saveAnnotationWithCompletion:^(BOOL success, NSError *error) {
+                if (success) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                } else {
+                    NSLog(@"Error: %@", error.userInfo);
+                    [self showAlertWithMessage:@"Annotation creation failed. Please try again"];
+                }
+            }];
+        }
     }
 }
 
@@ -232,6 +252,18 @@
 }
 
 #pragma mark - Helpers
+
+- (void)updateViewContent {
+    self.titleInput.text = self.annotation.title;
+    self.textInput.text = self.annotation.text;
+    if (self.annotation.photo.image) {
+        self.photo = self.annotation.photo.image;
+        self.photoView.image = self.photo;
+    } else {
+        self.photo = nil;
+        self.photoView.image = [UIImage imageNamed:@"image_placeholder"];
+    }
+}
 
 - (void)saveAnnotationWithCompletion:(void(^)(BOOL success, NSError *error))completionBlock {
     DRGAnnotation *annotation = [DRGAnnotation annotationOnBook:self.book

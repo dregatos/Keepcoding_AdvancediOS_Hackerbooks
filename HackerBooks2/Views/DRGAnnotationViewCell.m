@@ -21,7 +21,7 @@
     
     self.titleLbl.text = annotation.title;
     if (annotation.photo.photoData) {
-        self.photo.image = [UIImage imageWithData:annotation.photo.photoData];
+        self.photo.image = annotation.photo.image;
     } else {
         self.photo.hidden = YES;
         self.textView.text = annotation.text;

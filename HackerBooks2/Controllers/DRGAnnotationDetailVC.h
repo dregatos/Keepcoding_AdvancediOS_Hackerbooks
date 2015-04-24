@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class DRGBook;
+@class DRGAnnotation;
 
 @interface DRGAnnotationDetailVC : UIViewController
 
@@ -22,6 +23,7 @@
 // Autolayout
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomContainerConstrain;
 
-- (instancetype)initAnnotationForBook:(DRGBook *)aBook;
+/** To review/edit an existing one */
+- (instancetype)initAnnotation:(DRGAnnotation *)annotation forBook:(DRGBook *)aBook;
 
 @end
