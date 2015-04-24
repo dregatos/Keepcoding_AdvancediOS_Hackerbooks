@@ -8,21 +8,21 @@
 
 @import QuartzCore;
 
-#import "DRGAnnotationVC.h"
+#import "DRGAnnotationDetailVC.h"
 #import "DRGBook.h"
 #import "DRGAnnotation.h"
 #import "ErrorDomains.h"
 #import "NSString+Validation.h"
 #import "UIImage+Resize.h"
 
-@interface DRGAnnotationVC () <UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DRGAnnotationDetailVC () <UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) DRGBook *book;
 @property (nonatomic, strong) UIImage *photo;
 
 @end
 
-@implementation DRGAnnotationVC
+@implementation DRGAnnotationDetailVC
 
 #pragma mark - Init
 
@@ -131,7 +131,7 @@
     }];
 }
 
-#pragma mark - IBActions
+#pragma mark - IBAction
 
 - (IBAction)hideKeyboard:(UIControl *)sender {
     [self.view endEditing:YES];

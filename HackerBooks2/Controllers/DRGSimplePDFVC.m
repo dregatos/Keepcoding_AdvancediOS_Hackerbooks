@@ -7,7 +7,7 @@
 //
 
 #import "DRGSimplePDFVC.h"
-#import "DRGAnnotationVC.h"
+#import "DRGAnnotationDetailVC.h"
 // Models
 #import "DRGBook.h"
 #import "DRGPdf.h"
@@ -98,7 +98,7 @@
 #pragma mark - IBActions
 
 - (void)addAnnotationToBook:(id)sender {
-    DRGAnnotationVC *annVC = [[DRGAnnotationVC alloc] initAnnotationForBook:self.book];
+    DRGAnnotationDetailVC *annVC = [[DRGAnnotationDetailVC alloc] initAnnotationForBook:self.book];
     [self presentViewController:[annVC wrappedInNavigationController] animated:YES completion:nil];
 }
 

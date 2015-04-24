@@ -10,7 +10,7 @@
 
 @class DRGBook;
 
-@interface DRGAnnotationVC : UIViewController
+@interface DRGAnnotationDetailVC : UIViewController
 
 // IBOutles
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;

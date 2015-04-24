@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *readBtn;
 
-
 - (instancetype)initWithBook:(DRGBook *)aBook;
 
 @end

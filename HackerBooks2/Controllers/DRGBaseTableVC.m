@@ -31,11 +31,13 @@
     static NSString *cellID = @"bookCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
     // Configure cell
     cell.textLabel.text = book.title;
+    cell.detailTextLabel.text = [[book authorList] componentsJoinedByString:@" ,"];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -44,6 +46,10 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 55.;
 }
 
 #pragma mark - Utils

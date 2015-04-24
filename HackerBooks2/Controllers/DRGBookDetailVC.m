@@ -9,7 +9,7 @@
 @import QuartzCore;
 
 #import "DRGBookDetailVC.h"
-#import "DRGAnnotationVC.h"
+#import "DRGAnnotationsVC.h"
 #import "DRGSimplePDFVC.h"
 // models
 #import "DRGBook.h"
@@ -54,6 +54,11 @@
     self.coverContainer.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.coverContainer.clipsToBounds = YES;
     self.coverImView.image = [UIImage imageNamed:@"book-placeholder.jpg"];
+    // Annotation button
+    UIBarButtonItem *annBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks
+                                                                            target:self
+                                                                            action:@selector(showAnnotationsBtnPressed:)];
+    self.navigationItem.rightBarButtonItem = annBtn;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,7 +76,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-//    [self unregisterForNotifications];
+    [self unregisterForNotifications];
     [self unregisterForKVOs];
 }
 
@@ -159,14 +164,48 @@
     [self.navigationController pushViewController:pdfVC animated:YES];
 }
 
-- (IBAction)newAnnotationBtnPressed:(UIButton *)sender {
-    
-    DRGAnnotationVC *annVC = [[DRGAnnotationVC alloc] initAnnotationForBook:self.book];
-    [self presentViewController:[annVC wrappedInNavigationController] animated:YES completion:nil];
-}
-
 - (IBAction)showAnnotationsBtnPressed:(UIButton *)sender {
     
+    // Fetch request
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DRGAnnotation entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor
+                             sortDescriptorWithKey:@"date.creation"
+                             ascending:NO],
+                            [NSSortDescriptor
+                             sortDescriptorWithKey:@"date.modification"
+                             ascending:NO],
+                            [NSSortDescriptor
+                             sortDescriptorWithKey:DRGAnnotationAttributes.title
+                             ascending:YES
+                             selector:@selector(caseInsensitiveCompare:)]];
+    req.fetchBatchSize = 20;
+    req.predicate = [NSPredicate predicateWithFormat:@"book == %@", self.book];
+
+    NSArray *result = [self.book.managedObjectContext executeFetchRequest:req error:nil];
+    NSLog(@"Number of annotations: %lu", (unsigned long)[result count]);
+
+    // Fetched Results Controller
+    NSFetchedResultsController *fc = [[NSFetchedResultsController alloc]
+                                      initWithFetchRequest:req
+                                      managedObjectContext:self.book.managedObjectContext
+                                      sectionNameKeyPath:nil //@"date.creation"
+                                      cacheName:nil];
+    
+    // layout
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 10;
+    layout.itemSize = CGSizeMake(120, 180);
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    // View controller
+    DRGAnnotationsVC *annVC = [DRGAnnotationsVC
+                               coreDataCollectionViewControllerWithFetchedResultsController:fc
+                               layout:layout];
+    
+    // Push it!
+    [self.navigationController pushViewController:annVC animated:YES];
 }
 
 #pragma mark - Utils

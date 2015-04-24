@@ -32,9 +32,6 @@
 		0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C4081ADD725500F80DB7 /* DRGBookListVC.m */; };
 		0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */; };
 		0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */; };
-		070F0B7D1AE7926D0068702B /* book-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 070F0B7C1AE7926D0068702B /* book-placeholder.jpg */; };
-		070F0B811AE79D5E0068702B /* DRGSimplePDFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F0B7F1AE79D5E0068702B /* DRGSimplePDFVC.m */; };
-		070F0B821AE79D5E0068702B /* DRGSimplePDFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070F0B801AE79D5E0068702B /* DRGSimplePDFVC.xib */; };
 		070F0B851AE7B8F30068702B /* image_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 070F0B841AE7B8F30068702B /* image_placeholder.png */; };
 		0738A8AB1ADC0B4700CB87FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AA1ADC0B4700CB87FC /* main.m */; };
 		0738A8AE1ADC0B4700CB87FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0738A8AD1ADC0B4700CB87FC /* AppDelegate.m */; };
@@ -50,13 +47,20 @@
 		074D13671AE92CD100D2565A /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D13621AE92CD100D2565A /* UIImage+Alpha.m */; };
 		074D13681AE92CD100D2565A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D13641AE92CD100D2565A /* UIImage+Resize.m */; };
 		074D13691AE92CD100D2565A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D13661AE92CD100D2565A /* UIImage+RoundedCorner.m */; };
+		074FC1A81AEA430D0059EB95 /* book-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074FC1A71AEA430D0059EB95 /* book-placeholder.jpg */; };
+		074FC1AE1AEA48240059EB95 /* DRGAnnotationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074FC1AD1AEA48240059EB95 /* DRGAnnotationsVC.m */; };
+		074FC1B11AEA48690059EB95 /* AGTCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074FC1B01AEA48690059EB95 /* AGTCoreDataCollectionViewController.m */; };
+		074FC1B51AEA48750059EB95 /* DRGSimplePDFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074FC1B31AEA48750059EB95 /* DRGSimplePDFVC.m */; };
+		074FC1B61AEA48750059EB95 /* DRGSimplePDFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074FC1B41AEA48750059EB95 /* DRGSimplePDFVC.xib */; };
+		074FC1BA1AEA48F20059EB95 /* DRGAnnotationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074FC1B81AEA48F20059EB95 /* DRGAnnotationViewCell.m */; };
+		074FC1BB1AEA48F20059EB95 /* DRGAnnotationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074FC1B91AEA48F20059EB95 /* DRGAnnotationViewCell.xib */; };
 		0779FC871AE0FFD0008412A2 /* DRGSearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */; };
 		0779FC8A1AE102EC008412A2 /* DRGBaseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC891AE102EC008412A2 /* DRGBaseTableVC.m */; };
 		0779FC8D1AE10C08008412A2 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC8C1AE10C08008412A2 /* NSString+Validation.m */; };
 		0779FC901AE13D00008412A2 /* _DRGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC8F1AE13D00008412A2 /* _DRGLocation.m */; };
 		0779FC931AE13D0A008412A2 /* DRGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0779FC921AE13D0A008412A2 /* DRGLocation.m */; };
-		079E3A461AE5342F00018ED7 /* DRGAnnotationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E3A441AE5342F00018ED7 /* DRGAnnotationVC.m */; };
-		079E3A471AE5342F00018ED7 /* DRGAnnotationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079E3A451AE5342F00018ED7 /* DRGAnnotationVC.xib */; };
+		079E3A461AE5342F00018ED7 /* DRGAnnotationDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E3A441AE5342F00018ED7 /* DRGAnnotationDetailVC.m */; };
+		079E3A471AE5342F00018ED7 /* DRGAnnotationDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079E3A451AE5342F00018ED7 /* DRGAnnotationDetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,10 +124,6 @@
 		0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataStack.m; path = "AGBO Utils/AGTCoreDataStack.m"; sourceTree = "<group>"; };
 		0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataTableViewController.h; path = "AGBO Utils/AGTCoreDataTableViewController.h"; sourceTree = "<group>"; };
 		0704C40F1ADD72B600F80DB7 /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataTableViewController.m; path = "AGBO Utils/AGTCoreDataTableViewController.m"; sourceTree = "<group>"; };
-		070F0B7C1AE7926D0068702B /* book-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "book-placeholder.jpg"; sourceTree = "<group>"; };
-		070F0B7E1AE79D5E0068702B /* DRGSimplePDFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRGSimplePDFVC.h; sourceTree = "<group>"; };
-		070F0B7F1AE79D5E0068702B /* DRGSimplePDFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRGSimplePDFVC.m; sourceTree = "<group>"; };
-		070F0B801AE79D5E0068702B /* DRGSimplePDFVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DRGSimplePDFVC.xib; sourceTree = "<group>"; };
 		070F0B841AE7B8F30068702B /* image_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_placeholder.png; sourceTree = "<group>"; };
 		0738A8A51ADC0B4700CB87FC /* HackerBooks2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerBooks2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0738A8A91ADC0B4700CB87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +154,17 @@
 		074D13641AE92CD100D2565A /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "Categories/UIImage+Resize.m"; sourceTree = "<group>"; };
 		074D13651AE92CD100D2565A /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RoundedCorner.h"; path = "Categories/UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		074D13661AE92CD100D2565A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "Categories/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		074FC1A71AEA430D0059EB95 /* book-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "book-placeholder.jpg"; sourceTree = "<group>"; };
+		074FC1AC1AEA48240059EB95 /* DRGAnnotationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGAnnotationsVC.h; path = Controllers/DRGAnnotationsVC.h; sourceTree = "<group>"; };
+		074FC1AD1AEA48240059EB95 /* DRGAnnotationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGAnnotationsVC.m; path = Controllers/DRGAnnotationsVC.m; sourceTree = "<group>"; };
+		074FC1AF1AEA48690059EB95 /* AGTCoreDataCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTCoreDataCollectionViewController.h; path = "AGBO Utils/AGTCoreDataCollectionViewController.h"; sourceTree = "<group>"; };
+		074FC1B01AEA48690059EB95 /* AGTCoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTCoreDataCollectionViewController.m; path = "AGBO Utils/AGTCoreDataCollectionViewController.m"; sourceTree = "<group>"; };
+		074FC1B21AEA48750059EB95 /* DRGSimplePDFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGSimplePDFVC.h; path = Controllers/DRGSimplePDFVC.h; sourceTree = "<group>"; };
+		074FC1B31AEA48750059EB95 /* DRGSimplePDFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGSimplePDFVC.m; path = Controllers/DRGSimplePDFVC.m; sourceTree = "<group>"; };
+		074FC1B41AEA48750059EB95 /* DRGSimplePDFVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DRGSimplePDFVC.xib; path = Controllers/DRGSimplePDFVC.xib; sourceTree = "<group>"; };
+		074FC1B71AEA48F20059EB95 /* DRGAnnotationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGAnnotationViewCell.h; path = Views/DRGAnnotationViewCell.h; sourceTree = "<group>"; };
+		074FC1B81AEA48F20059EB95 /* DRGAnnotationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGAnnotationViewCell.m; path = Views/DRGAnnotationViewCell.m; sourceTree = "<group>"; };
+		074FC1B91AEA48F20059EB95 /* DRGAnnotationViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DRGAnnotationViewCell.xib; path = Views/DRGAnnotationViewCell.xib; sourceTree = "<group>"; };
 		076130BD1ADFA9F7002D80A3 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		0779FC851AE0FFD0008412A2 /* DRGSearchResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGSearchResultsVC.h; path = Controllers/DRGSearchResultsVC.h; sourceTree = "<group>"; };
 		0779FC861AE0FFD0008412A2 /* DRGSearchResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGSearchResultsVC.m; path = Controllers/DRGSearchResultsVC.m; sourceTree = "<group>"; };
@@ -165,9 +176,9 @@
 		0779FC8F1AE13D00008412A2 /* _DRGLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DRGLocation.m; path = Models/_DRGLocation.m; sourceTree = "<group>"; };
 		0779FC911AE13D0A008412A2 /* DRGLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGLocation.h; path = Models/DRGLocation.h; sourceTree = "<group>"; };
 		0779FC921AE13D0A008412A2 /* DRGLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGLocation.m; path = Models/DRGLocation.m; sourceTree = "<group>"; };
-		079E3A431AE5342F00018ED7 /* DRGAnnotationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGAnnotationVC.h; path = Controllers/DRGAnnotationVC.h; sourceTree = "<group>"; };
-		079E3A441AE5342F00018ED7 /* DRGAnnotationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGAnnotationVC.m; path = Controllers/DRGAnnotationVC.m; sourceTree = "<group>"; };
-		079E3A451AE5342F00018ED7 /* DRGAnnotationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DRGAnnotationVC.xib; path = Controllers/DRGAnnotationVC.xib; sourceTree = "<group>"; };
+		079E3A431AE5342F00018ED7 /* DRGAnnotationDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRGAnnotationDetailVC.h; path = Controllers/DRGAnnotationDetailVC.h; sourceTree = "<group>"; };
+		079E3A441AE5342F00018ED7 /* DRGAnnotationDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRGAnnotationDetailVC.m; path = Controllers/DRGAnnotationDetailVC.m; sourceTree = "<group>"; };
+		079E3A451AE5342F00018ED7 /* DRGAnnotationDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DRGAnnotationDetailVC.xib; path = Controllers/DRGAnnotationDetailVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,12 +280,14 @@
 				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
 				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
 				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
-				070F0B7E1AE79D5E0068702B /* DRGSimplePDFVC.h */,
-				070F0B7F1AE79D5E0068702B /* DRGSimplePDFVC.m */,
-				070F0B801AE79D5E0068702B /* DRGSimplePDFVC.xib */,
-				079E3A431AE5342F00018ED7 /* DRGAnnotationVC.h */,
-				079E3A441AE5342F00018ED7 /* DRGAnnotationVC.m */,
-				079E3A451AE5342F00018ED7 /* DRGAnnotationVC.xib */,
+				074FC1B21AEA48750059EB95 /* DRGSimplePDFVC.h */,
+				074FC1B31AEA48750059EB95 /* DRGSimplePDFVC.m */,
+				074FC1B41AEA48750059EB95 /* DRGSimplePDFVC.xib */,
+				079E3A431AE5342F00018ED7 /* DRGAnnotationDetailVC.h */,
+				079E3A441AE5342F00018ED7 /* DRGAnnotationDetailVC.m */,
+				079E3A451AE5342F00018ED7 /* DRGAnnotationDetailVC.xib */,
+				074FC1AC1AEA48240059EB95 /* DRGAnnotationsVC.h */,
+				074FC1AD1AEA48240059EB95 /* DRGAnnotationsVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +295,8 @@
 		0704C40D1ADD72A000F80DB7 /* AGBO */ = {
 			isa = PBXGroup;
 			children = (
+				074FC1AF1AEA48690059EB95 /* AGTCoreDataCollectionViewController.h */,
+				074FC1B01AEA48690059EB95 /* AGTCoreDataCollectionViewController.m */,
 				0704C40A1ADD729200F80DB7 /* AGTCoreDataStack.h */,
 				0704C40B1ADD729200F80DB7 /* AGTCoreDataStack.m */,
 				0704C40E1ADD72B600F80DB7 /* AGTCoreDataTableViewController.h */,
@@ -341,7 +356,7 @@
 		0738A8A71ADC0B4700CB87FC /* HackerBooks2 */ = {
 			isa = PBXGroup;
 			children = (
-				070F0B7C1AE7926D0068702B /* book-placeholder.jpg */,
+				074FC1A71AEA430D0059EB95 /* book-placeholder.jpg */,
 				070F0B841AE7B8F30068702B /* image_placeholder.png */,
 				076130BD1ADFA9F7002D80A3 /* Settings.h */,
 				0749AAAB1ADEC81F002563C2 /* NotificationKeys.h */,
@@ -400,6 +415,9 @@
 		07C7715D1AE6627A00835F84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				074FC1B71AEA48F20059EB95 /* DRGAnnotationViewCell.h */,
+				074FC1B81AEA48F20059EB95 /* DRGAnnotationViewCell.m */,
+				074FC1B91AEA48F20059EB95 /* DRGAnnotationViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -485,12 +503,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0738A8B31ADC0B4700CB87FC /* LaunchScreen.xib in Resources */,
-				079E3A471AE5342F00018ED7 /* DRGAnnotationVC.xib in Resources */,
+				079E3A471AE5342F00018ED7 /* DRGAnnotationDetailVC.xib in Resources */,
 				0749AAA51ADEB9E9002563C2 /* DRGBookDetailVC.xib in Resources */,
 				0738A8B01ADC0B4700CB87FC /* Images.xcassets in Resources */,
 				070F0B851AE7B8F30068702B /* image_placeholder.png in Resources */,
-				070F0B7D1AE7926D0068702B /* book-placeholder.jpg in Resources */,
-				070F0B821AE79D5E0068702B /* DRGSimplePDFVC.xib in Resources */,
+				074FC1BB1AEA48F20059EB95 /* DRGAnnotationViewCell.xib in Resources */,
+				074FC1B61AEA48750059EB95 /* DRGSimplePDFVC.xib in Resources */,
+				074FC1A81AEA430D0059EB95 /* book-placeholder.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +530,7 @@
 				0779FC8A1AE102EC008412A2 /* DRGBaseTableVC.m in Sources */,
 				0704C3D41ADD297D00F80DB7 /* _DRGTag.m in Sources */,
 				0704C3D31ADD297D00F80DB7 /* _DRGPhoto.m in Sources */,
+				074FC1BA1AEA48F20059EB95 /* DRGAnnotationViewCell.m in Sources */,
 				0779FC8D1AE10C08008412A2 /* NSString+Validation.m in Sources */,
 				0704C3CD1ADD297D00F80DB7 /* _DRGAuthor.m in Sources */,
 				0704C3D01ADD297D00F80DB7 /* _DRGDate.m in Sources */,
@@ -519,15 +539,15 @@
 				0704C3ED1ADD2AD100F80DB7 /* DRGCover.m in Sources */,
 				0749AAA41ADEB9E9002563C2 /* DRGBookDetailVC.m in Sources */,
 				0779FC901AE13D00008412A2 /* _DRGLocation.m in Sources */,
-				079E3A461AE5342F00018ED7 /* DRGAnnotationVC.m in Sources */,
+				079E3A461AE5342F00018ED7 /* DRGAnnotationDetailVC.m in Sources */,
 				0704C40C1ADD729200F80DB7 /* AGTCoreDataStack.m in Sources */,
 				0704C3F21ADD2AD100F80DB7 /* DRGTag.m in Sources */,
+				074FC1B11AEA48690059EB95 /* AGTCoreDataCollectionViewController.m in Sources */,
 				0704C3F01ADD2AD100F80DB7 /* DRGPdf.m in Sources */,
 				0704C3F31ADD2AD100F80DB7 /* DRGWriter.m in Sources */,
 				074D13691AE92CD100D2565A /* UIImage+RoundedCorner.m in Sources */,
 				0704C3F11ADD2AD100F80DB7 /* DRGPhoto.m in Sources */,
 				0704C4021ADD51C400F80DB7 /* DRGDownloadHelper.m in Sources */,
-				070F0B811AE79D5E0068702B /* DRGSimplePDFVC.m in Sources */,
 				0704C3FE1ADD4C0300F80DB7 /* DRGLabel.m in Sources */,
 				0704C4091ADD725500F80DB7 /* DRGBookListVC.m in Sources */,
 				0779FC931AE13D0A008412A2 /* DRGLocation.m in Sources */,
@@ -541,6 +561,7 @@
 				074D13671AE92CD100D2565A /* UIImage+Alpha.m in Sources */,
 				0704C3FB1ADD4BF700F80DB7 /* _DRGLabel.m in Sources */,
 				0738A8AB1ADC0B4700CB87FC /* main.m in Sources */,
+				074FC1AE1AEA48240059EB95 /* DRGAnnotationsVC.m in Sources */,
 				0704C3EE1ADD2AD100F80DB7 /* DRGDate.m in Sources */,
 				0704C3F81ADD2B7C00F80DB7 /* DRGLibraryBaseClass.m in Sources */,
 				0704C3CC1ADD297D00F80DB7 /* _DRGAnnotation.m in Sources */,
@@ -548,6 +569,7 @@
 				0704C3D51ADD297D00F80DB7 /* _DRGWriter.m in Sources */,
 				0704C4101ADD72B600F80DB7 /* AGTCoreDataTableViewController.m in Sources */,
 				0704C3EA1ADD2AD100F80DB7 /* DRGAnnotation.m in Sources */,
+				074FC1B51AEA48750059EB95 /* DRGSimplePDFVC.m in Sources */,
 				0749AA9A1ADE7C0A002563C2 /* _DRGBookResource.m in Sources */,
 				0738A8CE1ADC0E6B00CB87FC /* Library.xcdatamodeld in Sources */,
 			);
