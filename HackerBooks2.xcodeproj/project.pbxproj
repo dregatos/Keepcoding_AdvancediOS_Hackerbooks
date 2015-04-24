@@ -406,10 +406,10 @@
 		074FC1BC1AEA83200059EB95 /* Detail Book */ = {
 			isa = PBXGroup;
 			children = (
-				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
 				0749AAAA1ADEC800002563C2 /* DRGBookDetailVCDelegate.h */,
 				0749AAA11ADEB9E9002563C2 /* DRGBookDetailVC.h */,
 				0749AAA21ADEB9E9002563C2 /* DRGBookDetailVC.m */,
+				0749AAA31ADEB9E9002563C2 /* DRGBookDetailVC.xib */,
 			);
 			name = "Detail Book";
 			sourceTree = "<group>";

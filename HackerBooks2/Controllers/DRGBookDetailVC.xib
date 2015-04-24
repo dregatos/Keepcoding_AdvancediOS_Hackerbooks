@@ -35,6 +35,12 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="heightClass=compact-widthClass=regular">
+                        <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="14"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="14"/>
+                    </variation>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-Mp-tug" userLabel="Cover container">
                     <rect key="frame" x="142" y="100" width="316" height="400"/>
@@ -94,7 +100,7 @@
                         <constraint firstItem="62V-7n-bly" firstAttribute="top" secondItem="qNX-Mp-tug" secondAttribute="top" id="gHS-aW-3gX"/>
                         <constraint firstAttribute="trailing" secondItem="62V-7n-bly" secondAttribute="trailing" id="gKN-He-5PW"/>
                         <constraint firstItem="62V-7n-bly" firstAttribute="height" secondItem="2bd-i2-rcK" secondAttribute="height" multiplier="5" id="mGD-CP-wn6"/>
-                        <constraint firstItem="7qp-u7-nZS" firstAttribute="centerX" secondItem="62V-7n-bly" secondAttribute="centerX" constant="0.5" id="oay-2k-1tC"/>
+                        <constraint firstItem="7qp-u7-nZS" firstAttribute="centerX" secondItem="62V-7n-bly" secondAttribute="centerX" id="oay-2k-1tC"/>
                         <constraint firstItem="62V-7n-bly" firstAttribute="trailing" secondItem="2bd-i2-rcK" secondAttribute="trailing" id="t2T-2a-TVC"/>
                         <constraint firstAttribute="width" secondItem="qNX-Mp-tug" secondAttribute="height" multiplier="19:24" id="uff-Qt-YJF"/>
                         <constraint firstItem="62V-7n-bly" firstAttribute="leading" secondItem="2bd-i2-rcK" secondAttribute="leading" id="zSO-An-I4d"/>
